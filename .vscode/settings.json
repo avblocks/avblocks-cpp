@@ -1,0 +1,25 @@
+{
+    "cmake.configureOnOpen": true,
+    "cmake.preferredGenerators": [
+        "Ninja"
+    ],
+    "cmake.buildTask": true,
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "cmake.buildDirectory": "${workspaceFolder}/build/${variant:buildType}_${variant:platform}",
+    "files.associations": {
+        "iostream": "cpp",
+        "filesystem": "cpp",
+        "__functional_base": "cpp",
+        "array": "cpp",
+        "istream": "cpp",
+        "locale": "cpp",
+        "memory": "cpp",
+        "thread": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp",
+        "variant": "cpp",
+        "*.tcc": "cpp",
+        "ranges": "cpp",
+        "functional": "cpp"
+    },
+}

@@ -1,0 +1,20 @@
+# Mac
+.DS_Store
+
+# Python
+.venv
+
+# build
+build/
+lib/
+include/
+
+# assets
+assets/
+
+# output
+output/
+
+# generators
+xcode/
+
