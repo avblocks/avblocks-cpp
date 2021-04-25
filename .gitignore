@@ -2,12 +2,14 @@
 .DS_Store
 
 # Python
-.venv
+.venv/
 
 # build
 build/
-lib/
-include/
+bin/
+
+# AVBlocks SDK
+sdk/
 
 # assets
 assets/

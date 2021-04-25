@@ -9,7 +9,7 @@ while [[ $# -gt 0 ]]; do
 
     case $key in
         # build type  
-        # one of: "debug", "release"
+        # one of: "debug", "release", "debug_demo", "release_demo"
         -t|--type)
             type="$2"
             shift # past argument
@@ -61,6 +61,15 @@ if [ "${type}" == "release" ]; then
     mkdir -p ./build/release_x64
     pushd ./build/release_x64
         cmake -G 'Ninja' -DCMAKE_BUILD_TYPE=Release -DPLATFORM=x64 ../.. && \
+        ninja
+        ret=$?
+    popd  
+fi
+
+if [ "${type}" == "release_demo" ]; then 
+    mkdir -p ./build/release_demo_x64
+    pushd ./build/release_demo_x64
+        cmake -G 'Ninja' -DCMAKE_BUILD_TYPE=Release -DPLATFORM=x64 -DDEMO=YES ../.. && \
         ninja
         ret=$?
     popd  

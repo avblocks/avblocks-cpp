@@ -9,7 +9,7 @@ while [[ $# -gt 0 ]]; do
 
     case $key in
         # build type  
-        # one of: "debug", "release"
+        # one of: "debug", "release", "debug_demo", "release_demo"
         -t|--type)
             type="$2"
             shift # past argument
@@ -25,15 +25,15 @@ echo "Running clean.sh ..."
 
 if [[ -z $type ]]; then
     echo "Usage:"    
-    echo './clean.sh --type [debug, release]'
+    echo './build.sh --type [debug, release, debug_demo, release_demo]'
     popd; exit 1
 fi
 
-declare -A supported_types=([debug]=1 [release]=1)
+declare -A supported_types=([debug]=1 [release]=1 [debug_demo]=1 [release_demo]=1)
 
 if [[ -z "${supported_types[$type]}" ]]; then
     echo "Usage:"    
-    echo './clean.sh --type [debug, release]'
+    echo './build.sh --type [debug, release, debug_demo, release_demo]'
     popd; exit 1
 fi
 

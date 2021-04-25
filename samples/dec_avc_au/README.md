@@ -49,7 +49,7 @@ or using the default options:
 ***
 
 ``` bash
-cd ./lib/x64
+cd ./bin/x64
 ./dec_avc_au --input ../../assets/vid/foreman_qcif.h264.au --color yuv420
 Output file: ../../output/decoded_176x144.yuv
 ```
