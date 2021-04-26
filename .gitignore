@@ -13,10 +13,12 @@ sdk/
 
 # assets
 assets/
+package/
 
 # output
 output/
 
 # generators
 xcode/
+
 
