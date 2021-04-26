@@ -12,3 +12,7 @@ See [setup for macOS](./docs/setup-mac.md)
 
 See [build on macOS](./docs/build-mac.md)
 
+### Run
+
+See [README](./samples/README.md) in the `samples` subdirectory. 
+
