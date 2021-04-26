@@ -1,8 +1,14 @@
 # Download AVBlocks Core and Assets
 
+Change to the dorectory where you cloned this repository:
+
+```bash
+cd avblocks-cpp
+```
+
 ## AVBlocks Core
 
-In the script below, change the tag to the release that you need. For the available versions go to https://github.com/avblocks/avblocks-core/releases.   
+In the script below, change the tag to the release that you need. For the available versions go to [AVBlocks Core Releases](https://github.com/avblocks/avblocks-core/releases).   
 
 ```bash
 # select version and platform
