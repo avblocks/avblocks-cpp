@@ -13,7 +13,7 @@ cd avblocks-cpp
 
 ### Download AVBlocks Core and Assets
 
-See [Download Core and Assets](./docs/download-avblocks-core-and-assets.md) 
+See [Download Core and Assets on macOS](./docs/download-avblocks-core-and-assets-mac.md) 
 
 ### Setup
 

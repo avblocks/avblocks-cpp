@@ -1,4 +1,4 @@
-# Download AVBlocks Core and Assets
+# Download AVBlocks Core and Assets on macOS
 
 Change to the dorectory where you cloned this repository:
 
