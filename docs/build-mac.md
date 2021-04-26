@@ -8,27 +8,6 @@ The project comes with a pre-configured Visual Studio Code workspace which uses 
 
 Make sure you have done the [setup for macOS](./setup-mac.md) 
 
-## Download AVBlocks
-> In the script below, changethe  tag to the release that  you need. For the available versions go to https://github.com/avblocks/avblocks-core/releases.   
-
-```bash
-# select version and platform
-tag="v2.3.5-alpha.1"
-platform="darwin"
-
-# download
-mkdir -p ./sdk
-curl \
-  --location \
-  --output ./sdk/avblocks_$tag-$platform.zip \
-  https://github.com/avblocks/avblocks-core/releases/download/$tag/avblocks_$tag-$platform.zip
-  
-# unzip
-pushd sdk
-unzip avblocks_$tag-$platform.zip
-popd
-```
-
 ## Build with Ninja
 
 > This is the recommended way for building and working with the sample code.

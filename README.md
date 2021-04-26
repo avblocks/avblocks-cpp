@@ -4,13 +4,17 @@ AVBlocks C++ SDK (CLI Samples)
 
 ## macOS
 
+### Download AVBlocks Core and Assets
+
+See [Download Core and Assets](./docs/download-avblocks-core-and-assets.md) 
+
 ### Setup
 
-See [setup for macOS](./docs/setup-mac.md)
+See [Setup for macOS](./docs/setup-mac.md)
 
 ### Build
 
-See [build on macOS](./docs/build-mac.md)
+See [Build on macOS](./docs/build-mac.md)
 
 ### Run
 
