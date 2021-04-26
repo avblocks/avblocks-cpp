@@ -1,6 +1,6 @@
 # Download AVBlocks Core and Assets on macOS
 
-Change to the dorectory where you cloned this repository:
+Change to the directory where you cloned this repository:
 
 ```bash
 cd avblocks-cpp
