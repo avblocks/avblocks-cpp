@@ -4,6 +4,13 @@ AVBlocks C++ SDK (CLI Samples)
 
 ## macOS
 
+### Clone
+
+```bash
+git clone git@github.com:avblocks/avblocks-cpp.git
+cd avblocks-cpp
+```
+
 ### Download AVBlocks Core and Assets
 
 See [Download Core and Assets](./docs/download-avblocks-core-and-assets.md) 
