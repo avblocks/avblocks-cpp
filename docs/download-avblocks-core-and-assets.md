@@ -8,7 +8,7 @@ cd avblocks-cpp
 
 ## AVBlocks Core
 
-In the script below, change the tag to the release that you need. For the available versions go to [AVBlocks Core Releases](https://github.com/avblocks/avblocks-core/releases).   
+In the script below, change the tag to the release that you need. For the available versions check the [AVBlocks Core](https://github.com/avblocks/avblocks-core/releases) releases.   
 
 ```bash
 # select version and platform
