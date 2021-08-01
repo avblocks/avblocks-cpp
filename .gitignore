@@ -7,6 +7,8 @@
 # build
 build/
 bin/
+/-m64
+/null.d
 
 # AVBlocks SDK
 sdk/
@@ -20,5 +22,6 @@ output/
 
 # generators
 xcode/
+
 
 
