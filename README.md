@@ -20,3 +20,21 @@ See [Build on macOS](./docs/build-mac.md)
 
 See [README](./samples/README.md) in the `samples` subdirectory. 
 
+## Linux
+
+### Download AVBlocks Core and Assets
+
+See [Download Core and Assets on Linux](./docs/download-avblocks-core-and-assets-linux.md) 
+
+### Setup
+
+See [Setup for Linux](./docs/setup-linux.md)
+
+### Build
+
+See [Build on Linux](./docs/build-linux.md)
+
+### Run
+
+See [README](./samples/README.md) in the `samples` subdirectory. 
+
