@@ -18,7 +18,7 @@ See [Build on macOS](./docs/build-mac.md)
 
 ### Run
 
-See [README](./samples/README.md) in the `samples` subdirectory. 
+See [README](./samples/darwin/README.md) in the `samples` subdirectory. 
 
 ## Linux
 
@@ -36,5 +36,5 @@ See [Build on Linux](./docs/build-linux.md)
 
 ### Run
 
-See [README](./samples/README.md) in the `samples` subdirectory. 
+See [README](./samples/linux/README.md) in the `samples` subdirectory. 
 
