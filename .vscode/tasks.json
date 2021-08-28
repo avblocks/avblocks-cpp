@@ -16,6 +16,12 @@
             "osx": {            
                 "command": "cmake -G 'Ninja' -DCMAKE_BUILD_TYPE=debug -DPLATFORM=x64 ../.. && ninja"
             },
+            "linux": {            
+                "command": "cmake -G 'Ninja' -DCMAKE_BUILD_TYPE=debug -DPLATFORM=x64 ../.. && ninja"
+            },
+            "windows": {            
+                "command": "cmake -G 'Ninja' -DCMAKE_BUILD_TYPE=debug -DPLATFORM=x64 ../.. ; ninja"
+            },
             "problemMatcher": {
                 "owner": "cpp",
                 "fileLocation": [
@@ -79,6 +85,12 @@
             },
             "osx": {            
                 "command": "cmake -G 'Ninja' -DCMAKE_BUILD_TYPE=release -DPLATFORM=x64 ../.. && ninja"
+            },
+            "linux": {            
+                "command": "cmake -G 'Ninja' -DCMAKE_BUILD_TYPE=release -DPLATFORM=x64 ../.. && ninja"
+            },
+            "windows": {            
+                "command": "cmake -G 'Ninja' -DCMAKE_BUILD_TYPE=release -DPLATFORM=x64 ../.. ; ninja"
             },
             "problemMatcher": {
                 "owner": "cpp",

@@ -10,12 +10,12 @@
             "request": "launch",
             // see: https://code.visualstudio.com/docs/cpp/config-clang-mac
             "osx": {
-                "program": "${workspaceFolder}/lib/x64/dec_avc_au",
+                "program": "${workspaceFolder}/bin/x64/dec_avc_au",
                 "MIMode": "lldb",
             },
             // see: https://code.visualstudio.com/docs/cpp/config-linux
             "linux": {
-                "program": "${workspaceFolder}/lib/x64/dec_avc_au",
+                "program": "${workspaceFolder}/bin/x64/dec_avc_au",
                 "MIMode": "gdb",
                 "setupCommands": [
                     {
@@ -28,14 +28,14 @@
            // see: https://code.visualstudio.com/docs/cpp/config-msvc
            "windows": {
                 "type": "cppvsdbg",
-                "program": "${workspaceFolder}/lib/x64/dec_avc_au.exe",
+                "program": "${workspaceFolder}/bin/x64/dec_avc_au.exe",
             },            
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/bin/x64",
             "environment": [],
             "externalConsole": false,
-            "preLaunchTask": "Build All - Debug x64"
+            "preLaunchTask": "Build All - Debug x64 - Demo"
         }
     ]
 }
