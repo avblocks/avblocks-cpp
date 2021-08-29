@@ -22,6 +22,8 @@ output/
 
 # generators
 xcode/
+vs2019/
+vs2017/
 
 
 

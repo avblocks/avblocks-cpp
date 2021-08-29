@@ -11,6 +11,10 @@ string(TOLOWER ${CMAKE_SYSTEM_NAME} OS)
 # output
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../../../bin/${PLATFORM})
 
+if (CMAKE_GENERATOR MATCHES "Visual Studio.*20.*")
+    set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../../../bin)
+endif()
+
 # debug definitions
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     target_compile_definitions(${target} PUBLIC  _DEBUG)
