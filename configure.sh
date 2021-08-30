@@ -29,10 +29,6 @@ python3 -m venv .venv
 # activate virtual environment
 source .venv/bin/activate
 
-# upgrade pip
-# pip install --upgrade wheel
-# pip install --upgrade pip
-
 # install development packages
 pip install -r dev/requirements.txt
 
