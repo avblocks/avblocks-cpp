@@ -18,6 +18,3 @@ endif()
 if(OS STREQUAL "windows")
     add_subdirectory(${OS}/dec_avc_au)
 endif()
-
-
-

@@ -129,7 +129,7 @@ bool transcode(Options& opt)
     {
         WCHAR imgFile[MAX_PATH];
         wstring pattern = L"au_%04d.h264";
-        wstring imgPath = getExeDir() + L"\\" + opt.input_dir + pattern;
+        wstring imgPath = opt.input_dir + L"\\" + pattern;
         wsprintf(imgFile, imgPath.c_str(), i);
 
         if (!decoderInitialized)

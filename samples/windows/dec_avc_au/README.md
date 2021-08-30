@@ -4,50 +4,35 @@ The dec_avc_au sample shows how to decode a H.264 stream. The sample uses sequen
 
 ### Command Line
 
-	dec_avc_au --input <directory> [--output <file>] [--frame <width>x<height>] [--rate <fps>] [--color <COLOR>] [--colors]
-
-	dec_avc_au -i <directory> [-o <file>] [-f <width>x<height>] [-r <fps>] [-c <COLOR>] [--colors]
- 
-	COLORS:
-	-------
-	yv12                Planar Y, V, U (4:2:0) (note V,U order!)
-	nv12                Planar Y, merged U->V (4:2:0)
-	yuy2                Composite Y->U->Y->V (4:2:2)
-	uyvy                Composite U->Y->V->Y (4:2:2)
-	yuv411              Planar Y, U, V (4:1:1)
-	yuv420              Planar Y, U, V (4:2:0)
-	yuv422              Planar Y, U, V (4:2:2)
-	yuv444              Planar Y, U, V (4:4:4)
-	y411                Composite Y, U, V (4:1:1)
-	y41p                Composite Y, U, V (4:1:1)
-	bgr32               Composite B->G->R
-	bgra32              Composite B->G->R->A
-	bgr24               Composite B->G->R
-	bgr565              Composite B->G->R, 5 bit per B & R, 6 bit per G
-	bgr555              Composite B->G->R->A, 5 bit per component, 1 bit per A
-	bgr444              Composite B->G->R->A, 4 bit per component
-	gray                Luminance component only
-	yuv420a             Planar Y, U, V, Alpha (4:2:0)
-	yuv422a             Planar Y, U, V, Alpha (4:2:2)
-	yuv444a             Planar Y, U, V, Alpha (4:4:4)
-	yvu9                Planar Y, V, U, 9 bits per sample
+```powershell
+./dec_avc_au --input <directory> [--output <file>] [--frame <width>x<height>] [--rate <fps>] [--color <COLOR>] [--colors]
+```
 
 ###	Examples
 
-The following command extracts the H.264 Access Unit files from the `foreman_qcif.h264.au\` directory and decodes them to raw video frames. By default, the sample saves the decoded raw video to `decoded_WxH.yuv`:
-	
-	.\dec_avc_au.exe --input ..\assets\vid\foreman_qcif.h264.au\ --color yuv420
+List options:
 
-and using the default options:
+```powershell
+./bin/x64/dec_avc_au.exe --help
+Usage: dec_avc_au --input <directory> [--output <file>] [--frame <width>x<height>] [--rate <fps>] [--color <COLOR>] [--colors]
+  -?,    --help
+  -i,    --input    input directory (contains sequence of compressed file)
+  -o,    --output   output YUV file
+  -f,    --frame    frame size, <width>x<height>
+  -r,    --rate     frame rate
+  -c,    --color    output color format. Use --colors to list all supported color
+                    formats
+         --colors   list COLOR constants
+```
 
-	.\dec_avc_au.exe
-***
+The following command extracts the H.264 Access Unit files from the `assets/vid/foreman_qcif.h264.au` directory and decodes them to raw video frames. The decoded video is written to `output/dec_avc_au/decoded_176x144.yuv`:
 
-	Windows PowerShell
-	Copyright (C) 2012 Microsoft Corporation. All rights reserved.
-	
-	PS AVBlocksSDK\lib> .\dec_avc_au.exe --input ..\assets\vid\foreman_qcif.h264.au\ --color yuv420
+```powershell
+New-Item -Force -ItemType Directory ./output/dec_avc_au
 
-	Output file: AVBlocksSDK\lib\decoded_176x144.yuv
+./bin/x64/dec_avc_au.exe `
+  --input ./assets/vid/foreman_qcif.h264.au `
+  --output ./output/dec_avc_au/decoded_176x144.yuv `
+  --color yuv420
 
-	PS AVBlocksSDK\lib>
+```
