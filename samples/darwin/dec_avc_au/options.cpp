@@ -1,12 +1,13 @@
 /*
- *  Copyright (c) 2013 Primo Software. All Rights Reserved.
+ *  Copyright (c) Primo Software. All Rights Reserved.
  *
- *  Use of this source code is governed by a BSD-style license
+ *  Use of this source code is governed by a MIT License
  *  that can be found in the LICENSE file in the root of the source
  *  tree.
 */
 
 #include <primo/avblocks/AVBlocks.h>
+
 #include <string>
 #include <iostream>
 #include <iomanip>
@@ -16,8 +17,6 @@
 #include "options.h"
 #include "program_options.h"
 #include "util.h"
-
-namespace fs = std::filesystem;
 
 using namespace std;
 using namespace primo::avblocks;
