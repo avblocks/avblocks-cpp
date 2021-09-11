@@ -6,16 +6,17 @@
  *  tree.
 */
 
+#include <unistd.h>
+
 #include <iostream>
 #include <string>
 #include <filesystem>
-#include <unistd.h>
-
-#include <primo/avblocks/AVBlocks.h>
 
 #include <primo/platform/Reference++.h>
 #include <primo/platform/ErrorFacility.h>
 #include <primo/platform/UString.h>
+
+#include <primo/avblocks/AVBlocks.h>
 
 #include "options.h"
 #include "util.h"

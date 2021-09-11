@@ -14,6 +14,7 @@ endif()
 
 if(OS STREQUAL "linux")
     add_subdirectory(${OS}/dec_avc_au)
+    add_subdirectory(${OS}/enc_avc_file)
 endif()
 
 if(OS STREQUAL "windows")
