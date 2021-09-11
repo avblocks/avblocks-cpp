@@ -20,6 +20,8 @@
         "variant": "cpp",
         "*.tcc": "cpp",
         "ranges": "cpp",
-        "functional": "cpp"
+        "functional": "cpp",
+        "iomanip": "cpp",
+        "iosfwd": "cpp"
     },
 }
