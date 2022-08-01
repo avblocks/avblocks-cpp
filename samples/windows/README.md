@@ -8,7 +8,7 @@ Decode AAC file in Audio Data Transport Stream (ADTS) format and save the output
 
 See [dec_aac_adts_file](./dec_aac_adts_file) for details.
 
-### AVC / H.264
+### AVC / H.264 (Advance Video Coding)
 
 #### dec_avc_au
 
@@ -18,7 +18,15 @@ See [dec_avc_au](./dec_avc_au) for details.
 
 ## Encoding
 
-### AVC / H.264
+### AAC (Advanced Audio Coding)
+
+## enc_aac_adts_file
+
+Encode WAV file to AAC file in Audio Data Transport Stream (ADTS) format.
+
+See [enc_aac_adts_file](./enc_aac_adts_file) for details.
+
+### AVC / H.264 (Advance Video Coding)
 
 #### enc_avc_file
 
