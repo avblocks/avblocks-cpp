@@ -23,7 +23,7 @@ Usage: enc_aac_adts_file --input <wav file> --output <aac file>
 Encode the input file `./assets/aud/equinox-48KHz.wav` into output file `./output/enc_aac_adts_file/equinox-48KHz.adts.aac`:
 
 ```powershell
-mkdir -p ./output/enc_aac_adts_file
+mkdir -Force -Path ./output/enc_aac_adts_file
 
 ./bin/x64/enc_aac_adts_file `
     --input ./assets/aud/equinox-48KHz.wav `

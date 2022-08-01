@@ -24,7 +24,7 @@ dec_aac_adts_file --input <aac file> --output <wav file>
 The following example encode input file `..\assets\aud\Hydrate-Kenny_Beltrey.adts.aac` into output file `Hydrate-Kenny_Beltrey.wav`:
 
 ```powershell
-mkdir -p ./output/dec_aac_adts_file
+mkdir -Force -Path ./output/dec_aac_adts_file
 
 ./bin/x64/dec_aac_adts_file `
   --input ./assets/aud/Hydrate-Kenny_Beltrey.adts.aac `

@@ -23,7 +23,11 @@
         "functional": "cpp",
         "iomanip": "cpp",
         "iosfwd": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "map": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "fstream": "cpp"
     },
     "editor.tokenColorCustomizations": {
         "textMateRules": [

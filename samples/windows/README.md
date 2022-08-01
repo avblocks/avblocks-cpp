@@ -1,3 +1,15 @@
+# Samples - C++ / Windows
+
+## Demuxing
+
+### MP4 (MPEG-4 Part 14 / MPEG-4 Part 1)
+
+#### demux_mp4_file
+
+Extract the first audio and video elementary stream from an MP4 container and save each stream into a separate MP4 file.
+
+See [demux_mp4_file](./demux_mp4_file) for details.
+
 ## Decoding
 
 ### AAC (Advanced Audio Coding)
@@ -40,3 +52,12 @@ Convert a raw YUV video file to a compressed H.264 video file.
 
 See [enc_avc_file](./enc_avc_file) for details.
 
+## Muxing
+
+### MP4 (MPEG-4 Part 1)
+
+## mux_mp4_file
+
+Multiplex two single-stream MP4 files containing AAC (audio) and H.264 (video) streams into an MP4 (container) file.
+
+See [mux_mp4_file](./demux_mp4_file) for details.

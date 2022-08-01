@@ -30,7 +30,7 @@ enc_avc_file --frame <width>x<height> --rate <fps> --color <COLOR> --input <file
 The following command encodes a raw YUV video from `./assets/vid/foreman_qcif.yuv` to a H.264 video in `./output/enc_avc_file/foreman_qcif.h264`:
   
 ```powershell
-mkdir -p ./output/enc_avc_file
+mkdir -Force -Path ./output/enc_avc_file
 
 ./bin/x64/enc_avc_file `
   --frame 176x144 --rate 30 --color yuv420 `

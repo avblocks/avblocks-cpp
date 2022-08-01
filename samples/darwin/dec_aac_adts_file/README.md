@@ -12,7 +12,7 @@ Decode AAC file in Audio Data Transport Stream (ADTS) format and save output to 
 
 List options:
 
-```powershell
+```sh
 ./bin/x64/dec_aac_adts_file --help
 
 dec_aac_adts_file --input <aac file> --output <wav file>
@@ -23,7 +23,7 @@ dec_aac_adts_file --input <aac file> --output <wav file>
 
 The following example encode input file `..\assets\aud\Hydrate-Kenny_Beltrey.adts.aac` into output file `Hydrate-Kenny_Beltrey.wav`:
 
-```powershell
+```sh
 mkdir -p ./output/dec_aac_adts_file
 
 ./bin/x64/dec_aac_adts_file \

@@ -23,7 +23,7 @@ Usage: dec_avc_file -i <h264 file> -o <yuv file>
 The following command decodes an AVC/H.264 video from `assets/vid/foreman_qcif.h264` to `output/dec_avc_file/foreman_qcif.yuv`:
   
 ```powershell
-mkdir -p ./output/dec_avc_file
+mkdir -Force -Path ./output/dec_avc_file
 
 ./bin/x64/dec_avc_file `
   --input ./assets/vid/foreman_qcif.h264 `

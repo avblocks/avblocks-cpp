@@ -9,7 +9,7 @@ enum ErrorCodes
 
 struct Options
 {
-    Options(): help(false){}
+    Options(): help(false) {} 
     
     std::wstring inputFile;
     std::wstring outputFile;
@@ -18,4 +18,3 @@ struct Options
 };
 
 ErrorCodes prepareOptions(Options &opt, int argc, wchar_t* argv[]);
-

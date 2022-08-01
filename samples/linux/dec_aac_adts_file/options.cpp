@@ -18,7 +18,7 @@ using namespace primo::program_options;
 
 void setDefaultOptions(Options& opt)
 {
-    opt.inputFile = getExeDir() + "/../assets/aud/Hydrate-Kenny_Beltrey.adts.aac";
+    opt.inputFile = getExeDir() + "/../../assets/aud/Hydrate-Kenny_Beltrey.adts.aac";
 
     fs::path output(getExeDir() + "/../../output/dec_aac_adts_file");
     fs::create_directories(output);    

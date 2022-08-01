@@ -28,7 +28,7 @@ Usage: dec_avc_au --input <directory> [--output <file>] [--frame <width>x<height
 The following command extracts the H.264 Access Unit files from the `assets/vid/foreman_qcif.h264.au` directory and decodes them to raw video frames. The decoded video is written to `output/dec_avc_au/decoded_176x144.yuv`:
 
 ```powershell
-mkdir -p ./output/dec_avc_au
+mkdir -Force -Path ./output/dec_avc_au
 
 ./bin/x64/dec_avc_au `
   --input ./assets/vid/foreman_qcif.h264.au `
