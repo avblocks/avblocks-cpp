@@ -16,6 +16,12 @@ Decode AVC / H.264 stream. The sample uses sequence of files to simulate a strea
 
 See [dec_avc_au](./dec_avc_au) for details.
 
+#### dec_avc_file
+
+Shows how to decode a compressed AVC / H.264 file to raw uncompressed YUV video file.       
+
+See [dec_avc_file](./dec_avc_file) for details.
+
 ## Encoding
 
 ### AAC (Advanced Audio Coding)
