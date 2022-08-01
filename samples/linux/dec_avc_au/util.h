@@ -1,34 +1,43 @@
-/*
- *  Copyright (c)  Primo Software. All Rights Reserved.
- *
- *  Use of this source code is governed by a MIT License
- *  that can be found in the LICENSE file in the root of the source
- *  tree.  
-*/
 #pragma once
 
-#include <string>
-
-// stringstream
-#include <sstream>
-
-//getpid
 #include <unistd.h>
-
-//dirname
 #include <libgen.h>
-
-// PATH_MAX
 #include <linux/limits.h>
-
-// remove, sprintf
 #include <stdio.h>
-
-// strcasecmp
 #include <strings.h>
 
 #include <vector>
+#include <string>
+#include <iostream>
+#include <sstream>
 #include <fstream>
+
+#include <primo/avblocks/AVBlocks.h>
+#include <primo/platform/ErrorFacility.h>
+#include <primo/platform/UString.h>
+
+inline void printError(const char* action, const primo::error::ErrorInfo* e)
+{
+    using namespace std;
+
+	if (action)
+	{
+		std::cout << action << ": ";
+	}
+
+	if (primo::error::ErrorFacility::Success == e->facility())
+	{
+		cout << "Success" << endl;
+		return;
+	}
+
+	if (e->message())
+	{
+		cout << primo::ustring(e->message()) << " ";
+	}
+	
+	cout << "(facility:" << e->facility() << " error:" << e->code() << ")" << endl;
+}
 
 
 // Mac OSX / Unix specific implementations

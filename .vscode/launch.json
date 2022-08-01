@@ -38,6 +38,72 @@
             "preLaunchTask": "Build All - Debug x64 - Demo"
         },
         {
+            "name": "dec_avc_file",
+            "type": "cppdbg",
+            "request": "launch",
+            // see: https://code.visualstudio.com/docs/cpp/config-clang-mac
+            "osx": {
+                "program": "${workspaceFolder}/bin/x64/dec_avc_file",
+                "MIMode": "lldb",
+            },
+            // see: https://code.visualstudio.com/docs/cpp/config-linux
+            "linux": {
+                "program": "${workspaceFolder}/bin/x64/dec_avc_file",
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ],
+            },
+           // see: https://code.visualstudio.com/docs/cpp/config-msvc
+           "windows": {
+                "type": "cppvsdbg",
+                "program": "${workspaceFolder}/bin/x64/dec_avc_file.exe",
+            },            
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/bin/x64",
+            "environment": [],
+            "externalConsole": false,
+            "preLaunchTask": "Build All - Debug x64 - Demo"
+        },
+        {
+            "name": "enc_aac_adts_file",
+            "type": "cppdbg",
+            "request": "launch",
+            // see: https://code.visualstudio.com/docs/cpp/config-clang-mac
+            "osx": {
+                "program": "${workspaceFolder}/bin/x64/enc_aac_adts_file",
+                "MIMode": "lldb",
+            },
+            // see: https://code.visualstudio.com/docs/cpp/config-linux
+            "linux": {
+                "program": "${workspaceFolder}/bin/x64/enc_aac_adts_file",
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ],
+            },
+           // see: https://code.visualstudio.com/docs/cpp/config-msvc
+           "windows": {
+                "type": "cppvsdbg",
+                "program": "${workspaceFolder}/bin/x64/enc_aac_adts_file.exe",
+            },            
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/bin/x64",
+            "environment": [],
+            "externalConsole": false,
+            "preLaunchTask": "Build All - Debug x64 - Demo"
+        },
+        {
             "name": "enc_avc_file",
             "type": "cppdbg",
             "request": "launch",

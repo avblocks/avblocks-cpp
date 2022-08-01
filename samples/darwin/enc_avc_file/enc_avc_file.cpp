@@ -138,6 +138,7 @@ int main(int argc, char* argv[])
     {
         case Command: return 0;
         case Error:	return 1;
+        case Parsed: break;
     }
     
     Library::initialize();

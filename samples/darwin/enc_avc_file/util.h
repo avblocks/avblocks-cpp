@@ -1,60 +1,12 @@
-/*
- *  Copyright (c)  Primo Software. All Rights Reserved.
- *
- *  Use of this source code is governed by a MIT License
- *  that can be found in the LICENSE file in the root of the source
- *  tree.
- */
 #pragma once
 
+#include <primo/avblocks/AVBlocks.h>
+#include <primo/platform/ErrorFacility.h>
+#include <primo/platform/UString.h>
+
 #include <string>
-
-// stringstream
+#include <iostream>
 #include <sstream>
-
-//dirname
-#include <libgen.h>
-
-#include <fstream>
-
-#include <ApplicationServices/ApplicationServices.h>
-
-inline std::string getExeDir()
-{
-    std::string dir;
-    
-    OSStatus status;
-    CFDictionaryRef processInfoDict = NULL;
-    CFStringRef processExecutable = NULL;
-    
-    ProcessSerialNumber psn;
-    status = GetCurrentProcess(&psn);
-    
-    if (noErr == status)
-    {
-        processInfoDict = ProcessInformationCopyDictionary(&psn, kProcessDictionaryIncludeAllInformationMask);
-        if (processInfoDict != NULL)
-        {
-            char exec_str[PATH_MAX];
-            
-            processExecutable = (CFStringRef)CFDictionaryGetValue(processInfoDict, kCFBundleExecutableKey);
-            
-            if (processExecutable != NULL)
-            {
-                processExecutable = (CFStringRef)CFRetain(processExecutable);
-                
-                CFStringGetCString(processExecutable, exec_str, PATH_MAX, kCFStringEncodingUTF8 );
-                
-                dir.assign(dirname(exec_str));
-                
-                CFRelease(processExecutable);
-            }
-            
-            CFRelease(processInfoDict);
-        }
-    }
-    return dir;
-}
 
 inline void deleteFile(const char* file)
 {
@@ -65,3 +17,5 @@ inline bool compareNoCase(const char* arg1, const char* arg2)
 {
     return 0 == strcasecmp(arg1, arg2);
 }
+
+std::string getExeDir();

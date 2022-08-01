@@ -1,30 +1,41 @@
-/*
- *  Copyright (c) 2016 Primo Software. All Rights Reserved.
- *
- *  Use of this source code is governed by a BSD-style license
- *  that can be found in the LICENSE file in the root of the source
- *  tree.  
-*/
 #pragma once
 
 
-//getpid
 #include <unistd.h>
-
-//dirname
 #include <libgen.h>
-
-// PATH_MAX
 #include <linux/limits.h>
-
-// remove, sprintf
 #include <stdio.h>
-
-// strcasecmp
 #include <strings.h>
 
-// stringstream
-#include <sstream>
+#include <string>
+#include <iostream>
+
+#include <primo/avblocks/AVBlocks.h>
+#include <primo/platform/ErrorFacility.h>
+#include <primo/platform/UString.h>
+
+inline void printError(const char* action, const primo::error::ErrorInfo* e)
+{
+    using namespace std;
+
+    if (action)
+    {
+        std::cout << action << ": ";
+    }
+
+    if (primo::error::ErrorFacility::Success == e->facility())
+    {
+        cout << "Success" << endl;
+        return;
+    }
+
+    if (e->message())
+    {
+        cout << primo::ustring(e->message()) << " ";
+    }
+    
+    cout << "(facility:" << e->facility() << " error:" << e->code() << ")" << endl;
+}
 
 inline std::string getExeDir()
 {	
@@ -63,7 +74,7 @@ inline std::string getExeDir()
 
 inline void deleteFile(const char* file)
 {
-	remove(file);
+    remove(file);
 }
 
 inline bool compareNoCase(const char* arg1, const char* arg2)

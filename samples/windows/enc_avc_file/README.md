@@ -13,7 +13,8 @@ The `enc_avc_file` sample shows how to convert a raw YUV video file to a compres
 List options:
 
 ```powershell
-./bin/x64/enc_avc_file.exe --help
+./bin/x64/enc_avc_file --help
+
 enc_avc_file --frame <width>x<height> --rate <fps> --color <COLOR> --input <file.yuv> --output <file.h264>
 [--colors]
   -h,    --help
@@ -27,11 +28,11 @@ enc_avc_file --frame <width>x<height> --rate <fps> --color <COLOR> --input <file
 ```
 
 The following command encodes a raw YUV video from `./assets/vid/foreman_qcif.yuv` to a H.264 video in `./output/enc_avc_file/foreman_qcif.h264`:
-	
+  
 ```powershell
-New-Item -Force -ItemType Directory ./output/enc_avc_file
+mkdir -p ./output/enc_avc_file
 
-./bin/x64/enc_avc_file.exe `
+./bin/x64/enc_avc_file `
   --frame 176x144 --rate 30 --color yuv420 `
   --input ./assets/vid/foreman_qcif.yuv `
   --output ./output/enc_avc_file/foreman_qcif.h264

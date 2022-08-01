@@ -30,64 +30,45 @@ using namespace std;
 
 namespace fs = std::filesystem;
 
-void printStatus(const ErrorInfo* e)
-{
-	if (ErrorFacility::Success == e->facility())
-	{
-		cout << "Success";
-	}
-	else
-	{
-                if (e->message())
-                {
-                    cout << primo::ustring(e->message()) << " ";
-                }
-         
-                cout << "(facility:" << e->facility() << " error:" << e->code() << ")" << endl;
-	}
-
-	cout << endl;
-}
-
 primo::ref<MediaSocket> createInputSocket(Options& opt)
 {
-	auto socket = primo::make_ref(Library::createMediaSocket());
-	socket->setStreamType(StreamType::UncompressedVideo);
-	socket->setFile(primo::ustring(opt.yuv_file));
-	
-	auto pin = primo::make_ref(Library::createMediaPin());
-	socket->pins()->add(pin.get());
+    auto socket = primo::make_ref(Library::createMediaSocket());
+    socket->setStreamType(StreamType::UncompressedVideo);
+    socket->setFile(primo::ustring(opt.yuv_file));
+    
+    auto pin = primo::make_ref(Library::createMediaPin());
+    socket->pins()->add(pin.get());
 
-	auto vsi = primo::make_ref(Library::createVideoStreamInfo());
-	pin->setStreamInfo(vsi.get());
+    auto vsi = primo::make_ref(Library::createVideoStreamInfo());
+    pin->setStreamInfo(vsi.get());
 
-	vsi->setStreamType(StreamType::UncompressedVideo);
-	vsi->setFrameWidth(opt.frame_size.width_);
-	vsi->setFrameHeight(opt.frame_size.height_);
-	vsi->setColorFormat(opt.yuv_color.Id);
-	vsi->setFrameRate(opt.fps);
-	vsi->setScanType(ScanType::Progressive);
+    vsi->setStreamType(StreamType::UncompressedVideo);
+    vsi->setFrameWidth(opt.frame_size.width_);
+    vsi->setFrameHeight(opt.frame_size.height_);
+    vsi->setColorFormat(opt.yuv_color.Id);
+    vsi->setFrameRate(opt.fps);
+    vsi->setScanType(ScanType::Progressive);
 
-	return socket;
+    return socket;
 }
 
 primo::ref<MediaSocket> createOutputSocket(Options& opt)
 {
-	auto socket = primo::make_ref(Library::createMediaSocket());
-	socket->setFile(primo::ustring(opt.h264_file));
-	socket->setStreamType(StreamType::H264);
-	socket->setStreamSubType(StreamSubType::AVC_Annex_B);
+    auto socket = primo::make_ref(Library::createMediaSocket());
+    socket->setFile(primo::ustring(opt.h264_file));
+    socket->setStreamType(StreamType::H264);
+    socket->setStreamSubType(StreamSubType::AVC_Annex_B);
 
-	auto pin = primo::make_ref(Library::createMediaPin());
-	socket->pins()->add(pin.get());
+    auto pin = primo::make_ref(Library::createMediaPin());
+    socket->pins()->add(pin.get());
 
-	auto vsi = primo::make_ref(Library::createVideoStreamInfo());
-	pin->setStreamInfo(vsi.get());
+    auto vsi = primo::make_ref(Library::createVideoStreamInfo());
+    pin->setStreamInfo(vsi.get());
 
-	vsi->setStreamType(StreamType::H264);
-	vsi->setStreamSubType(StreamSubType::AVC_Annex_B);
+    vsi->setStreamType(StreamType::H264);
+    vsi->setStreamSubType(StreamSubType::AVC_Annex_B);
 
-	return socket;
+    return socket;
 }
 
 bool encode(Options& opt)
@@ -107,26 +88,21 @@ bool encode(Options& opt)
     // transcoder will fail if output exists (by design)
     deleteFile(primo::ustring(opt.h264_file));
 
-    cout << "Transcoder open: ";
-    if(transcoder->open())
+    if (!transcoder->open())
     {
-            printStatus(transcoder->error());
-            if(!transcoder->run())
-                return false;
-            
-            cout << "Transcoder run: ";
-            printStatus(transcoder->error());
-            
-            transcoder->close();
-            cout << "Transcoder close: ";
-            printStatus(transcoder->error());
+        printError("Transcoder open", transcoder->error());
+        return false;
     }
-    else
+
+    if (!transcoder->run())
     {
-            printStatus(transcoder->error());
-            return false;
-    }   
-    
+        printError("Transcoder run", transcoder->error());
+
+        transcoder->close();
+        return false;
+    }
+
+    transcoder->close();
     return true;
 }
 

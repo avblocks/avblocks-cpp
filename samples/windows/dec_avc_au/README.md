@@ -13,7 +13,7 @@ The dec_avc_au sample shows how to decode a H.264 stream. The sample uses sequen
 List options:
 
 ```powershell
-./bin/x64/dec_avc_au.exe --help
+./bin/x64/dec_avc_au --help
 Usage: dec_avc_au --input <directory> [--output <file>] [--frame <width>x<height>] [--rate <fps>] [--color <COLOR>] [--colors]
   -?,    --help
   -i,    --input    input directory (contains sequence of compressed file)
@@ -28,11 +28,10 @@ Usage: dec_avc_au --input <directory> [--output <file>] [--frame <width>x<height
 The following command extracts the H.264 Access Unit files from the `assets/vid/foreman_qcif.h264.au` directory and decodes them to raw video frames. The decoded video is written to `output/dec_avc_au/decoded_176x144.yuv`:
 
 ```powershell
-New-Item -Force -ItemType Directory ./output/dec_avc_au
+mkdir -p ./output/dec_avc_au
 
-./bin/x64/dec_avc_au.exe `
+./bin/x64/dec_avc_au `
   --input ./assets/vid/foreman_qcif.h264.au `
   --output ./output/dec_avc_au/decoded_176x144.yuv `
   --color yuv420
-
 ```

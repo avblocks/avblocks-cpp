@@ -28,26 +28,6 @@ namespace fs = std::filesystem;
 namespace av = primo::avblocks;
 namespace pc = primo::codecs;
 
-void printError(const char* action, const primo::error::ErrorInfo* e)
-{
-	if (action)
-	{
-		cout << action << ": ";
-	}
-
-	if (primo::error::ErrorFacility::Success == e->facility())
-	{
-		cout << "Success" << endl;
-		return;
-	}
-
-	if (e->message())
-	{
-		cout << primo::ustring(e->message()) << " ";
-	}
-	
-	cout << "(facility:" << e->facility() << " error:" << e->code() << ")" << endl;
-}
 
 MediaSocket* outputSocket(Options& opt, MediaSocket* inSocket)
 {
