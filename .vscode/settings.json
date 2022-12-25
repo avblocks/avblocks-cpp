@@ -27,7 +27,8 @@
         "map": "cpp",
         "vector": "cpp",
         "xstring": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "string": "cpp"
     },
     "editor.tokenColorCustomizations": {
         "textMateRules": [
