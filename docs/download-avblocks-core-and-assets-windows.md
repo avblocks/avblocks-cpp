@@ -1,4 +1,4 @@
-# Download AVBlocks Core and Assets on macOS
+# Download AVBlocks Core and Assets on Windows
 
 > Scripts are PowerShell
 
@@ -14,7 +14,7 @@ In the script below, change the tag to the release that you need. For the availa
 
 ```powershell
 # select version and platform
-$tag='v2.3.5-alpha.1'
+$tag='v3.0.0-demo.1'
 $platform='windows'
 
 # download

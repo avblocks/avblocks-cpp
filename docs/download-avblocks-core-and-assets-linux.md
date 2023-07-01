@@ -12,7 +12,7 @@ In the script below, change the tag to the release that you need. For the availa
 
 ```bash
 # select version and platform
-tag="v2.3.5-alpha.1"
+tag="v3.0.0-demo.1"
 platform="linux"
 
 # download

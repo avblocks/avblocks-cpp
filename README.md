@@ -42,7 +42,7 @@ See [README](./samples/linux/README.md) in the `samples` subdirectory.
 
 ### Download AVBlocks Core and Assets
 
-See [Download Core and Assets on Linux](./docs/download-avblocks-core-and-assets-windows.md) 
+See [Download Core and Assets on Windows](./docs/download-avblocks-core-and-assets-windows.md) 
 
 ### Setup
 
