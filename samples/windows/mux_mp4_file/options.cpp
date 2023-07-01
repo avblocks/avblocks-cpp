@@ -11,7 +11,6 @@ using namespace primo::codecs;
 
 void setDefaultOptions(Options& opt)
 {
-
     opt.input_audio.push_back(getExeDir() + L"/../../assets/aud/big_buck_bunny_trailer.aud.mp4");
     opt.input_video.push_back(getExeDir() + L"/../../assets/vid/big_buck_bunny_trailer.vid.mp4");
 

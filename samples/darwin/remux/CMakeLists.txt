@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(re-encode)
-set (target re-encode)
+project(remuxe)
+set (target remux)
 
 add_executable(${target})
 

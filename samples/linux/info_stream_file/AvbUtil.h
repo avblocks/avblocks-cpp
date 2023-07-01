@@ -1,6 +1,6 @@
 #pragma once
 
-#include <primo/avblocks/AVBlocks.h>
+#include <primo/avblocks/avb.h>
 
 namespace primo {
 namespace avblocks {

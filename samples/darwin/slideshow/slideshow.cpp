@@ -1,8 +1,8 @@
-#include <primo/platform/Reference++.h>
-#include <primo/platform/ErrorFacility.h>
-#include <primo/platform/UString.h>
+#include <primo/platform/reference++.h>
+#include <primo/platform/error_facility.h>
+#include <primo/platform/ustring.h>
 
-#include <primo/avblocks/AVBlocks.h>
+#include <primo/avblocks/avb.h>
 
 #include "options.h"
 #include "util.h"
@@ -119,7 +119,7 @@ bool slideshow(Options& opt)
     for(int i = 0; i < imageCount; i++)
     {
         char imgfile[PATH_MAX];
-        sprintf(imgfile, "%s/cube%04d.jpeg", imgdir.c_str(), i);
+        snprintf(imgfile, PATH_MAX, "%s/cube%04d.jpeg", imgdir.c_str(), i);
         
         auto buffer = primo::make_ref(createMediaBufferForFile(imgfile));
         
@@ -155,6 +155,7 @@ int main(int argc, char* argv[])
     {
         case Command: return 0;
         case Error:	return 1;
+        case Parsed: break;
     }
     
     primo::avblocks::Library::initialize();

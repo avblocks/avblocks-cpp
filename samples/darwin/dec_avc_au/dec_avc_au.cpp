@@ -11,11 +11,11 @@
 #include <filesystem>
 #include <unistd.h>
 
-#include <primo/avblocks/AVBlocks.h>
+#include <primo/avblocks/avb.h>
 
-#include <primo/platform/Reference++.h>
-#include <primo/platform/ErrorFacility.h>
-#include <primo/platform/UString.h>
+#include <primo/platform/reference++.h>
+#include <primo/platform/error_facility.h>
+#include <primo/platform/ustring.h>
 
 #include "options.h"
 #include "util.h"
@@ -150,7 +150,7 @@ bool transcode(Options& opt)
         char imgFile[PATH_MAX];
         string pattern = "au_%04d.h264";
         string imgPath = opt.input_dir + "/" + pattern;
-        sprintf(imgFile, imgPath.c_str(), i);
+        snprintf(imgFile, PATH_MAX, imgPath.c_str(), i);
         
         if (!decoderInitialized)
         {

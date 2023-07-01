@@ -1,7 +1,7 @@
-#include <primo/avblocks/AVBlocks.h>
+#include <primo/avblocks/avb.h>
 
-#include <primo/platform/Reference++.h>
-#include <primo/platform/UString.h>
+#include <primo/platform/reference++.h>
+#include <primo/platform/ustring.h>
 
 #include "options.h"
 #include "util.h"

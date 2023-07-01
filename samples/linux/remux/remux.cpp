@@ -1,47 +1,37 @@
-// enc_reencode.cpp : Defines the entry point for the console application.
-
-
-#include <stdio.h>
 #include <iostream>
-#include <iomanip>
-#include <string>
-#include <memory.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <libgen.h>
 
-#include <primo/platform/Reference++.h>
-#include <primo/platform/ErrorFacility.h>
-#include <primo/platform/UString.h>
+#include <primo/platform/reference++.h>
+#include <primo/platform/error_facility.h>
+#include <primo/platform/ustring.h>
 
-#include <primo/avblocks/AVBlocks.h>
+#include <primo/avblocks/avb.h>
 
 #include "options.h"
 
 using namespace std;
+using namespace primo::error;
 using namespace primo::avblocks;
 using namespace primo::codecs;
 
-void printError(const char* action, const primo::error::ErrorInfo* e)
+void printError(const char* action, const ErrorInfo* e)
 {
-	if (action)
-	{
-		cout << action << ": ";
-	}
+    if (action)
+    {
+        cout << action << ": ";
+    }
 
-    if (primo::error::ErrorFacility::Success == e->facility())
-	{
-		cout << "Success" << endl;
-		return;
-	}
-	
-	if (e->message())
-	{
-		cout << primo::ustring(e->message()) << " ";
-	}
+    if (ErrorFacility::Success == e->facility())
+    {
+        cout << "Success" << endl;
+        return;
+    }
+    
+    if (e->message())
+    {
+        cout << primo::ustring(e->message()) << " ";
+    }
 
-	cout << "facility:" << e->facility() << " error:" << e->code() << "" << endl;
+    cout << "facility:" << e->facility() << " error:" << e->code() << "" << endl;
 }
 
 bool reEncode(Options opt)
@@ -50,12 +40,13 @@ bool reEncode(Options opt)
     cout << "Output file: " << opt.outputFile << endl;
     cout << "Re-encode audio forced: " << opt.reEncodeAudio << endl;
     cout << "Re-encode video forced: " << opt.reEncodeVideo << endl;
-    
-	remove(opt.outputFile.c_str());
+        
+    remove(opt.outputFile.c_str());
 
-	auto transcoder = primo::make_ref(Library::createTranscoder());
-	// In order to use the OEM release for testing (without a valid license) the transcoder demo mode must be enabled.
-	transcoder->setAllowDemoMode(1);
+    auto transcoder = primo::make_ref(Library::createTranscoder());
+    
+    // In order to use the OEM release for testing (without a valid license) the transcoder demo mode must be enabled.
+    transcoder->setAllowDemoMode(1);
 
     // configure input
     {
@@ -112,39 +103,39 @@ bool reEncode(Options opt)
     }
 
     bool_t res = transcoder->open();
-	printError("Open Transcoder", transcoder->error());
-	if (!res)
-		return false;
+    printError("Open Transcoder", transcoder->error());
+    if (!res)
+        return false;
 
-	res = transcoder->run();
-	if (!res)
-		return false;
+    res = transcoder->run();
+    if (!res)
+        return false;
 
-	printError("Run Transcoder", transcoder->error());
+    printError("Run Transcoder", transcoder->error());
 
-	transcoder->close();
+    transcoder->close();
 
-	return true;
+    return true;
 }
 
 int main(int argc, char* argv[])
 {
-    Options opt;
-    
-    switch(prepareOptions(opt, argc, argv))
-    {
-        case Command: return 0;
-        case Error:	return 1;
-    }
+        Options opt;
+        
+        switch(prepareOptions( opt, argc, argv))
+        {
+                case Command: return 0;
+                case Error: return 1;
+        }
 
-	primo::avblocks::Library::initialize();
+    primo::avblocks::Library::initialize();
 
-	// set your license string
-	// primo::avblocks::Library::setLicense("PRIMO-LICENSE");
-    
-    bool reEncodeResult = reEncode(opt);
-    
-	primo::avblocks::Library::shutdown();
+    // set your license string
+    // primo::avblocks::Library::setLicense("PRIMO-LICENSE");
+        
+        bool reEncodeResult = reEncode(opt);
+
+    primo::avblocks::Library::shutdown();
 
     return reEncodeResult ? 0 : 1;
 }

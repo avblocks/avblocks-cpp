@@ -6,7 +6,7 @@
  *  tree.  
 */
 
-#include <primo/avblocks/AVBlocks.h>
+#include <primo/avblocks/avb.h>
 
 #include <string.h>
 

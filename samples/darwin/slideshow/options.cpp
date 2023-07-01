@@ -8,8 +8,8 @@
 #include "program_options.h"
 #include "util.h"
 
-#include <primo/avblocks/AVBlocks.h>
-#include <primo/platform/Reference++.h>
+#include <primo/avblocks/avb.h>
+#include <primo/platform/reference++.h>
 
 using namespace std;
 using namespace primo::avblocks;

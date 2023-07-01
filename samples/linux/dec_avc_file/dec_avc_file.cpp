@@ -6,11 +6,11 @@
 #include <fstream>
 #include <string>
 
-#include <primo/avblocks/AVBlocks.h>
+#include <primo/avblocks/avb.h>
 
-#include <primo/platform/Reference++.h>
-#include <primo/platform/ErrorFacility.h>
-#include <primo/platform/UString.h>
+#include <primo/platform/reference++.h>
+#include <primo/platform/error_facility.h>
+#include <primo/platform/ustring.h>
 
 #include "util.h"
 #include "options.h"

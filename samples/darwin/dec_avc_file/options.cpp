@@ -1,5 +1,5 @@
-#include <primo/avblocks/AVBlocks.h>
-#include <primo/platform/ErrorFacility.h>
+#include <primo/avblocks/avb.h>
+#include <primo/platform/error_facility.h>
 
 #include <string>
 #include <iostream>

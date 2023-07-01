@@ -76,7 +76,7 @@ if(OS STREQUAL "linux")
         ${target}
 
         # primo-avblocks
-        libAVBlocks.so
+        libAVBlocks64.so
 
         # os
         # pthread 

@@ -88,7 +88,7 @@ if(OS STREQUAL "windows")
         ${target}
         
         # primo-avblocks
-        AVBlocks.dll
+        AVBlocks64.dll
 
         # os
         Shlwapi 

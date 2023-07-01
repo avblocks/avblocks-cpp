@@ -3,11 +3,11 @@
 #include <iomanip>
 #include <fstream>
 
-#include <primo/avblocks/AVBlocks.h>
+#include <primo/avblocks/avb.h>
 
-#include <primo/platform/Reference++.h>
-#include <primo/platform/ErrorFacility.h>
-#include <primo/platform/UString.h>
+#include <primo/platform/reference++.h>
+#include <primo/platform/error_facility.h>
+#include <primo/platform/ustring.h>
 
 
 #include "util.h"
@@ -149,7 +149,7 @@ void savePictures(primo::codecs::Metadata* meta, const char* inputFile)
     for (int i=0; i < piclist->count(); ++i)
     {
         char num[8];
-        sprintf(num, "%d", i+1);
+        snprintf(num, 8, "%d", i+1);
         string picname (baseFilename);
         picname += num;
         savePicture(piclist->at(i), picname);
