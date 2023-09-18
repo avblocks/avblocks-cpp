@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(remuxe)
-set (target remux)
+project(re-encode)
+set (target re-encode)
 
 add_executable(${target})
 
@@ -10,10 +10,6 @@ string(TOLOWER ${CMAKE_SYSTEM_NAME} OS)
 
 # output
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../../../bin/${PLATFORM})
-
-if (CMAKE_GENERATOR STREQUAL "Xcode")
-    set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../../../bin)
-endif()
 
 # debug definitions
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
@@ -25,10 +21,10 @@ if (CMAKE_BUILD_TYPE STREQUAL "Release")
     target_compile_definitions(${target} PUBLIC NDEBUG)
 endif()
 
-# macOS
-if(OS STREQUAL "darwin") 
+# Linux
+if(OS STREQUAL "linux") 
     # common compile options
-    target_compile_options(${target} PRIVATE -std=c++17 -stdlib=libc++)
+    target_compile_options(${target} PRIVATE -std=c++17 -MMD -MP -MF)
 
     # x64 compile options
     if (PLATFORM STREQUAL "x64") 
@@ -47,9 +43,10 @@ if(OS STREQUAL "darwin")
 
     # release compile options
     if (CMAKE_BUILD_TYPE STREQUAL "Release")
-        target_compile_options(${target} PRIVATE -Os)
+        target_compile_options(${target} PRIVATE -O2 -s)
     endif()
 endif()
+
 
 # include dirs
 target_include_directories(${target}
@@ -59,6 +56,7 @@ target_include_directories(${target}
 
 # sources
 file(GLOB source "./*.cpp")
+
 
 target_sources(${target}
 PRIVATE
@@ -73,15 +71,15 @@ PRIVATE
 )
 
 # libs
-if (OS STREQUAL "darwin")
+if(OS STREQUAL "linux")
     target_link_libraries(
         ${target}
 
         # primo-avblocks
-        libAVBlocks.dylib
+        libAVBlocks64.so
 
         # os
-        "-framework CoreFoundation" 
-        "-framework ApplicationServices" 
+        # pthread 
+        # rt
     )
 endif()

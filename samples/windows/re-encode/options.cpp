@@ -14,7 +14,7 @@ void setDefaultOptions(Options& opt)
     //audio and video flags are enabled by default
     opt.inputFile = getExeDir() + L"/../../assets/mov/big_buck_bunny_trailer.mp4";
     
-    fs::path output(getExeDir() + L"/../../output/remux");
+    fs::path output(getExeDir() + L"/../../output/re-encode");
     fs::create_directories(output);
 
     wostringstream s;
@@ -25,7 +25,7 @@ void setDefaultOptions(Options& opt)
 
 void help(OptionsConfig<wchar_t>& optionsConfig)
 {
-    wcout << L"Usage: remux [--input inputFile.mp4] [--output outputFile.mp4] [--remux-audio yes|no] [--remux-video yes|no]\n" << endl;
+    wcout << L"Usage: re-encode [--input inputFile.mp4] [--output outputFile.mp4] [--audio yes|no] [--video yes|no]\n" << endl;
     doHelp(wcout, optionsConfig);
 }
 
@@ -44,8 +44,8 @@ ErrorCodes prepareOptions(Options& opt, int argc, wchar_t* argv[])
         wcout << L"Using defaults:\n";
         wcout << L"--input " << opt.inputFile;
         wcout << L" --output " << opt.outputFile;
-        wcout << L" --remux-video " << opt.reEncodeVideo;
-        wcout << L" --remux-audio " << opt.reEncodeAudio;
+        wcout << L" --video " << opt.reEncodeVideo;
+        wcout << L" --audio " << opt.reEncodeAudio;
         wcout << endl;
         return Parsed;
     }
@@ -55,8 +55,8 @@ ErrorCodes prepareOptions(Options& opt, int argc, wchar_t* argv[])
         (L"help,?",				opt.help,							L"")
         (L"input,i",			opt.inputFile,		wstring(),		L"input file")
         (L"output,o",			opt.outputFile,		wstring(),		L"output file")
-        (L"remux-audio,a",	opt.reEncodeAudio,	YesNo(TRUE),	L"remux audio with yes|no")
-        (L"remux-video,v",	opt.reEncodeVideo,	YesNo(TRUE),	L"remux video with yes|no");
+        (L"audio,a",	opt.reEncodeAudio,	YesNo(TRUE),	L"re-encode audio with yes|no")
+        (L"video,v",	opt.reEncodeVideo,	YesNo(TRUE),	L"re-encode video with yes|no");
 
     try
     {

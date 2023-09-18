@@ -100,11 +100,11 @@ See [enc_avc_file](./enc_avc_file) for details.
 
 ## Misc
 
-### remux
+### re-encode
 
 Take an MP4 input and re-encodes the audio and video streams back into an MP4 output. 
 
-See [remux](./remux) for details.
+See [re-encode](./re-encode) for details.
 
 ### slideshow
 
