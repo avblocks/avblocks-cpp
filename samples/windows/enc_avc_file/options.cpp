@@ -1,11 +1,3 @@
-/*
- *  Copyright (c) 2016 Primo Software. All Rights Reserved.
- *
- *  Use of this source code is governed by a BSD-style license
- *  that can be found in the LICENSE file in the root of the source
- *  tree.  
-*/
-
 #include "stdafx.h"
 #include "options.h"
 #include "program_options.h"
@@ -69,7 +61,6 @@ ColorDescriptor *getColorById(primo::codecs::ColorFormat::Enum Id)
 void setDefaultOptions(Options &opt)
 {
     opt.yuv_file = getExeDir() + L"/../../assets/vid/foreman_qcif.yuv";
-    opt.h264_file = getExeDir() + L"/../../output/enc_avc_file/foreman_qcif.h264";
 
     fs::path output(getExeDir() + L"/../../output/enc_avc_file");
     fs::create_directories(output);

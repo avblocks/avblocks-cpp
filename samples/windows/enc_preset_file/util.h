@@ -8,6 +8,11 @@ inline std::wstring getExeDir()
     return std::wstring(exedir);
 }
 
+inline void deleteFile(const wchar_t* file)
+{
+    DeleteFile(file);
+}
+
 inline bool compareNoCase(const char* arg1, const wchar_t* arg2)
 {
     std::string temp(arg1);

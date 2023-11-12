@@ -5,9 +5,8 @@ Create a video clip from a sequence of images. The sample input is a series of J
 ### Command Line
 
 ```sh
-slideshow [--preset PRESET]
+slideshow --input <directory> --output <file> [--preset <PRESET>] [--presets]
 ```
-
 
 ###	Examples
 
@@ -16,9 +15,33 @@ List options:
 ```sh
 ./bin/x64/slideshow --help
 
-Usage: slideshow [--preset PRESET]
+Usage: slideshow --input <directory> --output <file> [--preset <PRESET>] [--presets]
+  -h,    --help
+  -i,    --input     input directory containing images for the slideshow.
+  -o,    --output    output filename (without extension). The extension is added
+                     based on the preset.
+  -p,    --preset    output preset id. Use --presets to list presets.
+         --presets   list presets
+```
+
+Create a MP4 / H.264 video from a sequence of images in the `./assets/img` folder using the `mp4.h264.aac` preset:
+
+```sh
+mkdir -p ./output/slideshow
+
+./bin/x64/slideshow  \
+    --input ./assets/img \
+    --output ./output/slideshow/cube.mp4 \
+    --preset mp4.h264.aac
+```
+
+List available presets for the output:
+
+```sh
+./bin/x64/slideshow --presets
+
 PRESETS
------------------
+-------
 dvd.pal.4x3.mp2                               .mpg
 dvd.pal.16x9.mp2                              .mpg
 dvd.ntsc.4x3.mp2                              .mpg
@@ -43,12 +66,4 @@ android-tablet.webm.vp8.720p                  .webm
 vcd.pal                                       .mpg
 vcd.ntsc                                      .mpg
 webm.vp8.vorbis                               .webm
-```
-
-Create a MP4 / H.264 video from a sequence of images in the `assets/img` folder using the `mp4.h264.aac` preset:
-
-```sh
-mkdir -p ./output/slideshow
-
-./bin/x64/slideshow --preset mp4.h264.aac
 ```

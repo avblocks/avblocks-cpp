@@ -25,16 +25,15 @@ enc_avc_file --frame <width>x<height> --rate <fps> --color <COLOR> --input <file
          --colors   list COLOR constants
 ```
 
-The following command encodes a raw YUV video from `assets/vid/foreman_qcif.yuv` to a H.264 video in `output/enc_avc_file/foreman_qcif.h264`:
-	
+Encode a raw YUV video from `./assets/vid/foreman_qcif.yuv` to a H.264 video in `./output/enc_avc_file/foreman_qcif.h264`:
+  
 ```sh
 mkdir -p ./output/enc_avc_file
 
 ./bin/x64/enc_avc_file \
-	--input ./assets/vid/foreman_qcif.yuv \
-	--output ./output/enc_avc_file/foreman_qcif.h264 \
-	--frame 176x144 \
-	--rate 30 \
-	--color yuv420
+  --input ./assets/vid/foreman_qcif.yuv \
+  --output ./output/enc_avc_file/foreman_qcif.h264 \
+  --frame 176x144 \
+  --rate 30 \
+  --color yuv420
 ```
-

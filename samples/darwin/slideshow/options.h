@@ -12,17 +12,22 @@ enum ErrorCodes
 struct PresetDescriptor
 {
     const char * name;
-    const char * fileExtension;
+    const char * extension;
 };
 
 struct Options
 {
-    Options() : help(false)
+    Options() : preset(), help(false), list_presets(false)
     {}
-    
+
+    std::string input_dir;
+
+    // output options
     PresetDescriptor preset;
+    std::string output_file;
     
     bool help;
+    bool list_presets;
 };
 
 ErrorCodes prepareOptions(Options &opt, int argc, char* argv[]);

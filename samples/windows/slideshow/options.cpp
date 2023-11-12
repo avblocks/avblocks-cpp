@@ -3,8 +3,11 @@
 #include "program_options.h"
 #include "util.h"
 
+namespace fs = std::filesystem;
+
 using namespace std;
 using namespace primo::program_options;
+using namespace primo::codecs;
 using namespace primo::avblocks;
 
 PresetDescriptor avb_presets[] = {
@@ -38,17 +41,15 @@ PresetDescriptor avb_presets[] = {
 
 const int avb_presets_len = sizeof(avb_presets) / sizeof(PresetDescriptor);
 
-void printPreset(const PresetDescriptor& preset)
+void listPresets()
 {
-    wcout << left << setw(45) <<  preset.name << L" ." << preset.fileExtension << endl;
-}
-
-void printPresets()
-{
-    wcout << L"PRESETS" << endl;
-    wcout << L"----------------------------------" << endl;
-    for_each(begin(avb_presets), end(avb_presets), printPreset);
-    wcout << endl;
+    wcout << L"\nPRESETS" << endl;
+    wcout << L"-------" << endl;
+    for (int i=0; i < avb_presets_len; ++i)
+    {
+        const PresetDescriptor& preset = avb_presets[i];
+        wcout << left << setw(45) <<  preset.name << L" (." << preset.extension << L")" << endl;
+    }
 }
 
 template<typename T>
@@ -66,14 +67,6 @@ PresetDescriptor* getPresetByName(const T* presetName)
     return NULL;
 }
 
-void help(OptionsConfig<wchar_t>& optionsConfig)
-{
-    wcout << endl << L"Usage: Slideshow -p PRESET\n" << endl;
-    doHelp(wcout, optionsConfig);
-    wcout << endl;
-    printPresets();
-}
-
 inline std::wistringstream &operator>>(std::wistringstream &in, string &obj)
 {
     wstring preset;
@@ -84,14 +77,57 @@ inline std::wistringstream &operator>>(std::wistringstream &in, string &obj)
     return in;
 }
 
-bool validateOptions(Options& opt)
+void help(OptionsConfig<wchar_t>& optionsConfig)
 {
-    return (opt.preset.name != NULL && opt.preset.fileExtension != NULL);    
+    wcout << L"\nUsage: slideshow --input <directory> --output <file> [--preset <PRESET>]";
+    wcout << L" [--presets]";
+    wcout << endl;
+    doHelp(wcout, optionsConfig);
 }
 
 void setDefaultOptions(Options& opt)
 {
-    opt.preset = *getPresetByName(Preset::Video::iPad::H264_720p);
+    opt.input_dir = getExeDir() + L"/../../assets/img";
+
+    fs::path output(getExeDir() + L"/../../output/slideshow");
+    fs::create_directories(output);
+
+    wostringstream s;
+    s << output.c_str() << L"/cube.mp4";
+    opt.output_file = s.str();
+
+    opt.preset = *getPresetByName(Preset::Video::Generic::MP4::Base_H264_AAC);    
+}
+
+bool validateOptions(Options& opt)
+{
+    if (!opt.preset.name)
+    {
+        opt.preset = *getPresetByName(Preset::Video::Generic::MP4::Base_H264_AAC);
+    }
+    
+    // fix output: append file extension
+    if (!opt.output_file.empty() && opt.preset.extension)
+    {        
+        wstring::size_type pos = opt.output_file.rfind('.');
+        if (0 == pos || string::npos == pos)
+        {
+            opt.output_file.append(L".");
+        }
+        else
+        {
+            opt.output_file = opt.output_file.substr(0, pos+1);
+        }
+
+        opt.output_file.append(opt.preset.extension);
+    }
+
+    if (opt.output_file.empty())
+    {
+        return false;
+    }
+
+    return true;
 }
 
 ErrorCodes prepareOptions(Options& opt, int argc, wchar_t* argv[])
@@ -100,7 +136,9 @@ ErrorCodes prepareOptions(Options& opt, int argc, wchar_t* argv[])
     {
         setDefaultOptions(opt);
         wcout << L"Using defaults:\n";
-        wcout << L"--preset " << opt.preset.name;
+        wcout << L" --input " << opt.input_dir;
+        wcout << L" --output " << opt.output_file;
+        wcout << L" --preset " << opt.preset.name;
         wcout << endl;
         return Parsed;
     }
@@ -108,7 +146,10 @@ ErrorCodes prepareOptions(Options& opt, int argc, wchar_t* argv[])
     OptionsConfig<wchar_t> optionsConfig;
     optionsConfig.addOptions()
         (L"help,?",		opt.help,						L"")
-        (L"preset,p",	opt.preset,	PresetDescriptor(), L"preset");
+        (L"input,i",		opt.input_dir, wstring(),			L"input directory containing images for the slideshow.")
+        (L"output,o",		opt.output_file, wstring(),			L"output filename (without extension). The extension is added based on the preset.")
+        (L"preset,p",		opt.preset, PresetDescriptor(),		L"output preset id. Use --presets to list all supported presets")
+        (L"presets",		opt.list_presets,					L"list presets");
 
     try
     {
@@ -124,6 +165,12 @@ ErrorCodes prepareOptions(Options& opt, int argc, wchar_t* argv[])
     if(opt.help)
     {
         help(optionsConfig);
+        return Command;
+    }
+
+    if (opt.list_presets)
+    {
+        listPresets();
         return Command;
     }
 

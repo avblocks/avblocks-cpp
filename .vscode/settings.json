@@ -28,8 +28,11 @@
         "vector": "cpp",
         "xstring": "cpp",
         "fstream": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "system_error": "cpp",
+        "xlocale": "cpp"
     },
+    "markdown.preview.fontSize": 12,
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {

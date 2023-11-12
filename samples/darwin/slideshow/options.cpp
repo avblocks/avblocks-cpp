@@ -1,3 +1,6 @@
+#include <iterator>
+#include <primo/avblocks/avb.h>
+
 #include <string>
 #include <iostream>
 #include <iomanip>
@@ -8,8 +11,7 @@
 #include "program_options.h"
 #include "util.h"
 
-#include <primo/avblocks/avb.h>
-#include <primo/platform/reference++.h>
+namespace fs = std::filesystem;
 
 using namespace std;
 using namespace primo::avblocks;
@@ -43,24 +45,22 @@ PresetDescriptor avb_presets[] = {
     { Preset::Video::Generic::WebM::Base_VP8_Vorbis,                                    "webm" }
 };
 
-const int preset_count = sizeof(avb_presets) / sizeof(PresetDescriptor);
+const int avb_presets_len = sizeof(avb_presets) / sizeof(PresetDescriptor);
 
-void printPreset(const PresetDescriptor& preset)
+void listPresets()
 {
-    cout << left << setw(45) <<  preset.name << " ." << preset.fileExtension << endl;
-}
-
-void printPresets()
-{
-    cout << "PRESETS" << endl;
-    cout << "-----------------" << endl;
-    for_each(avb_presets, avb_presets+preset_count, printPreset);
-    cout << endl;
+    cout << "\nPRESETS" << endl;
+    cout << "-------" << endl;
+    for (int i=0; i < avb_presets_len; ++i)
+    {
+        const PresetDescriptor& preset = avb_presets[i];
+        cout << left << setw(45) <<  preset.name << " ." << preset.extension << endl;
+    }
 }
 
 PresetDescriptor* getPresetByName(const char* presetName)
 {
-    for (int i=0; i<preset_count; ++i)
+    for (int i=0; i< avb_presets_len; ++i)
     {
         PresetDescriptor* preset = &avb_presets[i];
         if (0 == strcasecmp(preset->name, presetName))
@@ -71,19 +71,55 @@ PresetDescriptor* getPresetByName(const char* presetName)
 
 void help(primo::program_options::OptionsConfig<char>& optcfg)
 {
-    primo::program_options::doHelp(cout, optcfg);
+    cout << "\nUsage: slideshow --input <directory> --output <file> [--preset <PRESET>]";
+    cout << " [--presets]";
     cout << endl;
-    printPresets();
+    primo::program_options::doHelp(cout, optcfg);
 }
 
 void setDefaultOptions(Options& opt)
 {
-    opt.preset = *getPresetByName(Preset::Video::iPad::H264_720p);
+    opt.input_dir = getExeDir() + "/../../assets/img";
+
+    fs::path output(getExeDir() + "/../../output/slideshow");
+    fs::create_directories(output);    
+
+    ostringstream s; 
+    s << output.c_str() << "/cube.mp4";
+    opt.output_file = s.str();
+
+    opt.preset = *getPresetByName(Preset::Video::Generic::MP4::Base_H264_AAC);
 }
 
 bool validateOptions(Options& opt)
 {
-    return (opt.preset.name != NULL && opt.preset.fileExtension != NULL);
+    if (!opt.preset.name)
+    {
+        opt.preset = *getPresetByName(Preset::Video::Generic::MP4::Base_H264_AAC);
+    }
+    
+    // fix output: append file extension
+    if (!opt.output_file.empty() && opt.preset.extension)
+    {
+        string::size_type pos = opt.output_file.rfind('.');
+        if (0 == pos || string::npos == pos)
+        {
+            opt.output_file.append(".");
+        }
+        else
+        {
+            opt.output_file = opt.output_file.substr(0, pos+1);
+        }
+        
+        opt.output_file.append(opt.preset.extension);
+    }
+    
+    if (opt.output_file.empty())
+    {
+        return false;
+    }
+
+    return true;
 }
 
 ErrorCodes prepareOptions(Options &opt, int argc, char* argv[])
@@ -92,6 +128,8 @@ ErrorCodes prepareOptions(Options &opt, int argc, char* argv[])
     {
         setDefaultOptions(opt);
         cout << "Using defaults:\n";
+        cout << " --input " << opt.input_dir;
+        cout << " --output " << opt.output_file;
         cout << " --preset " << opt.preset.name;
         cout << endl;
         return Parsed;
@@ -99,9 +137,12 @@ ErrorCodes prepareOptions(Options &opt, int argc, char* argv[])
     
     primo::program_options::OptionsConfig<char> optcfg;
     optcfg.addOptions()
-    ("help,h",  opt.help,       "")
-    ("preset,p", opt.preset,PresetDescriptor(), "output preset.");
-    
+    ("help,h",      opt.help,       "")
+    ("input,i",  opt.input_dir, string(), "input directory containing images for the slideshow.")
+    ("output,o", opt.output_file, string(), "output filename (without extension). The extension is added based on the preset.")
+    ("preset,p", opt.preset, PresetDescriptor(), "output preset id. Use --presets to list presets.")
+    ("presets",  opt.list_presets,"list presets");
+
     try
     {
         primo::program_options::scanArgv(optcfg, argc, argv);
@@ -113,9 +154,15 @@ ErrorCodes prepareOptions(Options &opt, int argc, char* argv[])
         return Error;
     }
     
-    if (opt.help )
+    if (opt.help)
     {
         help(optcfg);
+        return Command;
+    }
+    
+    if (opt.list_presets)
+    {
+        listPresets();
         return Command;
     }
     

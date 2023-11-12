@@ -16,6 +16,7 @@ if (OS STREQUAL "darwin")
     
     add_subdirectory(${OS}/enc_aac_adts_file)
     add_subdirectory(${OS}/enc_avc_file)
+    add_subdirectory(${OS}/enc_preset_file)
 
     add_subdirectory(${OS}/info_metadata_file)
     add_subdirectory(${OS}/info_stream_file)
@@ -35,6 +36,7 @@ if(OS STREQUAL "linux")
 
     add_subdirectory(${OS}/enc_aac_adts_file)
     add_subdirectory(${OS}/enc_avc_file)
+    add_subdirectory(${OS}/enc_preset_file)
 
     add_subdirectory(${OS}/info_metadata_file)
     add_subdirectory(${OS}/info_stream_file)
@@ -54,6 +56,7 @@ if(OS STREQUAL "windows")
 
     add_subdirectory(${OS}/enc_aac_adts_file)
     add_subdirectory(${OS}/enc_avc_file)
+    add_subdirectory(${OS}/enc_preset_file)
 
     add_subdirectory(${OS}/info_metadata_file)
     add_subdirectory(${OS}/info_stream_file)

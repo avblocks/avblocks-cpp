@@ -96,6 +96,13 @@ Convert a raw YUV video file to a compressed H.264 video file.
 
 See [enc_avc_file](./enc_avc_file) for details.
 
+### Other 
+
+#### enc_preset_file
+
+Convert a raw YUV video file to a compressed video file. The format of the output is configured with an AVBlocks preset.
+
+See [enc_preset_file](./enc_preset_file) for details.
 ---
 
 ## Misc

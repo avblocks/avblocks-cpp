@@ -59,17 +59,15 @@ MediaBuffer* createMediaBufferForFile(const char* filename)
 bool slideshow(Options& opt)
 {
     cout << "preset: " << opt.preset.name << endl;
+
+    bool_t res;
     
     const double inputFramerate = 25.0;
     const int imageCount = 250;
-    bool_t res;
     
-    string imgdir( getExeDir() );
-    imgdir.append("/../../assets/img");
+    string imgdir(opt.input_dir);
     
-    string outFilename (getExeDir());
-    outFilename.append("/../../output/slideshow/cube.");
-    outFilename.append(opt.preset.fileExtension);
+    string outFilename(opt.output_file);
     remove(outFilename.c_str());
     
     auto transcoder = primo::make_ref(Library::createTranscoder());
