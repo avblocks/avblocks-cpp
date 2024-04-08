@@ -55,3 +55,14 @@ See [Build on Windows](./docs/build-windows.md)
 #### Run
 
 See [README](./samples/windows/README.md) in the `samples` subdirectory. 
+
+## How to obtain Commercial License
+
+See [License Options](https://avblocks.com/license/) for details.
+
+We offer discounts for:
+
+- Competitive product
+- Startup
+- Educational institution
+- Open source project
