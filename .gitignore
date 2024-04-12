@@ -10,6 +10,8 @@ bin/
 /-m64
 /null.d
 
+vcpkg_installed/
+
 # AVBlocks SDK
 sdk/
 
@@ -25,6 +27,6 @@ xcode/
 
 vs2017/
 vs2019/
+vs2022/
 
-
-
+.env

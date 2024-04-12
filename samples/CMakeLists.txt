@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.20)
 
 # meta project that includes all other projects
 project(samples)
@@ -8,61 +8,13 @@ string(TOLOWER ${CMAKE_SYSTEM_NAME} OS)
 
 # add projects, each project should be in its own directory
 if (OS STREQUAL "darwin")
-    add_subdirectory(${OS}/dec_aac_adts_file)
-    add_subdirectory(${OS}/dec_avc_au)
-    add_subdirectory(${OS}/dec_avc_file)
-    
-    add_subdirectory(${OS}/demux_mp4_file)
-    
-    add_subdirectory(${OS}/enc_aac_adts_file)
-    add_subdirectory(${OS}/enc_avc_file)
-    add_subdirectory(${OS}/enc_preset_file)
-
-    add_subdirectory(${OS}/info_metadata_file)
-    add_subdirectory(${OS}/info_stream_file)
-
-    add_subdirectory(${OS}/mux_mp4_file)
-
-    add_subdirectory(${OS}/re-encode)
-    add_subdirectory(${OS}/slideshow)
+    add_subdirectory(${OS}/bluray-data)
 endif()
 
 if(OS STREQUAL "linux")
-    add_subdirectory(${OS}/dec_aac_adts_file)
-    add_subdirectory(${OS}/dec_avc_au)
-    add_subdirectory(${OS}/dec_avc_file)
-
-    add_subdirectory(${OS}/demux_mp4_file)
-
-    add_subdirectory(${OS}/enc_aac_adts_file)
-    add_subdirectory(${OS}/enc_avc_file)
-    add_subdirectory(${OS}/enc_preset_file)
-
-    add_subdirectory(${OS}/info_metadata_file)
-    add_subdirectory(${OS}/info_stream_file)
-
-    add_subdirectory(${OS}/mux_mp4_file)
-
-    add_subdirectory(${OS}/re-encode)
-    add_subdirectory(${OS}/slideshow)
+    add_subdirectory(${OS}/bluray-data)
 endif()
 
 if(OS STREQUAL "windows")
-    add_subdirectory(${OS}/dec_aac_adts_file)
-    add_subdirectory(${OS}/dec_avc_au)
-    add_subdirectory(${OS}/dec_avc_file)
-
-    add_subdirectory(${OS}/demux_mp4_file)
-
-    add_subdirectory(${OS}/enc_aac_adts_file)
-    add_subdirectory(${OS}/enc_avc_file)
-    add_subdirectory(${OS}/enc_preset_file)
-
-    add_subdirectory(${OS}/info_metadata_file)
-    add_subdirectory(${OS}/info_stream_file)
-
-    add_subdirectory(${OS}/mux_mp4_file)
-
-    add_subdirectory(${OS}/re-encode)
-    add_subdirectory(${OS}/slideshow)
+    add_subdirectory(${OS}/bluray-data)
 endif()
