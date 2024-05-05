@@ -3,7 +3,7 @@
         {
             "name": "Darwin",
             "includePath": [
-                "${workspaceFolder}/sdk/include"
+                "${workspaceFolder}/sdk/include/**"
             ],
             "defines": [],
             "macFrameworkPath": [
@@ -18,7 +18,7 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/sdk/include"
+                "${workspaceFolder}/sdk/include/**"
             ],
             "defines": [],
             "cStandard": "c11",
