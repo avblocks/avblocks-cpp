@@ -86,6 +86,16 @@ Encode WAV file to AAC file in Audio Data Transport Stream (ADTS) format.
 
 See [enc_aac_adts_file](./enc_aac_adts_file) for details.
 
+### MP3 
+
+> MPEG-1 Layer 3 Audio
+
+#### enc_mp3_file
+
+Encode WAV file to MP3 file.
+
+See [enc_mp3_file](./enc_mp3_file) for details.
+
 ### AVC / H.264 
 
 > Advanced Video Coding
