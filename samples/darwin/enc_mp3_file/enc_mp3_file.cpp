@@ -21,29 +21,36 @@ using namespace std;
 
 primo::ref<MediaSocket> createOutputSocket(Options& opt)
 {
-    auto socket = primo::make_ref(Library::createMediaSocket());
-    socket->setFile(primo::ustring(opt.outputFile));
-    socket->setStreamType(StreamType::MPEG_Audio);
-    socket->setStreamSubType(StreamSubType::MPEG_Audio_Layer3);
-
-    auto pin = primo::make_ref(Library::createMediaPin());
-    socket->pins()->add(pin.get());
-
+    // create stream info to describe the output audio stream
     auto asi = primo::make_ref(Library::createAudioStreamInfo());
-    pin->setStreamInfo(asi.get());
-
     asi->setStreamType(StreamType::MPEG_Audio);
     asi->setStreamSubType(StreamSubType::MPEG_Audio_Layer3);
 
-    // Change the encoding bitrate with the following line. The default bitrate is 128000. You can set it to 192000, 256000, etc.
+    // The default bitrate is 128000. You can set it to 192000, 256000, etc.
     // asi->setBitrate(192000);
 
-    // Change the sampling rate and the number of the channels, e.g. Mono, 44.1 Khz
-    // asi->setChannels(1);
+    // Optionally set the sampling rate and the number of the channels, e.g. 44.1 Khz, Mono 
     // asi->setSampleRate(44100);
+    // asi->setChannels(1);
 
-    // Change the stereo mode, e.g. Joint Stereo
+    // create a pin using the stream info 
+    auto pin = primo::make_ref(Library::createMediaPin());
+    pin->setStreamInfo(asi.get());
+
+    // the pin allows you to specify additional parameters for the encoder 
+    // for example, change the stereo mode, e.g. Joint Stereo
     // pin->params()->addInt(Param::Encoder::Audio::MPEG1::StereoMode, StereoMode::Joint);
+
+    // finally create a socket for the output container format which is MP3 in this case
+    auto socket = primo::make_ref(Library::createMediaSocket());
+    socket->setStreamType(StreamType::MPEG_Audio);
+    socket->setStreamSubType(StreamSubType::MPEG_Audio_Layer3);
+
+    socket->pins()->add(pin.get());
+
+    // output to a file
+    auto output_file = primo::ustring(opt.outputFile);
+    socket->setFile(output_file);
 
     return socket;
 }
