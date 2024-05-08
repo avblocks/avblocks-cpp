@@ -21,24 +21,31 @@ using namespace std;
 
 primo::ref<MediaSocket> createOutputSocket(Options& opt)
 {
-    auto socket = primo::make_ref(Library::createMediaSocket());
-    socket->setFile(primo::ustring(opt.outputFile));
-    socket->setStreamType(StreamType::AAC);
-    socket->setStreamSubType(StreamSubType::AAC_ADTS);
-
-    auto pin = primo::make_ref(Library::createMediaPin());
-    socket->pins()->add(pin.get());
-
+    // create stream info to describe the output audio stream
     auto asi = primo::make_ref(Library::createAudioStreamInfo());
-    pin->setStreamInfo(asi.get());
-
     asi->setStreamType(StreamType::AAC);
     asi->setStreamSubType(StreamSubType::AAC_ADTS);
 
     // You can change the sampling rate and the number of the channels
-    //asi->setChannels(1);
-    //asi->setSampleRate(44100);
+    // asi->setSampleRate(44100);
+    // asi->setChannels(1);
 
+    // create a pin using the stream info 
+    auto pin = primo::make_ref(Library::createMediaPin());
+    pin->setStreamInfo(asi.get());
+
+    // finally create a socket for the output container format 
+    // which in this cases is is AAC packaged as Audio Data Transport Stream (ATDS)
+    auto socket = primo::make_ref(Library::createMediaSocket());
+    socket->setStreamType(StreamType::AAC);
+    socket->setStreamSubType(StreamSubType::AAC_ADTS);
+
+    socket->pins()->add(pin.get());
+
+    // output to a file
+    auto output_file = primo::ustring(opt.outputFile);
+    socket->setFile(output_file);
+    
     return socket;
 }
 
