@@ -14,20 +14,35 @@ In the script below, change the tag to the release that you need. For the availa
 
 ```powershell
 # select version and platform
-$tag='v3.0.0-demo.1'
+$tag='v3.1.0-demo.1'
 $platform='windows'
 
 # download
 new-item -Force -ItemType Directory ./sdk
+cd ./sdk
+
+# sdk
 curl.exe `
   --location `
-  --output ./sdk/avblocks_$tag-$platform.zip `
-  https://github.com/avblocks/avblocks-core/releases/download/$tag/avblocks_$tag-$platform.zip
+  --output ./avblocks-$tag-$platform.zip `
+  https://github.com/avblocks/avblocks-core/releases/download/$tag/avblocks-$tag-$platform.zip
   
+
+# sha256 checksum
+curl.exe `
+  --location `
+  --output ./avblocks-$tag-$platform.zip.sha256 `
+  https://github.com/avblocks/avblocks-core/releases/download/$tag/avblocks-$tag-$platform.zip.sha256
+
+# verify checksum
+$downloadedHash = (Get-FileHash -Algorithm SHA256 ./avblocks-$tag-$platform.zip).Hash.ToLower()
+$expectedHash = (Get-Content ./avblocks-$tag-$platform.zip.sha256).Split(' ')[0].ToLower()
+if ($downloadedHash -eq $expectedHash) { Write-Host "Checksum OK!"; } else { { Write-Host "Checksum failed!"; } }
+
 # unzip
-pushd sdk
-expand-archive -Force -Path avblocks_$tag-$platform.zip -DestinationPath .
-popd
+expand-archive -Force -Path avblocks-$tag-$platform.zip -DestinationPath .
+
+cd ..
 ```
 
 ## Assets
@@ -36,14 +51,16 @@ These demo audio and video assets are used as input for the AVBlocks samples.
 
 ```powershell
 new-item -Force -ItemType Directory ./assets
+cd ./assets
+
 curl.exe `
   --location `
-  --output ./assets/avblocks_assets_v1.zip `
+  --output ./avblocks_assets_v1.zip `
   https://github.com/avblocks/avblocks-assets/releases/download/v1/avblocks_assets_v1.zip
   
 # unzip
-pushd assets
 expand-archive -Force -Path avblocks_assets_v1.zip -DestinationPath .
-popd
+
+cd ..
 ```
 

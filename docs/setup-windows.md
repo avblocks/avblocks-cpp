@@ -38,13 +38,13 @@ choco config set cacheLocation C:/ChocoCache
 choco upgrade chocolatey
 ```
 
-## Visual Studio 2017
+## Visual Studio 2022
 
-This is needed for the C++ compiler. Install [Visual Studio 2017 Community Edition](https://visualstudio.microsoft.com/vs/older-downloads/).  
+This is needed for the C++ compiler. Install [Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/vs/older-downloads/).  
 
 During installation select C++ desktop development and latest Windows 10 SDK. 
 
-After installation open Visual Studio and check for updates. Install the latest 2017 version that is available. 
+After installation open Visual Studio and check for updates. Install the latest 2022 version that is available. 
 
 ## CMake
 
@@ -85,11 +85,11 @@ Test. Close and reopen PowerShell:
 
 ```powershell
 Get-VSSetupInstance `
-| Select-VSSetupInstance -Version '[15.0,16.0]' `
+| Select-VSSetupInstance -Version '[17.0,18.0]' `
 | Select-Object -ExpandProperty InstallationPath
 ```
 
->  This finds the installation path for Visual Studio 2017.
+>  This finds the installation path for Visual Studio 2022.
 
 See [Selecting an Instance](https://github.com/Microsoft/vssetup.powershell/wiki/Selecting-an-Instance)
 
