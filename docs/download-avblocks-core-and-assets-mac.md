@@ -17,7 +17,7 @@ platform="darwin"
 
 # download
 mkdir -p ./sdk
-cd sdk
+cd ./sdk
 
 # sdk
 curl \
@@ -36,6 +36,8 @@ shasum --check ./avblocks-$tag-$platform.zip.sha256
 
 # unzip
 unzip avblocks-$tag-$platform.zip
+
+cd ..
 ```
 
 ## Assets
@@ -44,7 +46,7 @@ These demo audio and video assets are used as input for the AVBlocks samples.
 
 ```bash
 mkdir -p ./assets
-cd assets
+cd ./assets
 
 curl \
   --location \
@@ -53,4 +55,6 @@ curl \
   
 # unzip
 unzip avblocks_assets_v1.zip
+
+cd ..
 ```
