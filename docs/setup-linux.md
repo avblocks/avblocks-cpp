@@ -1,8 +1,8 @@
 # Setup for Linux
 
-## Ubuntu 20.04 / 22.04 / 24.04
-
 > Scripts are `bash`
+
+## Ubuntu
 
 ### Compilers
 
@@ -14,16 +14,16 @@ sudo apt install build-essential
 
 These libraries are required by AVBlocks:
 
-#### Ubuntu 16.04 / 18.04
-
-```bash
-sudo apt-get install libjpeg8 libtiff5 libpng12-0 libtbb2
-```
-
-#### Ubuntu 20.04 / 22.04 / 24.04
+#### Ubuntu 24.04 / 22.04 / 20.04
 
 ```bash
 sudo apt-get install libjpeg8 libtiff5 libpng16-16 libtbb2
+```
+
+#### Ubuntu 18.04 / 16.04
+
+```bash
+sudo apt-get install libjpeg8 libtiff5 libpng12-0 libtbb2
 ```
 
 ### CMake
