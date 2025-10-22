@@ -20,7 +20,7 @@ void setDefaultOptions(Options& opt)
 {
     opt.inputFile = getExeDir() + "/../../assets/aud/equinox-48KHz.wav";
 
-    fs::path output(getExeDir() + "/../../output/enc_mp3_pull");
+    fs::path output(getExeDir() + "/../../output/enc_mp3_push");
     fs::create_directories(output);    
 
     ostringstream s; 
@@ -31,7 +31,7 @@ void setDefaultOptions(Options& opt)
 
 void help(OptionsConfig<char>& optcfg)
 {
-    cout << "enc_mp3_pull --input <wav file> --output <amp3 file>" << endl;
+    cout << "enc_mp3_push --input <wav file> --output <mp3 file>" << endl;
     doHelp(cout, optcfg);
 }
 
