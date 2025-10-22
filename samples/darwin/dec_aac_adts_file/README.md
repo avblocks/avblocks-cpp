@@ -4,7 +4,7 @@ Decode AAC file in Audio Data Transport Stream (ADTS) format and save output to 
 
 ### Command Line
 
-```powershell
+```sh
 ./dec_aac_adts_file --input <aac file> --output <wav file>
 ```
 
