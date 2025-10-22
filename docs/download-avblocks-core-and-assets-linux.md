@@ -51,11 +51,11 @@ cd ./assets
 
 curl \
   --location \
-  --output ./avblocks_assets_v1.zip \
-  https://github.com/avblocks/avblocks-assets/releases/download/v1/avblocks_assets_v1.zip
+  --output ./avblocks_assets_v2.zip \
+  https://github.com/avblocks/avblocks-assets/releases/download/v1/avblocks_assets_v2.zip
   
 # unzip
-unzip avblocks_assets_v1.zip
+unzip avblocks_assets_v2.zip
 
 cd ..
 ```
