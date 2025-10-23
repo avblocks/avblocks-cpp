@@ -1,21 +1,12 @@
-// enc_reencode.cpp : Defines the entry point for the console application.
-
-
-#include <stdio.h>
-#include <iostream>
-#include <iomanip>
-#include <string>
-#include <memory.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <libgen.h>
+#include <primo/avblocks/avb.h>
 
 #include <primo/platform/reference++.h>
 #include <primo/platform/error_facility.h>
 #include <primo/platform/ustring.h>
 
-#include <primo/avblocks/avb.h>
+#include <cstdio>
+#include <iostream>
+#include <string>
 
 #include "options.h"
 

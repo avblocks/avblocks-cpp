@@ -4,16 +4,14 @@
 #include <primo/platform/error_facility.h>
 #include <primo/platform/ustring.h>
 
-#include "util.h"
-#include "options.h"
-
 #include <cstdio>
 #include <iostream>
 #include <iomanip>
 #include <fstream>
 #include <string>
 
-#include <memory.h>
+#include "util.h"
+#include "options.h"
 
 using namespace primo::codecs;
 using namespace primo::avblocks;
