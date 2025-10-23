@@ -17,6 +17,7 @@ if (OS STREQUAL "darwin")
     
     add_subdirectory(${OS}/enc_aac_adts_file)
     add_subdirectory(${OS}/enc_aac_adts_pull)
+    add_subdirectory(${OS}/enc_aac_adts_push)
     
     add_subdirectory(${OS}/enc_avc_file)
     

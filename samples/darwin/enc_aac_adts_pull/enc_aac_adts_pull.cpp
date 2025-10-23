@@ -13,8 +13,6 @@
 #include <fstream>
 #include <string>
 
-#include <memory.h>
-
 using namespace primo::codecs;
 using namespace primo::avblocks;
 using namespace std;
