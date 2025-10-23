@@ -1,6 +1,6 @@
 ## enc_aac_adts_push
 
-How to encode WAV file to AAC file in Audio Data Transport Stream (ADTS) format using Transcoder::push.
+How to encode WAV file to AAC file in Audio Data Transport Stream (ADTS) format using `Transcoder::push`.
 
 ### Command Line
 
