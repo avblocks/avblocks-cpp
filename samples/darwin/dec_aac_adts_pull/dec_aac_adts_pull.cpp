@@ -29,7 +29,7 @@ primo::ref<MediaSocket> createDecoderOutputSocket()
 
 primo::ref<Transcoder> createWavWriter(const std::string &outputFile)
 {
-    // input stream infor, pin and socket
+    // input stream info, pin and socket
     auto inAsi = primo::make_ref(Library::createAudioStreamInfo());
     inAsi->setStreamType(StreamType::LPCM);
     inAsi->setChannels(2);
