@@ -1,17 +1,9 @@
 #include <primo/avblocks/avb.h>
-
 #include <primo/platform/reference++.h>
-#include <primo/platform/error_facility.h>
 #include <primo/platform/ustring.h>
 
 #include "util.h"
 #include "options.h"
-
-#include <cstdio>
-#include <iostream>
-#include <iomanip>
-#include <fstream>
-#include <string>
 
 using namespace primo::codecs;
 using namespace primo::avblocks;
