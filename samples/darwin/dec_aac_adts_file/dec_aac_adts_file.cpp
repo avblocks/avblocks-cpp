@@ -1,23 +1,15 @@
 #include <primo/avblocks/avb.h>
 
-#include <primo/platform/reference++.h>
-#include <primo/platform/error_facility.h>
 #include <primo/platform/ustring.h>
+#include <primo/platform/reference++.h>
 
 #include "util.h"
 #include "options.h"
 
-#include <cstdio>
 #include <iostream>
-#include <iomanip>
-#include <fstream>
-#include <string>
-
-#include <memory.h>
 
 using namespace primo::codecs;
 using namespace primo::avblocks;
-using namespace std;
 
 primo::ref<MediaSocket> createOutputSocket(Options& opt)
 {

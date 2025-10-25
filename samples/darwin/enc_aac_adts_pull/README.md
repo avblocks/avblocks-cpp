@@ -1,6 +1,6 @@
 ## enc_aac_adts_pull
 
-How to encode WAV file to AAC file in Audio Data Transport Stream (ADTS) format using Transcoder::pull.
+Encode WAV file to AAC file in Audio Data Transport Stream (ADTS) format using Transcoder::pull.
 
 ### Command Line
 

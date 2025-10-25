@@ -9,6 +9,8 @@ string(TOLOWER ${CMAKE_SYSTEM_NAME} OS)
 # add projects, each project should be in its own directory
 if (OS STREQUAL "darwin")
     add_subdirectory(${OS}/dec_aac_adts_file)
+    add_subdirectory(${OS}/dec_aac_adts_pull)
+
     add_subdirectory(${OS}/dec_avc_au)
     add_subdirectory(${OS}/dec_avc_file)
     add_subdirectory(${OS}/dec_mp3_file)
