@@ -30,26 +30,22 @@ primo::ref<MediaSocket> createDecoderOutputSocket()
 primo::ref<Transcoder> createWavWriter(const std::string &outputFile)
 {
     // input stream info, pin and socket
-    auto inAsi = primo::make_ref(Library::createAudioStreamInfo());
-    inAsi->setStreamType(StreamType::LPCM);
-    inAsi->setChannels(2);
-    inAsi->setSampleRate(48000);
-    inAsi->setBitsPerSample(16);
+    auto infmt = primo::make_ref(Library::createAudioStreamInfo());
+    infmt->setStreamType(StreamType::LPCM);
+    infmt->setChannels(2);
+    infmt->setSampleRate(48000);
+    infmt->setBitsPerSample(16);
 
     auto inPin = primo::make_ref(Library::createMediaPin());
-    inPin->setStreamInfo(inAsi.get());
+    inPin->setStreamInfo(infmt.get());
 
     auto inSocket = primo::make_ref(Library::createMediaSocket());
     inSocket->setStreamType(StreamType::LPCM);
     inSocket->pins()->add(inPin.get());
 
     // output stream info, pin and socket
-    auto outfmt = primo::make_ref(Library::createAudioStreamInfo());
-    outfmt->setStreamType(StreamType::LPCM);
-    outfmt->setSampleRate(48000);
-    outfmt->setChannels(2);
-    outfmt->setBitsPerSample(16);
-
+    auto outfmt = primo::make_ref(infmt->clone());
+    
     auto outPin = primo::make_ref(Library::createMediaPin());
     outPin->setStreamInfo(outfmt.get());
 
