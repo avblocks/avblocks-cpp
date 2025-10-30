@@ -59,23 +59,31 @@ primo::ref<MediaSocket> createOutputSocket(const std::string& outputFile)
 
 primo::ref<Transcoder> createWavReader(const std::string& inputFile)
 {
-    auto wavReader = primo::make_ref(Library::createTranscoder());
-    wavReader->setAllowDemoMode(true);
-    
+    // input socket
+    // it will automatically detect stream info from the file
     auto wavInputSocket = primo::make_ref(Library::createMediaSocket());
     wavInputSocket->setFile(primo::ustring(inputFile));
-    wavReader->inputs()->add(wavInputSocket.get());
-    
-    auto pcmOutputSocket = primo::make_ref(Library::createMediaSocket());
-    pcmOutputSocket->setStreamType(StreamType::LPCM);
-    auto pcmPin = primo::make_ref(Library::createMediaPin());
+
+    // output stream info
     auto pcmAsi = primo::make_ref(Library::createAudioStreamInfo());
     pcmAsi->setStreamType(StreamType::LPCM);
     pcmAsi->setChannels(2);
     pcmAsi->setSampleRate(48000);
     pcmAsi->setBitsPerSample(16);
+
+    // output pin
+    auto pcmPin = primo::make_ref(Library::createMediaPin());
     pcmPin->setStreamInfo(pcmAsi.get());
+
+    // output socket. we need LPCM stream type
+    auto pcmOutputSocket = primo::make_ref(Library::createMediaSocket());
+    pcmOutputSocket->setStreamType(StreamType::LPCM);
     pcmOutputSocket->pins()->add(pcmPin.get());
+
+    // create transcoder
+    auto wavReader = primo::make_ref(Library::createTranscoder());
+    wavReader->setAllowDemoMode(true);
+    wavReader->inputs()->add(wavInputSocket.get());
     wavReader->outputs()->add(pcmOutputSocket.get());
     
     return wavReader;
