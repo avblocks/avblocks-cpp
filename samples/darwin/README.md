@@ -124,13 +124,20 @@ Convert a raw YUV video file to a compressed AVC / H.264 video file.
 
 See [enc_avc_file](./enc_avc_file) for details.
 
-### G.711 μ-law
+### G.711
+
+#### enc_g711_alaw_file
+
+Encode WAV file to G.711 A-law WAV file.
+
+See [enc_g711_alaw_file](./enc_g711_alaw_file) for details.
 
 #### enc_g711_ulaw_file
 
 Encode WAV file to G.711 μ-law WAV file.
 
 See [enc_g711_ulaw_file](./enc_g711_ulaw_file) for details.
+
 
 ### MP3 
 
