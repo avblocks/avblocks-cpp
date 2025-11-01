@@ -18,20 +18,20 @@ using namespace primo::program_options;
 
 void setDefaultOptions(Options& opt)
 {
-    opt.inputFile = getExeDir() + "/../../assets/aud/equinox-48KHz.wav";
+    opt.inputFile = getExeDir() + "/../../assets/aud/express-dictate_8000_s16_1ch_pcm.wav";
 
-    fs::path output(getExeDir() + "/../../output/enc_mp3_file");
+    fs::path output(getExeDir() + "/../../output/enc_g711_ulaw_file");
     fs::create_directories(output);    
 
     ostringstream s; 
-    s << output.c_str() << "/equinox-48KHz.mp3";
+    s << output.c_str() << "/express-dictate_g711_ulaw.wav";
     opt.outputFile = s.str();
 
 }
 
 void help(OptionsConfig<char>& optcfg)
 {
-    cout << "enc_mp3_file --input <wav file> --output <mp3 file>" << endl;
+    cout << "Usage: enc_g711_ulaw_file --input <wav file> --output <g711 ulaw wav file>" << endl;
     doHelp(cout, optcfg);
 }
 
@@ -76,7 +76,7 @@ ErrorCodes prepareOptions(Options &opt, int argc, char* argv[])
     optcfg.addOptions()
     (("help,h"),    opt.help,                   (""))
     (("input,i"),   opt.inputFile,  string(),   ("input WAV file"))
-    (("output,o"),  opt.outputFile, string(),   ("output MP3 file"));
+    (("output,o"),  opt.outputFile, string(),   ("output G.711 μ-law WAV file"));
     
     try
     {

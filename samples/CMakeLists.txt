@@ -23,6 +23,8 @@ if (OS STREQUAL "darwin")
     
     add_subdirectory(${OS}/enc_avc_file)
     
+    add_subdirectory(${OS}/enc_g711_ulaw_file)
+
     add_subdirectory(${OS}/enc_mp3_file)
     add_subdirectory(${OS}/enc_mp3_pull)
     add_subdirectory(${OS}/enc_mp3_push)
