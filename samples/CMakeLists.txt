@@ -13,7 +13,7 @@ if (OS STREQUAL "darwin")
 
     add_subdirectory(${OS}/dec_avc_au)
     add_subdirectory(${OS}/dec_avc_file)
-
+    
     add_subdirectory(${OS}/dec_g711_alaw_file)
     add_subdirectory(${OS}/dec_g711_ulaw_file)
 
@@ -26,7 +26,8 @@ if (OS STREQUAL "darwin")
     add_subdirectory(${OS}/enc_aac_adts_push)
     
     add_subdirectory(${OS}/enc_avc_file)
-    
+    add_subdirectory(${OS}/enc_avc_pull)
+
     add_subdirectory(${OS}/enc_g711_alaw_file)
     add_subdirectory(${OS}/enc_g711_ulaw_file)
 

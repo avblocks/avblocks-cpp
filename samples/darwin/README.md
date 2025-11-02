@@ -134,9 +134,15 @@ See [enc_aac_adts_push](./enc_aac_adts_push) for details.
 
 #### enc_avc_file
 
-Convert a raw YUV video file to a compressed AVC / H.264 video file.  
+Encode raw YUV video file to AVC / H.264 Annex B video file `Transcoder::push`.
 
 See [enc_avc_file](./enc_avc_file) for details.
+
+#### enc_avc_pull
+
+Encode raw YUV video file to AVC / H.264 Annex B video file using `Transcoder::pull`.  
+
+See [enc_avc_pull](./enc_avc_pull) for details.
 
 ### G.711
 

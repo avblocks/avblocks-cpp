@@ -1,6 +1,6 @@
 ## enc_avc_file
 
-The enc_avc_file sample shows how to convert a raw YUV video file to a compressed H.264 video file.  
+Encode raw YUV video file to AVC / H.264 Annex B video file using `Transcoder::run`.  
 
 ### Command Line
 
