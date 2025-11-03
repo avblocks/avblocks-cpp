@@ -74,7 +74,7 @@ See [dec_avc_au](./dec_avc_au) for details.
 
 #### dec_avc_file
 
-Decode a compressed AVC / H.264 file to raw uncompressed YUV video file.       
+Decode a compressed AVC / H.264 AVC1 file to raw uncompressed YUV video file.       
 
 See [dec_avc_file](./dec_avc_file) for details.
 
@@ -134,7 +134,7 @@ See [enc_aac_adts_push](./enc_aac_adts_push) for details.
 
 #### enc_avc_file
 
-Encode raw YUV video file to AVC / H.264 Annex B video file `Transcoder::push`.
+Encode raw YUV video file to AVC / H.264 AVC1 video file `Transcoder::run`.
 
 See [enc_avc_file](./enc_avc_file) for details.
 

@@ -1,6 +1,6 @@
 ## dec_avc_file
 
-The dec_avc_file sample shows how to decode AVC/H.264 compressed file to YUV uncompressed file.   
+The dec_avc_file sample shows how to decode AVC/H.264 AVC1 compressed file to YUV uncompressed file.   
 
 ### Command Line
 
