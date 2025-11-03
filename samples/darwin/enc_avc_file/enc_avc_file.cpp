@@ -76,7 +76,6 @@ primo::ref<MediaSocket> createOutputSocket(Options& opt)
     auto socket = primo::make_ref(Library::createMediaSocket());
     socket->setFile(primo::ustring(opt.h264_file));
     socket->setStreamType(StreamType::H264);
-    socket->setStreamSubType(StreamSubType::AVC1);
     
     auto pin = primo::make_ref(Library::createMediaPin());
     socket->pins()->add(pin.get());
@@ -85,7 +84,7 @@ primo::ref<MediaSocket> createOutputSocket(Options& opt)
     pin->setStreamInfo(vsi.get());
     
     vsi->setStreamType(StreamType::H264);
-    vsi->setStreamSubType(StreamSubType::AVC1);
+    vsi->setStreamSubType(StreamSubType::AVC_Annex_B);
     
     return socket;
 }

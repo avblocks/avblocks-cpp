@@ -1,6 +1,6 @@
 ## enc_avc_file
 
-Encode raw YUV video file to AVC / H.264 AVC1 video file using `Transcoder::run`.  
+Encode raw YUV video file to AVC / H.264 Annex B video file using `Transcoder::run`.  
 
 ### Command Line
 
