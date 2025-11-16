@@ -169,6 +169,17 @@ Encode WAV file to MP3 file.
 
 See [enc_mp3_file](./enc_mp3_file) for details.
 
+#### enc_mp3_pull
+
+Encode WAV file to MP3 file using `Transcoder::pull`.
+
+See [enc_mp3_pull](./enc_mp3_pull) for details.
+
+#### enc_mp3_push
+
+How to encode WAV file to MP3 file using `Transcoder::push`.
+
+See [enc_mp3_push](./enc_mp3_push) for details.
 
 ### Other 
 
