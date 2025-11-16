@@ -79,6 +79,16 @@ Decode a compressed AVC / H.264 file to raw uncompressed YUV video file.
 
 See [dec_avc_file](./dec_avc_file) for details.
 
+### MP3
+
+> MPEG-1 Layer 3 Audio
+
+#### dec_mp3_file
+
+Decode MP3 file and save output to WAV file.
+
+See [dec_mp3_file](./dec_mp3_file) for details.
+
 ---
 
 ## Encoding
