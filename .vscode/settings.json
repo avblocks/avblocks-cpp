@@ -6,6 +6,8 @@
     "cmake.buildTask": true,
     "cmake.sourceDirectory": "${workspaceFolder}",
     "cmake.buildDirectory": "${workspaceFolder}/build/${variant:buildType}_${variant:platform}",
+
+    
     "files.associations": {
         "iostream": "cpp",
         "filesystem": "cpp",
@@ -32,27 +34,5 @@
         "system_error": "cpp",
         "xlocale": "cpp"
     },
-    "markdown.preview.fontSize": 12,
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope": "googletest.failed",
-                "settings": {
-                    "foreground": "#f00"
-                }
-            },
-            {
-                "scope": "googletest.passed",
-                "settings": {
-                    "foreground": "#0f0"
-                }
-            },
-            {
-                "scope": "googletest.run",
-                "settings": {
-                    "foreground": "#0f0"
-                }
-            }
-        ]
-    },
+    "markdown.preview.fontSize": 12
 }
