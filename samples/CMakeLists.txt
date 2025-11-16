@@ -65,6 +65,7 @@ if(OS STREQUAL "linux")
     add_subdirectory(${OS}/enc_aac_adts_push)
 
     add_subdirectory(${OS}/enc_avc_file)
+    add_subdirectory(${OS}/enc_avc_pull)
 
     add_subdirectory(${OS}/enc_mp3_file)
 
