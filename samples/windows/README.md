@@ -142,6 +142,20 @@ Encode raw YUV video file to AVC / H.264 Annex B video file using `Transcoder::p
 
 See [enc_avc_pull](./enc_avc_pull) for details.
 
+### G.711
+
+#### enc_g711_alaw_file
+
+Encode WAV file to G.711 A-law WAV file.
+
+See [enc_g711_alaw_file](./enc_g711_alaw_file) for details.
+
+#### enc_g711_ulaw_file
+
+Encode WAV file to G.711 μ-law WAV file.
+
+See [enc_g711_ulaw_file](./enc_g711_ulaw_file) for details.
+
 ### MP3 
 
 > MPEG-1 Layer 3 Audio
