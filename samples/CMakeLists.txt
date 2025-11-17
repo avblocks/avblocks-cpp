@@ -95,6 +95,8 @@ if(OS STREQUAL "windows")
     add_subdirectory(${OS}/dec_g711_alaw_file)
     add_subdirectory(${OS}/dec_g711_ulaw_file)
 
+    add_subdirectory(${OS}/dec_mp3_file)
+ 
     add_subdirectory(${OS}/demux_mp4_file)
 
     add_subdirectory(${OS}/enc_aac_adts_file)

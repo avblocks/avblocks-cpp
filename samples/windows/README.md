@@ -92,6 +92,16 @@ Decode G.711 μ-law WAV file to PCM WAV file.
 
 See [dec_g711_ulaw_file](./dec_g711_ulaw_file) for details.
 
+### MP3
+
+> MPEG-1 Layer 3 Audio
+
+#### dec_mp3_file
+
+Decode MP3 file and save output to WAV file.
+
+See [dec_mp3_file](./dec_mp3_file) for details.
+
 ---
 
 ## Encoding
