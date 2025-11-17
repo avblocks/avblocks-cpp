@@ -3,6 +3,8 @@
 #include "program_options.h"
 #include "util.h"
 
+#include <codecvt>
+
 namespace fs = std::filesystem;
 
 using namespace std;
@@ -72,7 +74,9 @@ inline std::wistringstream &operator>>(std::wistringstream &in, string &obj)
     wstring preset;
     in >> preset;
     
-    obj.assign(preset.begin(), preset.end());
+    // Convert wide string to narrow string properly
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+    obj = converter.to_bytes(preset);
 
     return in;
 }

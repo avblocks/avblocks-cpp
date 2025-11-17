@@ -87,6 +87,7 @@ endif()
 
 if(OS STREQUAL "windows")
     add_subdirectory(${OS}/dec_aac_adts_file)
+    add_subdirectory(${OS}/dec_aac_adts_pull)
     
     add_subdirectory(${OS}/dec_avc_au)
     add_subdirectory(${OS}/dec_avc_file)

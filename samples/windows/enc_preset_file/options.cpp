@@ -3,6 +3,8 @@
 #include "program_options.h"
 #include "util.h"
 
+#include <codecvt>
+
 namespace fs = std::filesystem;
 
 using namespace std;
@@ -296,7 +298,9 @@ std::wistringstream &operator>>(std::wistringstream &in, PresetDescriptor &prese
     std::wstring strPresetNameWide;
     in >> strPresetNameWide;
 
-    std::string strPresetName(strPresetNameWide.begin(), strPresetNameWide.end());
+    // Convert wide string to narrow string properly
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+    std::string strPresetName = converter.to_bytes(strPresetNameWide);
 
     PresetDescriptor* pp = getPresetByName(strPresetName.c_str());
     if(!pp)
@@ -305,5 +309,18 @@ std::wistringstream &operator>>(std::wistringstream &in, PresetDescriptor &prese
     presetDesc = *pp;
     return in;
 }
+
+inline std::wistringstream &operator>>(std::wistringstream &in, string &obj)
+{
+    wstring preset;
+    in >> preset;
+    
+    // Convert wide string to narrow string properly
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+    obj = converter.to_bytes(preset);
+
+    return in;
+}
+
 
 
