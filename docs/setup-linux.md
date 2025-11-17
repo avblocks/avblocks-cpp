@@ -28,7 +28,13 @@ sudo apt-get install libjpeg8 libtiff5 libpng12-0 libtbb2
 
 ### CMake
 
-#### Manual Installation (preferred)
+#### Ubuntu 24.04 / 22.04
+
+```bash
+sudo apt install cmake
+```
+
+#### Ubuntu 20.04 / 18.04 / 16.04
 
 Remove `cmake` that comes with Ubuntu 20.04 or 18.04:
 

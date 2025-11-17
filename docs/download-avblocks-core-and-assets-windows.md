@@ -55,11 +55,11 @@ cd ./assets
 
 curl.exe `
   --location `
-  --output ./avblocks_assets_v2.zip `
-  https://github.com/avblocks/avblocks-assets/releases/download/v1/avblocks_assets_v2.zip
+  --output ./avblocks_assets_v3.zip `
+  https://github.com/avblocks/avblocks-assets/releases/download/v3/avblocks_assets_v3.zip
   
 # unzip
-expand-archive -Force -Path avblocks_assets_v2.zip -DestinationPath .
+expand-archive -Force -Path avblocks_assets_v3.zip -DestinationPath .
 
 cd ..
 ```
