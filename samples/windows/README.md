@@ -78,6 +78,20 @@ Shows how to decode a compressed AVC / H.264 file to raw uncompressed YUV video 
 
 See [dec_avc_file](./dec_avc_file) for details.
 
+### G.711
+
+#### dec_g711_alaw_file
+
+Decode G.711 A-law WAV file to PCM WAV file.
+
+See [dec_g711_alaw_file](./dec_g711_alaw_file) for details.
+
+#### dec_g711_ulaw_file
+
+Decode G.711 μ-law WAV file to PCM WAV file.
+
+See [dec_g711_ulaw_file](./dec_g711_ulaw_file) for details.
+
 ---
 
 ## Encoding
