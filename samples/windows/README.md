@@ -116,6 +116,16 @@ Encode WAV file to AAC file in Audio Data Transport Stream (ADTS) format.
 
 See [enc_aac_adts_file](./enc_aac_adts_file) for details.
 
+#### enc_aac_adts_pull
+
+Encode WAV file to AAC file in Audio Data Transport Stream (ADTS) format using `Transcoder::pull`.
+
+See [enc_aac_adts_pull](./enc_aac_adts_pull) for details.
+
+#### enc_aac_adts_push
+
+Encode WAV file to AAC file in Audio Data Transport Stream (ADTS) format using `Transcoder::push`.
+
 ### AVC / H.264 
 
 > Advanced Video Coding

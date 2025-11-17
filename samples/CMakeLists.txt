@@ -100,6 +100,8 @@ if(OS STREQUAL "windows")
     add_subdirectory(${OS}/demux_mp4_file)
 
     add_subdirectory(${OS}/enc_aac_adts_file)
+    add_subdirectory(${OS}/enc_aac_adts_pull)
+    add_subdirectory(${OS}/enc_aac_adts_push)
     
     add_subdirectory(${OS}/enc_avc_file)
     
