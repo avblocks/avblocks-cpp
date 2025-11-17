@@ -104,6 +104,8 @@ if(OS STREQUAL "windows")
     add_subdirectory(${OS}/enc_avc_file)
     
     add_subdirectory(${OS}/enc_mp3_file)
+    add_subdirectory(${OS}/enc_mp3_pull)
+    add_subdirectory(${OS}/enc_mp3_push)
     
     add_subdirectory(${OS}/enc_preset_file)
 
