@@ -136,6 +136,12 @@ Convert a raw YUV video file to a compressed H.264 video file.
 
 See [enc_avc_file](./enc_avc_file) for details.
 
+#### enc_avc_pull
+
+Encode raw YUV video file to AVC / H.264 Annex B video file using `Transcoder::pull`.  
+
+See [enc_avc_pull](./enc_avc_pull) for details.
+
 ### MP3 
 
 > MPEG-1 Layer 3 Audio

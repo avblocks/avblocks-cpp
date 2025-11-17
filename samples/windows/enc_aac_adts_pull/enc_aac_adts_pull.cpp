@@ -41,7 +41,7 @@ bool encode(Options& opt)
     // transcoder will fail if output exists (by design)
     deleteFile(opt.outputFile.c_str());
 
-    wofstream outfile(opt.outputFile, ios_base::binary);
+    ofstream outfile(opt.outputFile, ios_base::binary);
     if (!outfile.is_open())
     {
         wcout << L"Could not open file " << opt.outputFile << endl;
