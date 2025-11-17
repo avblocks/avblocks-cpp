@@ -39,7 +39,7 @@
             "cppStandard": "c++17",
             "intelliSenseMode": "msvc-x64",
             "configurationProvider": "vector-of-bool.cmake-tools"
-        }        
+        }
     ],
     "version": 4
 }

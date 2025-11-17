@@ -56,6 +56,12 @@ Decode AAC file in Audio Data Transport Stream (ADTS) format and save the output
 
 See [dec_aac_adts_file](./dec_aac_adts_file) for details.
 
+#### dec_aac_adts_pull
+
+Decode AAC file in Audio Data Transport Stream (ADTS) format using `Transcoder::pull` and save output to WAV file.
+
+See [dec_aac_adts_pull](./dec_aac_adts_pull) for details.
+
 ### AVC / H.264 
 
 > Advanced Video Coding
@@ -72,6 +78,30 @@ Shows how to decode a compressed AVC / H.264 file to raw uncompressed YUV video 
 
 See [dec_avc_file](./dec_avc_file) for details.
 
+### G.711
+
+#### dec_g711_alaw_file
+
+Decode G.711 A-law WAV file to PCM WAV file.
+
+See [dec_g711_alaw_file](./dec_g711_alaw_file) for details.
+
+#### dec_g711_ulaw_file
+
+Decode G.711 μ-law WAV file to PCM WAV file.
+
+See [dec_g711_ulaw_file](./dec_g711_ulaw_file) for details.
+
+### MP3
+
+> MPEG-1 Layer 3 Audio
+
+#### dec_mp3_file
+
+Decode MP3 file and save output to WAV file.
+
+See [dec_mp3_file](./dec_mp3_file) for details.
+
 ---
 
 ## Encoding
@@ -86,6 +116,16 @@ Encode WAV file to AAC file in Audio Data Transport Stream (ADTS) format.
 
 See [enc_aac_adts_file](./enc_aac_adts_file) for details.
 
+#### enc_aac_adts_pull
+
+Encode WAV file to AAC file in Audio Data Transport Stream (ADTS) format using `Transcoder::pull`.
+
+See [enc_aac_adts_pull](./enc_aac_adts_pull) for details.
+
+#### enc_aac_adts_push
+
+Encode WAV file to AAC file in Audio Data Transport Stream (ADTS) format using `Transcoder::push`.
+
 ### AVC / H.264 
 
 > Advanced Video Coding
@@ -96,6 +136,26 @@ Convert a raw YUV video file to a compressed H.264 video file.
 
 See [enc_avc_file](./enc_avc_file) for details.
 
+#### enc_avc_pull
+
+Encode raw YUV video file to AVC / H.264 Annex B video file using `Transcoder::pull`.  
+
+See [enc_avc_pull](./enc_avc_pull) for details.
+
+### G.711
+
+#### enc_g711_alaw_file
+
+Encode WAV file to G.711 A-law WAV file.
+
+See [enc_g711_alaw_file](./enc_g711_alaw_file) for details.
+
+#### enc_g711_ulaw_file
+
+Encode WAV file to G.711 μ-law WAV file.
+
+See [enc_g711_ulaw_file](./enc_g711_ulaw_file) for details.
+
 ### MP3 
 
 > MPEG-1 Layer 3 Audio
@@ -105,6 +165,18 @@ See [enc_avc_file](./enc_avc_file) for details.
 Encode WAV file to MP3 file.
 
 See [enc_mp3_file](./enc_mp3_file) for details.
+
+#### enc_mp3_pull
+
+Encode WAV file to MP3 file using `Transcoder::pull`.
+
+See [enc_mp3_pull](./enc_mp3_pull) for details.
+
+#### enc_mp3_push
+
+How to encode WAV file to MP3 file using `Transcoder::push`.
+
+See [enc_mp3_push](./enc_mp3_push) for details.
 
 
 ### Other 
