@@ -1088,6 +1088,7 @@ StreamInfo* si = pin->streamInfo();
 ### Linux
 - Link against `libAVBlocks64.so`
 - Ensure library path is in `LD_LIBRARY_PATH` or use `rpath`
+- Use `primo::ustring` for file paths to handle Unicode correctly
 
 ### Windows
 - Link against `AVBlocks64.lib` (64-bit) 
