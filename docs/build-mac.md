@@ -27,13 +27,15 @@ source ./configure.sh
 #### Build
 
 ```bash
-invoke build --type release
+./scripts/build.sh --type debug
+./scripts/build.sh --type release
 ```
 
 #### Clean
 
 ```bash
-invoke clean --type release
+./scripts/clean.sh --type debug
+./scripts/clean.sh --type release
 ```
 
 #### Edit

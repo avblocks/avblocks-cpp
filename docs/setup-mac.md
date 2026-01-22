@@ -18,12 +18,12 @@ Install Homebrew:
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-## cmake, ninja, pyenv
+## cmake, ninja
 
 Install via Homebrew:
 
 ```bash
-brew install cmake ninja pyenv
+brew install cmake ninja
 ```
 
 ## Visual Studio Code

@@ -85,28 +85,6 @@ cmake --version
 sudo apt install ninja-build
 ```
 
-### pyenv
-
-Install Python Dependencies:
-
-```bash
-sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
-```
-
-Install `pyenv`:
-
-```bash
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-```
-
-Enable:
-
-```bash
-source ~/.bashrc
-```
-
 ### Visual Studio Code
 
 Install via Snap Store:

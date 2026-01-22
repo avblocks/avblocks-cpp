@@ -15,15 +15,3 @@ New-Item -Force -ItemType Directory $script_dir/build/release_x64
 
 New-Item -Force -ItemType Directory $script_dir/build/debug_demo_x64
 New-Item -Force -ItemType Directory $script_dir/build/release_demo_x64
-
-# Python
-Write-Output "Python ..."
-
-# create virtual environment
-C:\tools\python3\python.exe -m venv .venv
-
-# activate virtual environment
-.venv\Scripts\Activate.ps1
-
-# install development packages
-pip install -r dev/requirements.txt

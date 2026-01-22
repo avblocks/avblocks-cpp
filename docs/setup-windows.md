@@ -93,39 +93,8 @@ Get-VSSetupInstance `
 
 See [Selecting an Instance](https://github.com/Microsoft/vssetup.powershell/wiki/Selecting-an-Instance)
 
-## Python 3
-
-This will become your system wide Python 3 installation. For projects use `venv` module (Python 3 ) to configure projects and install dependencies.
-
-In PowerShell as Administrator:
-
-```powershell
-choco install python3 --force --params '"/InstallDir:C:\tools\python3"'
-```
-
-Install pip3 and easy_install:
-
-```powershell
-C:\tools\python3\python.exe -m ensurepip --default-pip
-```
-
-Create `python3.exe` symbolic link:
-
-```powershell
-New-Item -ItemType SymbolicLink -Path C:\tools\python3 -Name python3.exe -Target C:\tools\python3\python.exe
-```
-
-Add to PATH:
-
-```powershell
-[System.Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\tools\python3;C:\tools\python3\Scripts", "Machine")
-```
-
-Close and reopen PowerShell to refresh PATH.
-
 ## Visual Studio Code
 
 Download and install from [Visual Studio Code](https://code.visualstudio.com/download) site.
 
 Open Visual Studio Code and press `Ctrl + Shift + p`. Select `Shell Command: Install 'code' command in PATH`.
-

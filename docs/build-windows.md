@@ -20,14 +20,16 @@ Make sure you have done the [setup for Windows](./setup-windows.md)
 
 #### Build
 
-```powershell
-invoke build --type release
+```bash
+./scripts/build.ps1 -type debug
+./scripts/build.ps1 -type release
 ```
 
 #### Clean
 
-```powershell
-invoke clean --type release
+```bash
+./scripts/clean.ps1 -type debug
+./scripts/clean.ps1 -type release
 ```
 
 #### Edit
