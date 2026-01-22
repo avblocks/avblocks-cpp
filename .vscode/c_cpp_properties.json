@@ -40,7 +40,6 @@
             "intelliSenseMode": "msvc-x64",
             "configurationProvider": "vector-of-bool.cmake-tools"
         }
-
     ],
     "version": 4
 }

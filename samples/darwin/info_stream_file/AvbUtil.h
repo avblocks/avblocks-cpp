@@ -59,9 +59,6 @@ const char* getStreamTypeName(primo::codecs::StreamType::Enum streamType )
     case StreamType::WMV:			return "WMV";
     case StreamType::AVS:			return "AVS";
     case StreamType::VP8:			return "VP8";
-    case StreamType::VP9:			return "VP9";
-    case StreamType::AV1:			return "AV1";
-    case StreamType::AV2:			return "AV2";
     case StreamType::Theora:        return "Theora";
     case StreamType::END_VIDEO: return "???";
 
@@ -76,7 +73,6 @@ const char* getStreamTypeName(primo::codecs::StreamType::Enum streamType )
     case StreamType::DTS:			return "DTS";
     case StreamType::MPEG_Audio:	return "MPEG_Audio";
     case StreamType::Vorbis:		return "Vorbis";
-    case StreamType::Opus:			return "Opus";
     case StreamType::AAC:			return "AAC";
     case StreamType::AMRNB:			return "AMRNB";
     case StreamType::AMRWB:			return "AMRWB";
@@ -113,7 +109,6 @@ const char* getStreamTypeName(primo::codecs::StreamType::Enum streamType )
     case StreamType::FLV:			return "FLV";
     case StreamType::WebM:			return "WebM";
     case StreamType::OGG:			return "Ogg";
-    case StreamType::IVF:			return "IVF";
     case StreamType::END_CONTAINER: return "???";
     }
 

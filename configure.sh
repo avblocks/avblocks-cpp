@@ -9,26 +9,3 @@ mkdir -p $script_dir/build/release_x64
 
 mkdir -p $script_dir/build/debug_demo_x64
 mkdir -p $script_dir/build/release_demo_x64
-
-echo "Python ..."
-
-# Do not install Python if in Anaconda environment or we are on Docker container
-if [[ -z "$CONDA_DEFAULT_ENV" && ! -f /.dockerenv ]]
-then
-    # install Python 3.12.0 if not installed
-    pyenv install 3.12.0 --skip-existing
-    pyenv versions
-
-    # use Python 3 from .python-version for local development
-    eval "$(pyenv init -)"
-fi
-
-# create virtual environment
-python3 -m venv .venv
-
-# activate virtual environment
-source .venv/bin/activate
-
-# install development packages
-pip install -r dev/requirements.txt
-
