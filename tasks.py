@@ -43,9 +43,10 @@ def clean(c, type="debug"):
             pty=True
         )
     elif "Windows" == os:
+        build_dir = f"build/{type}_x64" 
         c.run(
             f"powershell -ExecutionPolicy ByPass \
-            ./scripts/clean.ps1 -type {type}"
+            pushd {build_dir} ; ninja clean ; popd"
         )
     else:
         print("Unsupported platform!")    
@@ -95,4 +96,4 @@ def watch(c, type="debug", filter=""):
             ./scripts/watch.ps1 -type {type} -filter '{filter}'"
         )
     else:
-        print("Unsupported platform!")
+        print("Unsupported platform!")    
