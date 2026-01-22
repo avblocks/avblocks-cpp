@@ -21,14 +21,12 @@ Make sure you have done the [setup for Windows](./setup-windows.md)
 #### Build
 
 ```bash
-./scripts/build.ps1 -type debug
 ./scripts/build.ps1 -type release
 ```
 
 #### Clean
 
 ```bash
-./scripts/clean.ps1 -type debug
 ./scripts/clean.ps1 -type release
 ```
 

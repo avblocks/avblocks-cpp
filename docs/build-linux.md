@@ -21,14 +21,12 @@ source ./configure.sh
 #### Build
 
 ```bash
-./scripts/build.sh --type debug
 ./scripts/build.sh --type release
 ```
 
 #### Clean
 
 ```bash
-./scripts/clean.sh --type debug
 ./scripts/clean.sh --type release
 ```
 
