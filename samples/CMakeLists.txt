@@ -37,6 +37,9 @@ if (OS STREQUAL "darwin")
     
     add_subdirectory(${OS}/enc_preset_file)
 
+    add_subdirectory(${OS}/enc_vp8_file)
+    add_subdirectory(${OS}/enc_vp9_file)
+
     add_subdirectory(${OS}/info_metadata_file)
     add_subdirectory(${OS}/info_stream_file)
 

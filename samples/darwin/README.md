@@ -181,6 +181,22 @@ How to encode WAV file to MP3 file using `Transcoder::push`.
 
 See [enc_mp3_push](./enc_mp3_push) for details.
 
+### VP8
+
+#### enc_vp8_file
+
+Encode raw YUV video file to VP8 video in IVF (Duck IVF) container using `Transcoder::run`.
+
+See [enc_vp8_file](./enc_vp8_file) for details.
+
+### VP9
+
+#### enc_vp9_file
+
+Encode raw YUV video file to VP9 video in IVF (Duck IVF) container using `Transcoder::run`.
+
+See [enc_vp9_file](./enc_vp9_file) for details.
+
 ### Other 
 
 #### enc_preset_file
