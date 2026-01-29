@@ -102,6 +102,16 @@ Decode MP3 file and save output to WAV file.
 
 See [dec_mp3_file](./dec_mp3_file) for details.
 
+### Vorbis
+
+> OGG Vorbis Audio
+
+#### dec_vorbis_file
+
+Decode Vorbis OGG file and save output to WAV file.
+
+See [dec_vorbis_file](./dec_vorbis_file) for details.
+
 ---
 
 ## Encoding
@@ -180,6 +190,16 @@ See [enc_mp3_pull](./enc_mp3_pull) for details.
 How to encode WAV file to MP3 file using `Transcoder::push`.
 
 See [enc_mp3_push](./enc_mp3_push) for details.
+
+### Vorbis
+
+> OGG Vorbis Audio
+
+#### enc_vorbis_file
+
+Encode WAV file to Vorbis OGG file.
+
+See [enc_vorbis_file](./enc_vorbis_file) for details.
 
 ### VP8
 

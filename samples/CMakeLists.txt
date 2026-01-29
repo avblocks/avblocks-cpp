@@ -18,6 +18,8 @@ if (OS STREQUAL "darwin")
     add_subdirectory(${OS}/dec_g711_ulaw_file)
 
     add_subdirectory(${OS}/dec_mp3_file)
+
+    add_subdirectory(${OS}/dec_vorbis_file)
     
     add_subdirectory(${OS}/demux_mp4_file)
     
@@ -36,6 +38,8 @@ if (OS STREQUAL "darwin")
     add_subdirectory(${OS}/enc_mp3_push)
     
     add_subdirectory(${OS}/enc_preset_file)
+
+    add_subdirectory(${OS}/enc_vorbis_file)
 
     add_subdirectory(${OS}/enc_vp8_file)
     add_subdirectory(${OS}/enc_vp9_file)
