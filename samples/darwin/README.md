@@ -112,6 +112,16 @@ Decode Vorbis OGG file and save output to WAV file.
 
 See [dec_vorbis_file](./dec_vorbis_file) for details.
 
+### Opus
+
+> OGG Opus Audio
+
+#### dec_opus_file
+
+Decode Opus OGG file and save output to WAV file.
+
+See [dec_opus_file](./dec_opus_file) for details.
+
 ---
 
 ## Encoding
@@ -200,6 +210,16 @@ See [enc_mp3_push](./enc_mp3_push) for details.
 Encode WAV file to Vorbis OGG file.
 
 See [enc_vorbis_file](./enc_vorbis_file) for details.
+
+### Opus
+
+> OGG Opus Audio
+
+#### enc_opus_file
+
+Encode WAV file to Opus OGG file.
+
+See [enc_opus_file](./enc_opus_file) for details.
 
 ### VP8
 
