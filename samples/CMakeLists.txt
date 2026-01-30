@@ -124,8 +124,15 @@ if(OS STREQUAL "windows")
     add_subdirectory(${OS}/dec_g711_ulaw_file)
 
     add_subdirectory(${OS}/dec_mp3_file)
+
+    add_subdirectory(${OS}/dec_opus_file)
+    add_subdirectory(${OS}/dec_vorbis_file)
+
+    add_subdirectory(${OS}/dec_vp8_file)
+    add_subdirectory(${OS}/dec_vp9_file)
  
     add_subdirectory(${OS}/demux_mp4_file)
+    add_subdirectory(${OS}/demux_webm_file)
 
     add_subdirectory(${OS}/enc_aac_adts_file)
     add_subdirectory(${OS}/enc_aac_adts_pull)
@@ -143,10 +150,17 @@ if(OS STREQUAL "windows")
     
     add_subdirectory(${OS}/enc_preset_file)
 
+    add_subdirectory(${OS}/enc_opus_file)
+    add_subdirectory(${OS}/enc_vorbis_file)
+
+    add_subdirectory(${OS}/enc_vp8_file)
+    add_subdirectory(${OS}/enc_vp9_file)
+
     add_subdirectory(${OS}/info_metadata_file)
     add_subdirectory(${OS}/info_stream_file)
 
     add_subdirectory(${OS}/mux_mp4_file)
+    add_subdirectory(${OS}/mux_webm_file)
 
     add_subdirectory(${OS}/re-encode)
     add_subdirectory(${OS}/slideshow)
