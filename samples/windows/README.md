@@ -266,6 +266,7 @@ See [enc_vp9_file](./enc_vp9_file) for details.
 Convert a raw YUV video file to a compressed video file. The format of the output is configured with an AVBlocks preset.
 
 See [enc_preset_file](./enc_preset_file) for details.
+
 ---
 
 ## Misc
