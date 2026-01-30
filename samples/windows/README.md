@@ -28,6 +28,14 @@ Extract the first audio and video elementary stream from an MP4 container and sa
 
 See [demux_mp4_file](./demux_mp4_file) for details.
 
+### WebM
+
+#### demux_webm_file
+
+Extract audio and video streams from a WebM file and save each stream into a separate WebM file.
+
+See [demux_webm_file](./demux_webm_file) for details.
+
 ---
 
 ## Muxing
@@ -40,7 +48,15 @@ See [demux_mp4_file](./demux_mp4_file) for details.
 
 Multiplex two single-stream MP4 files containing AAC (audio) and H.264 (video) streams into an MP4 (container) file.
 
-See [mux_mp4_file](./demux_mp4_file) for details.
+See [mux_mp4_file](./mux_mp4_file) for details.
+
+### WebM
+
+#### mux_webm_file
+
+Multiplex Vorbis audio and VP8 video streams into a WebM file.
+
+See [mux_webm_file](./mux_webm_file) for details.
 
 ---
 
@@ -101,6 +117,38 @@ See [dec_g711_ulaw_file](./dec_g711_ulaw_file) for details.
 Decode MP3 file and save output to WAV file.
 
 See [dec_mp3_file](./dec_mp3_file) for details.
+
+### Opus
+
+#### dec_opus_file
+
+Decode Opus file in OGG container and save output to WAV file.
+
+See [dec_opus_file](./dec_opus_file) for details.
+
+### Vorbis
+
+#### dec_vorbis_file
+
+Decode Vorbis file in OGG container and save output to WAV file.
+
+See [dec_vorbis_file](./dec_vorbis_file) for details.
+
+### VP8
+
+#### dec_vp8_file
+
+Decode VP8 video in IVF container and save output to raw YUV file.
+
+See [dec_vp8_file](./dec_vp8_file) for details.
+
+### VP9
+
+#### dec_vp9_file
+
+Decode VP9 video in IVF container and save output to raw YUV file.
+
+See [dec_vp9_file](./dec_vp9_file) for details.
 
 ---
 
@@ -177,6 +225,38 @@ See [enc_mp3_pull](./enc_mp3_pull) for details.
 How to encode WAV file to MP3 file using `Transcoder::push`.
 
 See [enc_mp3_push](./enc_mp3_push) for details.
+
+### Opus
+
+#### enc_opus_file
+
+Encode WAV file to Opus audio in OGG container.
+
+See [enc_opus_file](./enc_opus_file) for details.
+
+### Vorbis
+
+#### enc_vorbis_file
+
+Encode WAV file to Vorbis audio in OGG container.
+
+See [enc_vorbis_file](./enc_vorbis_file) for details.
+
+### VP8
+
+#### enc_vp8_file
+
+Encode raw YUV video to VP8 video in IVF container.
+
+See [enc_vp8_file](./enc_vp8_file) for details.
+
+### VP9
+
+#### enc_vp9_file
+
+Encode raw YUV video to VP9 video in IVF container.
+
+See [enc_vp9_file](./enc_vp9_file) for details.
 
 
 ### Other 
