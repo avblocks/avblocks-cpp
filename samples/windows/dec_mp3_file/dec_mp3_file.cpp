@@ -42,7 +42,7 @@ bool decode(Options& opt)
     
     // Continue to work even when license is invalid 
     // This is not recommended in production
-    transcoder->setAllowDemoMode(TRUE);
+    transcoder->setAllowDemoMode(true);
     
     transcoder->inputs()->add(inSocket.get());
     transcoder->outputs()->add(outSocket.get());

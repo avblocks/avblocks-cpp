@@ -22,7 +22,7 @@ primo::ref<Transcoder> configureTranscoder(Options& opt)
     info->close();
 
     primo::ref<Transcoder> transcoder(Library::createTranscoder());
-    transcoder->setAllowDemoMode(TRUE);
+    transcoder->setAllowDemoMode(true);
 
     transcoder->inputs()->add(inSocket.get());
 

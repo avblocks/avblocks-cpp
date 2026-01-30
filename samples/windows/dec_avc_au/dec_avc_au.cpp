@@ -120,7 +120,7 @@ bool setTranscoder(Transcoder* transcoder, wstring imgFile, Options& opt)
 bool transcode(Options& opt)
 {
     auto transcoder = primo::make_ref(Library::createTranscoder());
-    transcoder->setAllowDemoMode(TRUE);
+    transcoder->setAllowDemoMode(true);
 
     bool decoderInitialized = false;
     int32_t index = 0;
@@ -147,7 +147,7 @@ bool transcode(Options& opt)
             break;
 
         auto buffer = primo::make_ref(Library::createMediaBuffer());
-        buffer->attach(inputData.data(), inputData.size(), TRUE);
+        buffer->attach(inputData.data(), inputData.size(), true);
         sample->setBuffer(buffer.get());
 
         if (!transcoder->push(index, sample.get()))

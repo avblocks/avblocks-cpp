@@ -35,7 +35,7 @@ bool encode(const Options& opt)
     
     // Transcoder demo mode must be enabled, 
     // in order to use the production release for testing (without a valid license)
-    transcoder->setAllowDemoMode(TRUE);
+    transcoder->setAllowDemoMode(true);
 
     // Configure input
     // The input stream frame rate determines the playback speed

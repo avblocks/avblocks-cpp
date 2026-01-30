@@ -14,7 +14,7 @@ bool MP4Mux(const Options& opt)
 
     // Transcoder demo mode must be enabled, 
     // in order to use the production release for testing (without a valid license)
-    transcoder->setAllowDemoMode(TRUE);
+    transcoder->setAllowDemoMode(true);
 
     primo::ref<MediaSocket> outputSocket(Library::createMediaSocket());
     outputSocket->setFile(opt.output_file.c_str());

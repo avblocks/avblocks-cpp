@@ -25,7 +25,7 @@ void printVideo(VideoStreamInfo* vsi)
 	primo::codecs::ColorFormat::Enum color = vsi->colorFormat();
 	int32_t dar_width  = vsi->displayRatioWidth();
 	int32_t dar_height = vsi->displayRatioHeight();
-	bool frameBottomUp = vsi->frameBottomUp() == TRUE;
+	bool frameBottomUp = vsi->frameBottomUp() == true;
 	int32_t height = vsi->frameHeight();
 	int32_t width = vsi->frameWidth();
 	double rate = vsi->frameRate();

@@ -54,7 +54,7 @@ bool encode(const Options& opt)
 	auto transcoder = primo::make_ref(Library::createTranscoder());
 
     // In order to use the OEM release for testing (without a valid license) the transcoder demo mode must be enabled.
-	transcoder->setAllowDemoMode(TRUE);
+	transcoder->setAllowDemoMode(true);
 
 	// Set Input
 	{

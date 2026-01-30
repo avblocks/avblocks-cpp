@@ -100,7 +100,7 @@ bool encode(Options &opt)
     auto outSocket = createOutputSocket(opt);
 
     auto transcoder = primo::make_ref(Library::createTranscoder());
-    transcoder->setAllowDemoMode(TRUE);
+    transcoder->setAllowDemoMode(true);
     transcoder->inputs()->add(inSocket.get());
     transcoder->outputs()->add(outSocket.get());
 

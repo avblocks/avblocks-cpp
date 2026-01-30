@@ -46,7 +46,7 @@ bool decodeAvcFile(Options& opt)
 
     // create transcoder
     auto transcoder = primo::make_ref(Library::createTranscoder());
-    transcoder->setAllowDemoMode(TRUE);
+    transcoder->setAllowDemoMode(true);
     transcoder->inputs()->add(inputSocket.get());
     transcoder->outputs()->add(outputSocket.get());
 

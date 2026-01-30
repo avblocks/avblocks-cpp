@@ -55,7 +55,7 @@ primo::ref<Transcoder> createWavWriter(const wstring &outputFile)
 
     // create transcoder
     auto wavWriter = primo::make_ref(Library::createTranscoder());
-    wavWriter->setAllowDemoMode(TRUE);
+    wavWriter->setAllowDemoMode(true);
     wavWriter->inputs()->add(inSocket.get());
     wavWriter->outputs()->add(outSocket.get());
 
@@ -69,7 +69,7 @@ bool decode(Options& opt)
 
     // Create decoder transcoder
     auto decoder = primo::make_ref(Library::createTranscoder());
-    decoder->setAllowDemoMode(TRUE);
+    decoder->setAllowDemoMode(true);
 
     auto inputSocket = primo::make_ref(Library::createMediaSocket());
     inputSocket->setFile(opt.inputFile.c_str());

@@ -62,7 +62,7 @@ bool slideshow(Options& opt)
 
     // Transcoder demo mode must be enabled, 
     // in order to use the production release for testing (without a valid license)
-    transcoder->setAllowDemoMode(TRUE);
+    transcoder->setAllowDemoMode(true);
 
     // Load image info
     auto info = primo::make_ref(Library::createMediaInfo());

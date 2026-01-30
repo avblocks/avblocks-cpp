@@ -55,8 +55,8 @@ ErrorCodes prepareOptions(Options& opt, int argc, wchar_t* argv[])
         (L"help,?",				opt.help,							L"")
         (L"input,i",			opt.inputFile,		wstring(),		L"input file")
         (L"output,o",			opt.outputFile,		wstring(),		L"output file")
-        (L"audio,a",	opt.reEncodeAudio,	YesNo(TRUE),	L"re-encode audio with yes|no")
-        (L"video,v",	opt.reEncodeVideo,	YesNo(TRUE),	L"re-encode video with yes|no");
+        (L"audio,a",	opt.reEncodeAudio,	YesNo(true),	L"re-encode audio with yes|no")
+        (L"video,v",	opt.reEncodeVideo,	YesNo(true),	L"re-encode video with yes|no");
 
     try
     {

@@ -79,7 +79,7 @@ primo::ref<Transcoder> createWavReader(Options& opt)
 
     // create transcoder
     auto wavReader = primo::make_ref(Library::createTranscoder());
-    wavReader->setAllowDemoMode(TRUE);
+    wavReader->setAllowDemoMode(true);
     wavReader->inputs()->add(wavInputSocket.get());
     wavReader->outputs()->add(pcmOutputSocket.get());
     
@@ -101,7 +101,7 @@ bool encode(Options& opt)
 
     // Create encoder transcoder
     auto encoder = primo::make_ref(Library::createTranscoder());
-    encoder->setAllowDemoMode(TRUE);
+    encoder->setAllowDemoMode(true);
     encoder->inputs()->add(createInputSocket().get());
     encoder->outputs()->add(createOutputSocket(opt).get());
     
