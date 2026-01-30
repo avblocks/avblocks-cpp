@@ -21,18 +21,17 @@ using namespace std;
 
 primo::ref<MediaSocket> createOutputSocket(Options& opt)
 {
+    auto vsi = primo::make_ref(Library::createVideoStreamInfo());
+    vsi->setStreamType(StreamType::UncompressedVideo);
+    vsi->setColorFormat(ColorFormat::YUV420);
+
+    auto pin = primo::make_ref(Library::createMediaPin());
+    pin->setStreamInfo(vsi.get());
+    
     auto socket = primo::make_ref(Library::createMediaSocket());
     socket->setFile(primo::ustring(opt.outputFile));
     socket->setStreamType(StreamType::UncompressedVideo);
-    
-    auto pin = primo::make_ref(Library::createMediaPin());
     socket->pins()->add(pin.get());
-    
-    auto vsi = primo::make_ref(Library::createVideoStreamInfo());
-    pin->setStreamInfo(vsi.get());
-    
-    vsi->setStreamType(StreamType::UncompressedVideo);
-    vsi->setColorFormat(ColorFormat::YUV420);
     
     return socket;
 }

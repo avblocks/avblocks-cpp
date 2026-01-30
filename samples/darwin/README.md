@@ -28,6 +28,16 @@ Extract the first audio and video elementary stream from an MP4 container and sa
 
 See [demux_mp4_file](./demux_mp4_file) for details.
 
+### WebM 
+
+> Matroska / WebM
+
+#### demux_webm_file
+
+Extract the first audio and video elementary stream from a WebM container and save each stream into a separate WebM file.
+
+See [demux_webm_file](./demux_webm_file) for details.
+
 ---
 
 ## Muxing
@@ -40,7 +50,17 @@ See [demux_mp4_file](./demux_mp4_file) for details.
 
 Multiplex two single-stream MP4 files containing AAC (audio) and H.264 (video) streams into an MP4 (container) file.
 
-See [mux_mp4_file](./demux_mp4_file) for details.
+See [mux_mp4_file](./mux_mp4_file) for details.
+
+### WebM 
+
+> Matroska / WebM
+
+#### mux_webm_file
+
+Multiplex two single-stream WebM files containing Vorbis (audio) and VP8 (video) streams into a WebM (container) file.
+
+See [mux_webm_file](./mux_webm_file) for details.
 
 ---
 
@@ -104,7 +124,7 @@ See [dec_mp3_file](./dec_mp3_file) for details.
 
 ### Vorbis
 
-> OGG Vorbis Audio
+> Vorbis Audio
 
 #### dec_vorbis_file
 
@@ -114,13 +134,29 @@ See [dec_vorbis_file](./dec_vorbis_file) for details.
 
 ### Opus
 
-> OGG Opus Audio
+> Opus Audio
 
 #### dec_opus_file
 
-Decode Opus OGG file and save output to WAV file.
+Decode Opus file and save output to WAV file.
 
 See [dec_opus_file](./dec_opus_file) for details.
+
+### VP8
+
+#### dec_vp8_file
+
+Decode VP8 video in IVF container and save output to YUV file.
+
+See [dec_vp8_file](./dec_vp8_file) for details.
+
+### VP9
+
+#### dec_vp9_file
+
+Decode VP9 video in IVF container and save output to YUV file.
+
+See [dec_vp9_file](./dec_vp9_file) for details.
 
 ---
 
@@ -203,7 +239,7 @@ See [enc_mp3_push](./enc_mp3_push) for details.
 
 ### Vorbis
 
-> OGG Vorbis Audio
+> Vorbis Audio
 
 #### enc_vorbis_file
 
@@ -213,11 +249,11 @@ See [enc_vorbis_file](./enc_vorbis_file) for details.
 
 ### Opus
 
-> OGG Opus Audio
+> Opus Audio
 
 #### enc_opus_file
 
-Encode WAV file to Opus OGG file.
+Encode WAV file to Opus file.
 
 See [enc_opus_file](./enc_opus_file) for details.
 
