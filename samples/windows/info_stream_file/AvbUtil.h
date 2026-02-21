@@ -54,6 +54,7 @@ const char* getStreamTypeName(primo::codecs::StreamType::Enum streamType )
         case StreamType::VC1:			return "VC1";
         case StreamType::WMV:			return "WMV";
         case StreamType::AVS:			return "AVS";
+        case StreamType::VP8:			return "VP8";
         case StreamType::VP9:			return "VP9";
         case StreamType::AV1:			return "AV1";
         case StreamType::AV2:			return "AV2";
