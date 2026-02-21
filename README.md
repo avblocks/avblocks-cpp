@@ -1097,17 +1097,185 @@ StreamInfo* si = pin->streamInfo();
 
 ## Sample Code
 
-Complete working examples are available in the `samples` directory:
+Complete working examples are available in the `samples` directory.
 
-- **Media Info**: [`info_stream_file`](./samples/darwin/info_stream_file), [`info_metadata_file`](./samples/darwin/info_metadata_file)
-- **Decoding**: 
-  - Audio: [`dec_aac_adts_file`](./samples/darwin/dec_aac_adts_file), [`dec_aac_adts_pull`](./samples/darwin/dec_aac_adts_pull), [`dec_mp3_file`](./samples/darwin/dec_mp3_file), [`dec_g711_alaw_file`](./samples/darwin/dec_g711_alaw_file), [`dec_g711_ulaw_file`](./samples/darwin/dec_g711_ulaw_file)
-  - Video: [`dec_avc_file`](./samples/darwin/dec_avc_file), [`dec_avc_au`](./samples/darwin/dec_avc_au)
-- **Encoding**: 
-  - Audio: [`enc_aac_adts_file`](./samples/darwin/enc_aac_adts_file), [`enc_aac_adts_pull`](./samples/darwin/enc_aac_adts_pull), [`enc_aac_adts_push`](./samples/darwin/enc_aac_adts_push), [`enc_mp3_file`](./samples/darwin/enc_mp3_file), [`enc_mp3_pull`](./samples/darwin/enc_mp3_pull), [`enc_mp3_push`](./samples/darwin/enc_mp3_push), [`enc_g711_alaw_file`](./samples/darwin/enc_g711_alaw_file), [`enc_g711_ulaw_file`](./samples/darwin/enc_g711_ulaw_file)
-  - Video: [`enc_avc_file`](./samples/darwin/enc_avc_file), [`enc_avc_pull`](./samples/darwin/enc_avc_pull), [`enc_preset_file`](./samples/darwin/enc_preset_file)
-- **Muxing/Demuxing**: [`mux_mp4_file`](./samples/darwin/mux_mp4_file), [`demux_mp4_file`](./samples/darwin/demux_mp4_file)
-- **Advanced**: [`slideshow`](./samples/darwin/slideshow), [`re-encode`](./samples/darwin/re-encode)
+### macOS
+
+**Media Info**
+- [`info_metadata_file`](./samples/darwin/info_metadata_file)
+- [`info_stream_file`](./samples/darwin/info_stream_file)
+
+**Decoding Audio**
+- [`dec_aac_adts_file`](./samples/darwin/dec_aac_adts_file)
+- [`dec_aac_adts_pull`](./samples/darwin/dec_aac_adts_pull)
+- [`dec_g711_alaw_file`](./samples/darwin/dec_g711_alaw_file)
+- [`dec_g711_ulaw_file`](./samples/darwin/dec_g711_ulaw_file)
+- [`dec_mp3_file`](./samples/darwin/dec_mp3_file)
+- [`dec_opus_file`](./samples/darwin/dec_opus_file)
+- [`dec_vorbis_file`](./samples/darwin/dec_vorbis_file)
+
+**Decoding Video**
+- [`dec_avc_au`](./samples/darwin/dec_avc_au)
+- [`dec_avc_file`](./samples/darwin/dec_avc_file)
+- [`dec_hevc_au`](./samples/darwin/dec_hevc_au)
+- [`dec_hevc_file`](./samples/darwin/dec_hevc_file)
+- [`dec_vp8_file`](./samples/darwin/dec_vp8_file)
+- [`dec_vp9_file`](./samples/darwin/dec_vp9_file)
+
+**Encoding Audio**
+- [`enc_aac_adts_file`](./samples/darwin/enc_aac_adts_file)
+- [`enc_aac_adts_pull`](./samples/darwin/enc_aac_adts_pull)
+- [`enc_aac_adts_push`](./samples/darwin/enc_aac_adts_push)
+- [`enc_g711_alaw_file`](./samples/darwin/enc_g711_alaw_file)
+- [`enc_g711_ulaw_file`](./samples/darwin/enc_g711_ulaw_file)
+- [`enc_mp3_file`](./samples/darwin/enc_mp3_file)
+- [`enc_mp3_pull`](./samples/darwin/enc_mp3_pull)
+- [`enc_mp3_push`](./samples/darwin/enc_mp3_push)
+- [`enc_opus_file`](./samples/darwin/enc_opus_file)
+- [`enc_vorbis_file`](./samples/darwin/enc_vorbis_file)
+
+**Encoding Video**
+- [`enc_avc_file`](./samples/darwin/enc_avc_file)
+- [`enc_avc_pull`](./samples/darwin/enc_avc_pull)
+- [`enc_hevc_file`](./samples/darwin/enc_hevc_file)
+- [`enc_hevc_pull`](./samples/darwin/enc_hevc_pull)
+- [`enc_preset_file`](./samples/darwin/enc_preset_file)
+- [`enc_vp8_file`](./samples/darwin/enc_vp8_file)
+- [`enc_vp9_file`](./samples/darwin/enc_vp9_file)
+
+**Dump**
+- [`dump_avc_au`](./samples/darwin/dump_avc_au)
+- [`dump_hevc_au`](./samples/darwin/dump_hevc_au)
+
+**Muxing / Demuxing**
+- [`demux_mp4_file`](./samples/darwin/demux_mp4_file)
+- [`demux_webm_file`](./samples/darwin/demux_webm_file)
+- [`mux_mp4_file`](./samples/darwin/mux_mp4_file)
+- [`mux_webm_file`](./samples/darwin/mux_webm_file)
+
+**Advanced**
+- [`re-encode`](./samples/darwin/re-encode)
+- [`slideshow`](./samples/darwin/slideshow)
+
+---
+
+### Linux
+
+**Media Info**
+- [`info_metadata_file`](./samples/linux/info_metadata_file)
+- [`info_stream_file`](./samples/linux/info_stream_file)
+
+**Decoding Audio**
+- [`dec_aac_adts_file`](./samples/linux/dec_aac_adts_file)
+- [`dec_aac_adts_pull`](./samples/linux/dec_aac_adts_pull)
+- [`dec_g711_alaw_file`](./samples/linux/dec_g711_alaw_file)
+- [`dec_g711_ulaw_file`](./samples/linux/dec_g711_ulaw_file)
+- [`dec_mp3_file`](./samples/linux/dec_mp3_file)
+- [`dec_opus_file`](./samples/linux/dec_opus_file)
+- [`dec_vorbis_file`](./samples/linux/dec_vorbis_file)
+
+**Decoding Video**
+- [`dec_avc_au`](./samples/linux/dec_avc_au)
+- [`dec_avc_file`](./samples/linux/dec_avc_file)
+- [`dec_hevc_au`](./samples/linux/dec_hevc_au)
+- [`dec_hevc_file`](./samples/linux/dec_hevc_file)
+- [`dec_vp8_file`](./samples/linux/dec_vp8_file)
+- [`dec_vp9_file`](./samples/linux/dec_vp9_file)
+
+**Encoding Audio**
+- [`enc_aac_adts_file`](./samples/linux/enc_aac_adts_file)
+- [`enc_aac_adts_pull`](./samples/linux/enc_aac_adts_pull)
+- [`enc_aac_adts_push`](./samples/linux/enc_aac_adts_push)
+- [`enc_g711_alaw_file`](./samples/linux/enc_g711_alaw_file)
+- [`enc_g711_ulaw_file`](./samples/linux/enc_g711_ulaw_file)
+- [`enc_mp3_file`](./samples/linux/enc_mp3_file)
+- [`enc_mp3_pull`](./samples/linux/enc_mp3_pull)
+- [`enc_mp3_push`](./samples/linux/enc_mp3_push)
+- [`enc_opus_file`](./samples/linux/enc_opus_file)
+- [`enc_vorbis_file`](./samples/linux/enc_vorbis_file)
+
+**Encoding Video**
+- [`enc_avc_file`](./samples/linux/enc_avc_file)
+- [`enc_avc_pull`](./samples/linux/enc_avc_pull)
+- [`enc_hevc_file`](./samples/linux/enc_hevc_file)
+- [`enc_hevc_pull`](./samples/linux/enc_hevc_pull)
+- [`enc_preset_file`](./samples/linux/enc_preset_file)
+- [`enc_vp8_file`](./samples/linux/enc_vp8_file)
+- [`enc_vp9_file`](./samples/linux/enc_vp9_file)
+
+**Dump**
+- [`dump_avc_au`](./samples/linux/dump_avc_au)
+- [`dump_hevc_au`](./samples/linux/dump_hevc_au)
+
+**Muxing / Demuxing**
+- [`demux_mp4_file`](./samples/linux/demux_mp4_file)
+- [`demux_webm_file`](./samples/linux/demux_webm_file)
+- [`mux_mp4_file`](./samples/linux/mux_mp4_file)
+- [`mux_webm_file`](./samples/linux/mux_webm_file)
+
+**Advanced**
+- [`re-encode`](./samples/linux/re-encode)
+- [`slideshow`](./samples/linux/slideshow)
+
+---
+
+### Windows
+
+**Media Info**
+- [`info_metadata_file`](./samples/windows/info_metadata_file)
+- [`info_stream_file`](./samples/windows/info_stream_file)
+
+**Decoding Audio**
+- [`dec_aac_adts_file`](./samples/windows/dec_aac_adts_file)
+- [`dec_aac_adts_pull`](./samples/windows/dec_aac_adts_pull)
+- [`dec_g711_alaw_file`](./samples/windows/dec_g711_alaw_file)
+- [`dec_g711_ulaw_file`](./samples/windows/dec_g711_ulaw_file)
+- [`dec_mp3_file`](./samples/windows/dec_mp3_file)
+- [`dec_opus_file`](./samples/windows/dec_opus_file)
+- [`dec_vorbis_file`](./samples/windows/dec_vorbis_file)
+
+**Decoding Video**
+- [`dec_avc_au`](./samples/windows/dec_avc_au)
+- [`dec_avc_file`](./samples/windows/dec_avc_file)
+- [`dec_hevc_au`](./samples/windows/dec_hevc_au)
+- [`dec_hevc_file`](./samples/windows/dec_hevc_file)
+- [`dec_vp8_file`](./samples/windows/dec_vp8_file)
+- [`dec_vp9_file`](./samples/windows/dec_vp9_file)
+
+**Encoding Audio**
+- [`enc_aac_adts_file`](./samples/windows/enc_aac_adts_file)
+- [`enc_aac_adts_pull`](./samples/windows/enc_aac_adts_pull)
+- [`enc_aac_adts_push`](./samples/windows/enc_aac_adts_push)
+- [`enc_g711_alaw_file`](./samples/windows/enc_g711_alaw_file)
+- [`enc_g711_ulaw_file`](./samples/windows/enc_g711_ulaw_file)
+- [`enc_mp3_file`](./samples/windows/enc_mp3_file)
+- [`enc_mp3_pull`](./samples/windows/enc_mp3_pull)
+- [`enc_mp3_push`](./samples/windows/enc_mp3_push)
+- [`enc_opus_file`](./samples/windows/enc_opus_file)
+- [`enc_vorbis_file`](./samples/windows/enc_vorbis_file)
+
+**Encoding Video**
+- [`enc_avc_file`](./samples/windows/enc_avc_file)
+- [`enc_avc_pull`](./samples/windows/enc_avc_pull)
+- [`enc_hevc_file`](./samples/windows/enc_hevc_file)
+- [`enc_hevc_pull`](./samples/windows/enc_hevc_pull)
+- [`enc_preset_file`](./samples/windows/enc_preset_file)
+- [`enc_vp8_file`](./samples/windows/enc_vp8_file)
+- [`enc_vp9_file`](./samples/windows/enc_vp9_file)
+
+**Dump**
+- [`dump_avc_au`](./samples/windows/dump_avc_au)
+- [`dump_hevc_au`](./samples/windows/dump_hevc_au)
+
+**Muxing / Demuxing**
+- [`demux_mp4_file`](./samples/windows/demux_mp4_file)
+- [`demux_webm_file`](./samples/windows/demux_webm_file)
+- [`mux_mp4_file`](./samples/windows/mux_mp4_file)
+- [`mux_webm_file`](./samples/windows/mux_webm_file)
+
+**Advanced**
+- [`re-encode`](./samples/windows/re-encode)
+- [`slideshow`](./samples/windows/slideshow)
 
 # Development
 
