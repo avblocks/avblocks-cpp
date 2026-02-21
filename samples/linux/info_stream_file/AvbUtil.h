@@ -47,6 +47,7 @@ const char* getStreamTypeName(primo::codecs::StreamType::Enum streamType )
     case StreamType::H261:			return "H261";
     case StreamType::H263:			return "H263";
     case StreamType::H264:			return "H264";
+    case StreamType::H265:			return "H265";
     case StreamType::MJPEG:			return "MJPEG";
     case StreamType::MPEG1_Video:	return "MPEG1_Video";
     case StreamType::MPEG2_Video:	return "MPEG2_Video";
@@ -57,6 +58,10 @@ const char* getStreamTypeName(primo::codecs::StreamType::Enum streamType )
     case StreamType::WMV:			return "WMV";
     case StreamType::AVS:			return "AVS";
     case StreamType::VP8:			return "VP8";
+    case StreamType::VP9:			return "VP9";
+    case StreamType::AV1:			return "AV1";
+    case StreamType::AV2:			return "AV2";
+    case StreamType::Theora:        return "Theora";
 
     // audio codecs
     case StreamType::LPCM:			return "LPCM";
@@ -68,6 +73,7 @@ const char* getStreamTypeName(primo::codecs::StreamType::Enum streamType )
     case StreamType::DTS:			return "DTS";
     case StreamType::MPEG_Audio:	return "MPEG_Audio";
     case StreamType::Vorbis:		return "Vorbis";
+    case StreamType::Opus:			return "Opus";
     case StreamType::AAC:			return "AAC";
     case StreamType::AMRNB:			return "AMRNB";
     case StreamType::AMRWB:			return "AMRWB";
@@ -86,6 +92,8 @@ const char* getStreamTypeName(primo::codecs::StreamType::Enum streamType )
     case StreamType::FLV:			return "FLV";
     case StreamType::WebM:			return "WebM";
     case StreamType::OGG:			return "Ogg";
+    case StreamType::IVF:			return "IVF";
+
     }
     return "???";
 }
@@ -100,6 +108,8 @@ const char* getStreamSubTypeName(primo::codecs::StreamSubType::Enum streamSubTyp
     case StreamSubType::None:			return "None";	
     case StreamSubType::AVC1:			return "AVC1";
     case StreamSubType::AVC_Annex_B:	return "AVC_Annex_B";
+    case StreamSubType::HVC1:			return "HVC1";
+    case StreamSubType::HEVC_Annex_B:	return "HEVC_Annex_B";
     case StreamSubType::AAC_ADTS:		return "AAC_ADTS";
     case StreamSubType::AAC_ADIF:		return "AAC_ADIF";
     case StreamSubType::AAC_MP4:		return "AAC_MP4";
