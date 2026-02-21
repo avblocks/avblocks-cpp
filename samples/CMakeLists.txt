@@ -17,6 +17,9 @@ if (OS STREQUAL "darwin")
     add_subdirectory(${OS}/dec_g711_alaw_file)
     add_subdirectory(${OS}/dec_g711_ulaw_file)
 
+    add_subdirectory(${OS}/dec_hevc_au)
+    add_subdirectory(${OS}/dec_hevc_file)
+
     add_subdirectory(${OS}/dec_mp3_file)
 
     add_subdirectory(${OS}/dec_opus_file)
@@ -28,6 +31,9 @@ if (OS STREQUAL "darwin")
     add_subdirectory(${OS}/demux_mp4_file)
     add_subdirectory(${OS}/demux_webm_file)
     
+    add_subdirectory(${OS}/dump_avc_au)
+    add_subdirectory(${OS}/dump_hevc_au)
+    
     add_subdirectory(${OS}/enc_aac_adts_file)
     add_subdirectory(${OS}/enc_aac_adts_pull)
     add_subdirectory(${OS}/enc_aac_adts_push)
@@ -37,6 +43,9 @@ if (OS STREQUAL "darwin")
 
     add_subdirectory(${OS}/enc_g711_alaw_file)
     add_subdirectory(${OS}/enc_g711_ulaw_file)
+
+    add_subdirectory(${OS}/enc_hevc_file)
+    add_subdirectory(${OS}/enc_hevc_pull)
 
     add_subdirectory(${OS}/enc_mp3_file)
     add_subdirectory(${OS}/enc_mp3_pull)
@@ -70,6 +79,9 @@ if(OS STREQUAL "linux")
     add_subdirectory(${OS}/dec_g711_alaw_file)
     add_subdirectory(${OS}/dec_g711_ulaw_file)
 
+    add_subdirectory(${OS}/dec_hevc_au)
+    add_subdirectory(${OS}/dec_hevc_file)
+
     add_subdirectory(${OS}/dec_mp3_file)
 
     add_subdirectory(${OS}/dec_opus_file)
@@ -81,6 +93,9 @@ if(OS STREQUAL "linux")
     add_subdirectory(${OS}/demux_mp4_file)
     add_subdirectory(${OS}/demux_webm_file)
 
+    add_subdirectory(${OS}/dump_avc_au)
+    add_subdirectory(${OS}/dump_hevc_au)
+
     add_subdirectory(${OS}/enc_aac_adts_file)
     add_subdirectory(${OS}/enc_aac_adts_pull)
     add_subdirectory(${OS}/enc_aac_adts_push)
@@ -90,6 +105,9 @@ if(OS STREQUAL "linux")
 
     add_subdirectory(${OS}/enc_g711_alaw_file)
     add_subdirectory(${OS}/enc_g711_ulaw_file)
+
+    add_subdirectory(${OS}/enc_hevc_file)
+    add_subdirectory(${OS}/enc_hevc_pull)
 
     add_subdirectory(${OS}/enc_mp3_file)
     add_subdirectory(${OS}/enc_mp3_pull)
@@ -123,6 +141,9 @@ if(OS STREQUAL "windows")
     add_subdirectory(${OS}/dec_g711_alaw_file)
     add_subdirectory(${OS}/dec_g711_ulaw_file)
 
+    add_subdirectory(${OS}/dec_hevc_au)
+    add_subdirectory(${OS}/dec_hevc_file)
+
     add_subdirectory(${OS}/dec_mp3_file)
 
     add_subdirectory(${OS}/dec_opus_file)
@@ -134,6 +155,9 @@ if(OS STREQUAL "windows")
     add_subdirectory(${OS}/demux_mp4_file)
     add_subdirectory(${OS}/demux_webm_file)
 
+    add_subdirectory(${OS}/dump_avc_au)
+    add_subdirectory(${OS}/dump_hevc_au)
+
     add_subdirectory(${OS}/enc_aac_adts_file)
     add_subdirectory(${OS}/enc_aac_adts_pull)
     add_subdirectory(${OS}/enc_aac_adts_push)
@@ -143,6 +167,9 @@ if(OS STREQUAL "windows")
     
     add_subdirectory(${OS}/enc_g711_alaw_file)
     add_subdirectory(${OS}/enc_g711_ulaw_file)
+
+    add_subdirectory(${OS}/enc_hevc_file)
+    add_subdirectory(${OS}/enc_hevc_pull)
 
     add_subdirectory(${OS}/enc_mp3_file)
     add_subdirectory(${OS}/enc_mp3_pull)

@@ -38,6 +38,26 @@ Extract the first audio and video elementary stream from a WebM container and sa
 
 See [demux_webm_file](./demux_webm_file) for details.
 
+### AVC / H.264
+
+> Advanced Video Coding
+
+#### dump_avc_au
+
+Split an H.264 (AVC) elementary stream into access units (AU). Each access unit is saved as a separate file. The sample also displays the NAL units within each access unit.
+
+See [dump_avc_au](./dump_avc_au) for details.
+
+### HEVC / H.265
+
+> High Efficiency Video Coding
+
+#### dump_hevc_au
+
+Split an H.265 (HEVC) elementary stream into access units (AU). Each access unit is saved as a separate file. The sample also displays the NAL units within each access unit.
+
+See [dump_hevc_au](./dump_hevc_au) for details.
+
 ---
 
 ## Muxing
@@ -97,6 +117,22 @@ See [dec_avc_au](./dec_avc_au) for details.
 Decode a compressed AVC / H.264 Annex B file to raw uncompressed YUV video file.       
 
 See [dec_avc_file](./dec_avc_file) for details.
+
+### HEVC / H.265
+
+> High Efficiency Video Coding
+
+#### dec_hevc_au
+
+Decode HEVC / H.265 stream. The sample uses a sequence of files to simulate a stream of H.265 Access Units (AUs) and a Transcoder object to decode the AUs to raw YUV video frames.    
+
+See [dec_hevc_au](./dec_hevc_au) for details.
+
+#### dec_hevc_file
+
+Decode a compressed HEVC / H.265 Annex B file to raw uncompressed YUV video file.       
+
+See [dec_hevc_file](./dec_hevc_file) for details.
 
 ### G.711
 
@@ -199,6 +235,22 @@ See [enc_avc_file](./enc_avc_file) for details.
 Encode raw YUV video file to AVC / H.264 Annex B video file using `Transcoder::pull`.  
 
 See [enc_avc_pull](./enc_avc_pull) for details.
+
+### HEVC / H.265
+
+> High Efficiency Video Coding
+
+#### enc_hevc_file
+
+Encode raw YUV video file to HEVC / H.265 Annex B video file using `Transcoder::run`.
+
+See [enc_hevc_file](./enc_hevc_file) for details.
+
+#### enc_hevc_pull
+
+Encode raw YUV video file to HEVC / H.265 Annex B video file using `Transcoder::pull`.  
+
+See [enc_hevc_pull](./enc_hevc_pull) for details.
 
 ### G.711
 

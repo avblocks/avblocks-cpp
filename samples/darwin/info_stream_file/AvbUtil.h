@@ -130,7 +130,9 @@ const char* getStreamSubTypeName(primo::codecs::StreamSubType::Enum streamSubTyp
     case StreamSubType::None:			return "None";	
     case StreamSubType::AVC1:			return "AVC1";
     case StreamSubType::AVC_Annex_B:	return "AVC_Annex_B";
-    case StreamSubType::AAC_RAW:		    return "AAC_RAW";
+    case StreamSubType::HVC1:			return "HVC1";
+    case StreamSubType::HEVC_Annex_B:	return "HEVC_Annex_B";
+    case StreamSubType::AAC_RAW:		return "AAC_RAW";
     case StreamSubType::AAC_ADTS:		return "AAC_ADTS";
     case StreamSubType::AAC_ADIF:		return "AAC_ADIF";
     case StreamSubType::AAC_MP4:		return "AAC_MP4";
