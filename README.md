@@ -1143,13 +1143,11 @@ Complete working examples are available in the `samples` directory.
 - [`enc_vp8_file`](./samples/darwin/enc_vp8_file)
 - [`enc_vp9_file`](./samples/darwin/enc_vp9_file)
 
-**Dump**
-- [`dump_avc_au`](./samples/darwin/dump_avc_au)
-- [`dump_hevc_au`](./samples/darwin/dump_hevc_au)
-
 **Muxing / Demuxing**
 - [`demux_mp4_file`](./samples/darwin/demux_mp4_file)
 - [`demux_webm_file`](./samples/darwin/demux_webm_file)
+- [`dump_avc_au`](./samples/darwin/dump_avc_au)
+- [`dump_hevc_au`](./samples/darwin/dump_hevc_au)
 - [`mux_mp4_file`](./samples/darwin/mux_mp4_file)
 - [`mux_webm_file`](./samples/darwin/mux_webm_file)
 
@@ -1203,13 +1201,11 @@ Complete working examples are available in the `samples` directory.
 - [`enc_vp8_file`](./samples/linux/enc_vp8_file)
 - [`enc_vp9_file`](./samples/linux/enc_vp9_file)
 
-**Dump**
-- [`dump_avc_au`](./samples/linux/dump_avc_au)
-- [`dump_hevc_au`](./samples/linux/dump_hevc_au)
-
 **Muxing / Demuxing**
 - [`demux_mp4_file`](./samples/linux/demux_mp4_file)
 - [`demux_webm_file`](./samples/linux/demux_webm_file)
+- [`dump_avc_au`](./samples/linux/dump_avc_au)
+- [`dump_hevc_au`](./samples/linux/dump_hevc_au)
 - [`mux_mp4_file`](./samples/linux/mux_mp4_file)
 - [`mux_webm_file`](./samples/linux/mux_webm_file)
 
@@ -1263,13 +1259,11 @@ Complete working examples are available in the `samples` directory.
 - [`enc_vp8_file`](./samples/windows/enc_vp8_file)
 - [`enc_vp9_file`](./samples/windows/enc_vp9_file)
 
-**Dump**
-- [`dump_avc_au`](./samples/windows/dump_avc_au)
-- [`dump_hevc_au`](./samples/windows/dump_hevc_au)
-
 **Muxing / Demuxing**
 - [`demux_mp4_file`](./samples/windows/demux_mp4_file)
 - [`demux_webm_file`](./samples/windows/demux_webm_file)
+- [`dump_avc_au`](./samples/windows/dump_avc_au)
+- [`dump_hevc_au`](./samples/windows/dump_hevc_au)
 - [`mux_mp4_file`](./samples/windows/mux_mp4_file)
 - [`mux_webm_file`](./samples/windows/mux_webm_file)
 
