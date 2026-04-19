@@ -243,6 +243,34 @@ See [enc_preset_file](./enc_preset_file) for details.
 
 ---
 
+## Video Processing
+
+### video_framerate
+
+Change the frame rate of a video from 24 fps to 30 fps.
+
+See [video_framerate](./video_framerate) for details.
+
+### video_pad
+
+Apply padding to video frames by adding black borders on all sides.
+
+See [video_pad](./video_pad) for details.
+
+### video_crop
+
+Crop a video by removing pixels from the edges (left, right, top, bottom).
+
+See [video_crop](./video_crop) for details.
+
+### video_upscale
+
+Upscale a video to Full HD (1920x1080) using bicubic interpolation method.
+
+See [video_upscale](./video_upscale) for details.
+
+---
+
 ## Misc
 
 ### re-encode

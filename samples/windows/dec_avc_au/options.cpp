@@ -15,20 +15,6 @@ using namespace primo::avblocks;
 using namespace primo::codecs;	
 using namespace primo::program_options;
 
-/*
-command line options:
-
-long format:
-	dec_avc_au --input input.h264 --output file.yuv --frame 352x288 --rate 30 --color yuv420 
-
-short format:
-	dec_avc_au -i input.h264 -o file.yuv -f 352x288 -r 30 -c yuv420 
-
-TODO: separate syntax from semantic processing.
-1. Command Line Parser: get all options and validate syntax (get name->value; or just name; or just value)
-2. enc_yuv_preset_file: translate command options to encoder options (parse names and values).
-*/
-
 ColorDescriptor color_formats[] = {
 	
 	{ ColorFormat::YV12,	L"yv12",	L"Planar Y, V, U (4:2:0) (note V,U order!)" },
