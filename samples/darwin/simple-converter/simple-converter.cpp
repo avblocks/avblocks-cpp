@@ -1,8 +1,3 @@
-//
-//  simple-converter.cpp
-//  simple-converter
-//
-
 #include <primo/avblocks/avb.h>
 #include <primo/platform/reference++.h>
 #include <primo/platform/ustring.h>
