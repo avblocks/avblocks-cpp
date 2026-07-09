@@ -1,6 +1,6 @@
 # simple-converter
 
-Transcodes a media file from `H.264 (AVC)` to `H.265/HEVC` using AVBlocks Transcoder with hardcoded input and output file paths.
+Transcodes a media file from `H.264/AVC` to `H.265/HEVC` using AVBlocks Transcoder with hardcoded input and output file paths.
 
 This sample demonstrates the basic AVBlocks transcoding workflow:
 
