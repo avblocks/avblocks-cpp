@@ -1,4 +1,4 @@
-# simple-converter
+# simple_converter
 
 Transcodes a media file from `H.264/AVC` to `H.265/HEVC` using AVBlocks Transcoder with hardcoded input and output file paths.
 
@@ -24,7 +24,7 @@ cmake -G 'Ninja' -DCMAKE_BUILD_TYPE=debug -DPLATFORM=x64 ../../samples
 ninja
 ```
 
-The built executable will be placed in `bin/x64/simple-converter`.
+The built executable will be placed in `bin/x64/simple_converter`.
 
 ## Running
 
@@ -37,14 +37,14 @@ The built executable will be placed in `bin/x64/simple-converter`.
 2. Run the sample from the sample directory (the input/output file paths are relative to the working directory):
 
     ```sh
-    cd samples/darwin/simple-converter
-    ../../../bin/x64/simple-converter
+    cd samples/darwin/simple_converter
+    ../../../bin/x64/simple_converter
     ```
 
-3. The transcoded output file `Wildlife_h265_aac.mp4` will be created in the `samples/darwin/simple-converter` directory.
+3. The transcoded output file `Wildlife_h265_aac.mp4` will be created in the `samples/darwin/simple_converter` directory.
 
 ## Notes
 
-- The input file `Wildlife_h264_aac.mp4` and output file `Wildlife_h265_aac.mp4` paths are hardcoded in `simple-converter.cpp`. They are relative to the working directory from which the executable is run.
+- The input file `Wildlife_h264_aac.mp4` and output file `Wildlife_h265_aac.mp4` paths are hardcoded in `simple_converter.cpp`. They are relative to the working directory from which the executable is run.
 - If `transcoder->open()` fails, it may be because `Wildlife_h265_aac.mp4` already exists in the directory. Delete the output file and try again.
 - The output uses the `Preset::Video::Generic::MP4::Base_H264_AAC` preset with the video stream type changed to `StreamType::H265`, producing an MP4 container with H.265 video and AAC audio streams.

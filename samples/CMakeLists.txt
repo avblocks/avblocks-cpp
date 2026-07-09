@@ -68,7 +68,7 @@ add_subdirectory(${OS}/slideshow)
 
 add_subdirectory(${OS}/audio_upsample)
 
-add_subdirectory(${OS}/simple-converter)
+add_subdirectory(${OS}/simple_converter)
 
 add_subdirectory(${OS}/video_crop)
 add_subdirectory(${OS}/video_framerate)

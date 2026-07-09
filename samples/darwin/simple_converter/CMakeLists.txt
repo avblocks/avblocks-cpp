@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(simple-converter)
-set (target simple-converter)
+project(simple_converter)
+set (target simple_converter)
 
 add_executable(${target})
 

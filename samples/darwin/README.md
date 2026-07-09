@@ -387,8 +387,8 @@ Create a video from a sequence of images.
 
 See [slideshow](./slideshow) for details.
 
-### simple-converter
+### simple_converter
 
 Transcode a media file using a `Transcoder` with hardcoded input and output file paths.
 
-See [simple-converter](./simple-converter) for details.
+See [simple_converter](./simple_converter) for details.

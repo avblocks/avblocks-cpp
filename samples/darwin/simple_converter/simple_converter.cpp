@@ -9,33 +9,45 @@ using namespace primo::avblocks;
 int main(int argc, const char *argv[]) {
     Library::initialize();
 
+    auto inputFile = primo::ustring(L"Wildlife_h264_aac.mp4");
+    auto outputFile = primo::ustring(L"Wildlife_h265_aac.mp4");
+
     auto inputInfo = primo::make_ref(Library::createMediaInfo());
-    inputInfo->inputs()->at(0)->setFile(primo::ustring(L"Wildlife_h264_aac.mp4"));
+    inputInfo->inputs()->at(0)->setFile(inputFile);
 
     if (inputInfo->open()) {
-        auto inputSocket = primo::make_ref(Library::createMediaSocket(inputInfo.get()));
+        auto inputSocket = primo::make_ref(
+            Library::createMediaSocket(inputInfo.get())
+        );
         
         // Start with same output as the input, which is MP4 / H.264 + AAC
         auto outputSocket = primo::make_ref(inputSocket->clone());
 
-        // Change the video stream type to H.265 (HEVC) and the stream subtype to HEVC_Annex_B
-        auto outVideoStream = (VideoStreamInfo*)outputSocket->pins()->at(0)->streamInfo();
+        // Get the output video stream info
+        auto outVideoStream = (VideoStreamInfo*)outputSocket
+                                                ->pins()->at(0)
+                                                ->streamInfo();
+
+        // Change the video stream type to H.265 (HEVC) 
+        // and the stream subtype to HEVC Annex B
         outVideoStream->setStreamType(StreamType::H265);
         outVideoStream->setStreamSubType(StreamSubType::HEVC_Annex_B);
         
-        // Set the bitrate to 500 kbps (500,000 bits per second)
-        // Input is 700 kbps, so we are reducing the bitrate to 500 kbps for the output
+        // Input is H.264/AVC at 700 kbps
+        // With H.265/HEVC we can use lower bitrate, e.g. 500 kbps
         outVideoStream->setBitrate(500'000);
 
         // Change the output file name to Wildlife_h265_aac.mp4
-        outputSocket->setFile(primo::ustring(L"Wildlife_h265_aac.mp4"));
+        outputSocket->setFile(outputFile);
         
-        // Create Transcoder and configure it with the input and output sockets
+        // Create Transcoder and configure it with 
+        // the input and output sockets
         auto transcoder = primo::make_ref(Library::createTranscoder());
         transcoder->inputs()->add(inputSocket.get());
         transcoder->outputs()->add(outputSocket.get());
 
-        // Allow demo mode for the transcoder when using the demo version of the library
+        // Allow demo mode for the transcoder when 
+        // using the demo version of the library
         transcoder->setAllowDemoMode(true);
 
         // Run the transcoder
