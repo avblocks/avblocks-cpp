@@ -1213,7 +1213,12 @@ StreamInfo* si = pin->streamInfo();
 
 Complete working examples are available in the `samples` directory.
 
+
 ### macOS
+
+**Getting Started**
+
+- [`simple_converter`](./samples/darwin/simple_converter) — Transcode a media file using a `Transcoder` with hardcoded input and output file paths.
 
 **Media Info**
 - [`info_metadata_file`](./samples/darwin/info_metadata_file)
@@ -1269,9 +1274,22 @@ Complete working examples are available in the `samples` directory.
 - [`re-encode`](./samples/darwin/re-encode)
 - [`slideshow`](./samples/darwin/slideshow)
 
+**Audio Processing**
+- [`audio_upsample`](./samples/darwin/audio_upsample)
+
+**Video Processing**
+- [`video_framerate`](./samples/darwin/video_framerate)
+- [`video_pad`](./samples/darwin/video_pad)
+- [`video_crop`](./samples/darwin/video_crop)
+- [`video_upscale`](./samples/darwin/video_upscale)
+
 ---
 
 ### Linux
+
+**Getting Started**
+
+- [`simple_converter`](./samples/linux/simple_converter) — Transcode a media file using a `Transcoder` with hardcoded input and output file paths.
 
 **Media Info**
 - [`info_metadata_file`](./samples/linux/info_metadata_file)
@@ -1327,9 +1345,22 @@ Complete working examples are available in the `samples` directory.
 - [`re-encode`](./samples/linux/re-encode)
 - [`slideshow`](./samples/linux/slideshow)
 
+**Audio Processing**
+- [`audio_upsample`](./samples/linux/audio_upsample)
+
+**Video Processing**
+- [`video_framerate`](./samples/linux/video_framerate)
+- [`video_pad`](./samples/linux/video_pad)
+- [`video_crop`](./samples/linux/video_crop)
+- [`video_upscale`](./samples/linux/video_upscale)
+
 ---
 
 ### Windows
+
+**Getting Started**
+
+- [`simple_converter`](./samples/windows/simple_converter) — Transcode a media file using a `Transcoder` with hardcoded input and output file paths.
 
 **Media Info**
 - [`info_metadata_file`](./samples/windows/info_metadata_file)
@@ -1384,6 +1415,15 @@ Complete working examples are available in the `samples` directory.
 **Advanced**
 - [`re-encode`](./samples/windows/re-encode)
 - [`slideshow`](./samples/windows/slideshow)
+
+**Audio Processing**
+- [`audio_upsample`](./samples/windows/audio_upsample)
+
+**Video Processing**
+- [`video_framerate`](./samples/windows/video_framerate)
+- [`video_pad`](./samples/windows/video_pad)
+- [`video_crop`](./samples/windows/video_crop)
+- [`video_upscale`](./samples/windows/video_upscale)
 
 # Development
 
