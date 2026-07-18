@@ -114,7 +114,7 @@ Expand-Archive `
 
 The extracted files will be placed under `.\avblocks\`.
 
-For more details, see the platform-specific setup guides in `docs/`.
+For more details, see the platform-specific setup guides in [docs/](docs/).
 
 # Usage
 
