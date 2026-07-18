@@ -1,6 +1,6 @@
 # avblocks-cpp
 
-AVBlocks - Audio SDK and Video SDK - C++ SDK (CLI Samples)
+AVBlocks - Audio SDK - Video SDK - C++ SDK (CLI Samples)
 
 - [API Docs](https://doc.avblocks.com/core/latest/)
 - [Wiki](https://wiki.avblocks.com/)
