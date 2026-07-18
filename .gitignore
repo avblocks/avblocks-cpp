@@ -11,18 +11,21 @@ bin/
 /null.d
 
 # AVBlocks SDK
-sdk/
+/sdk
 
 # assets
-assets/
-package/
+/assets
+/package
 
 # output
-output/
+/output
 
 # generators
-xcode/
+/xcode
 
-vs2017/
-vs2019/
-vs2022/
+/vs2017
+/vs2019
+/vs2022
+
+# wiki
+/avblocks-wiki-src
