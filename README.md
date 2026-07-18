@@ -1,6 +1,6 @@
 # avblocks-cpp
 
-AVBlocks - Audio SDK - Video SDK - C++ SDK (CLI Samples)
+AVBlocks - Audio SDK - Video SDK - C++ SDK  - CLI Samples
 
 - [API Docs](https://doc.avblocks.com/core/latest/)
 - [Wiki](https://wiki.avblocks.com/)
@@ -1209,221 +1209,221 @@ StreamInfo* si = pin->streamInfo();
 - `AVBlocks64.dll` DLL must be in PATH or application directory
 - Use `/MT` or `/MTd` runtime library option
 
-## Sample Code
+# Examples
 
 Complete working examples are available in the `samples` directory.
 
 
-### macOS
+## macOS
 
 **Getting Started**
 
 - [`simple_converter`](./samples/darwin/simple_converter) — Transcode a media file using a `Transcoder` with hardcoded input and output file paths.
 
 **Media Info**
-- [`info_metadata_file`](./samples/darwin/info_metadata_file)
-- [`info_stream_file`](./samples/darwin/info_stream_file)
+- [`info_metadata_file`](./samples/darwin/info_metadata_file) — Extract metadata information from a media file
+- [`info_stream_file`](./samples/darwin/info_stream_file) — Extract the audio/video stream information from a media file
 
 **Decoding Audio**
-- [`dec_aac_adts_file`](./samples/darwin/dec_aac_adts_file)
-- [`dec_aac_adts_pull`](./samples/darwin/dec_aac_adts_pull)
-- [`dec_g711_alaw_file`](./samples/darwin/dec_g711_alaw_file)
-- [`dec_g711_ulaw_file`](./samples/darwin/dec_g711_ulaw_file)
-- [`dec_mp3_file`](./samples/darwin/dec_mp3_file)
-- [`dec_opus_file`](./samples/darwin/dec_opus_file)
-- [`dec_vorbis_file`](./samples/darwin/dec_vorbis_file)
+- [`dec_aac_adts_file`](./samples/darwin/dec_aac_adts_file) — Decode AAC file in ADTS format and save output to WAV file
+- [`dec_aac_adts_pull`](./samples/darwin/dec_aac_adts_pull) — Decode AAC file in ADTS format using `Transcoder::pull` and save output to WAV file
+- [`dec_g711_alaw_file`](./samples/darwin/dec_g711_alaw_file) — Decode G.711 A-law WAV file to PCM WAV file
+- [`dec_g711_ulaw_file`](./samples/darwin/dec_g711_ulaw_file) — Decode G.711 μ-law WAV file to PCM WAV file
+- [`dec_mp3_file`](./samples/darwin/dec_mp3_file) — Decode MP3 file and save output to WAV file
+- [`dec_opus_file`](./samples/darwin/dec_opus_file) — Decode Opus OGG file and save output to WAV file
+- [`dec_vorbis_file`](./samples/darwin/dec_vorbis_file) — Decode Vorbis OGG file and save output to WAV file
 
 **Decoding Video**
-- [`dec_avc_au`](./samples/darwin/dec_avc_au)
-- [`dec_avc_file`](./samples/darwin/dec_avc_file)
-- [`dec_hevc_au`](./samples/darwin/dec_hevc_au)
-- [`dec_hevc_file`](./samples/darwin/dec_hevc_file)
-- [`dec_vp8_file`](./samples/darwin/dec_vp8_file)
-- [`dec_vp9_file`](./samples/darwin/dec_vp9_file)
+- [`dec_avc_au`](./samples/darwin/dec_avc_au) — Decode a H.264 stream using sequence of files to simulate a stream of H.264 Access Units
+- [`dec_avc_file`](./samples/darwin/dec_avc_file) — Decode AVC/H.264 Annex B compressed file to YUV uncompressed file
+- [`dec_hevc_au`](./samples/darwin/dec_hevc_au) — Decode an H.265 stream using sequence of files to simulate a stream of H.265 Access Units
+- [`dec_hevc_file`](./samples/darwin/dec_hevc_file) — Decode an HEVC/H.265 Annex B compressed file to a raw uncompressed YUV video file
+- [`dec_vp8_file`](./samples/darwin/dec_vp8_file) — Decode VP8 video in IVF container to YUV uncompressed file
+- [`dec_vp9_file`](./samples/darwin/dec_vp9_file) — Decode VP9 video in IVF container to YUV uncompressed file
 
 **Encoding Audio**
-- [`enc_aac_adts_file`](./samples/darwin/enc_aac_adts_file)
-- [`enc_aac_adts_pull`](./samples/darwin/enc_aac_adts_pull)
-- [`enc_aac_adts_push`](./samples/darwin/enc_aac_adts_push)
-- [`enc_g711_alaw_file`](./samples/darwin/enc_g711_alaw_file)
-- [`enc_g711_ulaw_file`](./samples/darwin/enc_g711_ulaw_file)
-- [`enc_mp3_file`](./samples/darwin/enc_mp3_file)
-- [`enc_mp3_pull`](./samples/darwin/enc_mp3_pull)
-- [`enc_mp3_push`](./samples/darwin/enc_mp3_push)
-- [`enc_opus_file`](./samples/darwin/enc_opus_file)
-- [`enc_vorbis_file`](./samples/darwin/enc_vorbis_file)
+- [`enc_aac_adts_file`](./samples/darwin/enc_aac_adts_file) — Encode WAV file to AAC file in ADTS format
+- [`enc_aac_adts_pull`](./samples/darwin/enc_aac_adts_pull) — Encode WAV file to AAC file in ADTS format using `Transcoder::pull`
+- [`enc_aac_adts_push`](./samples/darwin/enc_aac_adts_push) — Encode WAV file to AAC file in ADTS format using `Transcoder::push`
+- [`enc_g711_alaw_file`](./samples/darwin/enc_g711_alaw_file) — Encode WAV file to G.711 A-law WAV file
+- [`enc_g711_ulaw_file`](./samples/darwin/enc_g711_ulaw_file) — Encode WAV file to G.711 μ-law WAV file
+- [`enc_mp3_file`](./samples/darwin/enc_mp3_file) — Encode WAV file to MP3 file
+- [`enc_mp3_pull`](./samples/darwin/enc_mp3_pull) — Encode WAV file to MP3 file using `Transcoder::pull`
+- [`enc_mp3_push`](./samples/darwin/enc_mp3_push) — Encode WAV file to MP3 file using `Transcoder::push`
+- [`enc_opus_file`](./samples/darwin/enc_opus_file) — Encode WAV file to Opus OGG file
+- [`enc_vorbis_file`](./samples/darwin/enc_vorbis_file) — Encode WAV file to Vorbis OGG file
 
 **Encoding Video**
-- [`enc_avc_file`](./samples/darwin/enc_avc_file)
-- [`enc_avc_pull`](./samples/darwin/enc_avc_pull)
-- [`enc_hevc_file`](./samples/darwin/enc_hevc_file)
-- [`enc_hevc_pull`](./samples/darwin/enc_hevc_pull)
-- [`enc_preset_file`](./samples/darwin/enc_preset_file)
-- [`enc_vp8_file`](./samples/darwin/enc_vp8_file)
-- [`enc_vp9_file`](./samples/darwin/enc_vp9_file)
+- [`enc_avc_file`](./samples/darwin/enc_avc_file) — Encode raw YUV video file to AVC/H.264 Annex B video file using `Transcoder::run`
+- [`enc_avc_pull`](./samples/darwin/enc_avc_pull) — Encode raw YUV video file to AVC/H.264 Annex B video file using `Transcoder::pull`
+- [`enc_hevc_file`](./samples/darwin/enc_hevc_file) — Encode raw YUV video file to HEVC/H.265 Annex B video file using `Transcoder::run`
+- [`enc_hevc_pull`](./samples/darwin/enc_hevc_pull) — Encode raw YUV video file to HEVC/H.265 Annex B video file using `Transcoder::pull`
+- [`enc_preset_file`](./samples/darwin/enc_preset_file) — Convert a raw YUV video file to a compressed video file using an AVBlocks preset
+- [`enc_vp8_file`](./samples/darwin/enc_vp8_file) — Encode raw YUV video file to VP8 video in IVF container using `Transcoder::run`
+- [`enc_vp9_file`](./samples/darwin/enc_vp9_file) — Encode raw YUV video file to VP9 video in IVF container using `Transcoder::run`
 
 **Muxing / Demuxing**
-- [`demux_mp4_file`](./samples/darwin/demux_mp4_file)
-- [`demux_webm_file`](./samples/darwin/demux_webm_file)
-- [`dump_avc_au`](./samples/darwin/dump_avc_au)
-- [`dump_hevc_au`](./samples/darwin/dump_hevc_au)
-- [`mux_mp4_file`](./samples/darwin/mux_mp4_file)
-- [`mux_webm_file`](./samples/darwin/mux_webm_file)
+- [`demux_mp4_file`](./samples/darwin/demux_mp4_file) — Extract the first audio and video elementary stream from an MP4 container into separate MP4 files
+- [`demux_webm_file`](./samples/darwin/demux_webm_file) — Extract the first audio and video elementary stream from a WebM container into separate WebM files
+- [`dump_avc_au`](./samples/darwin/dump_avc_au) — Split an H.264 (AVC) elementary stream to access units (AU), writing each to a separate file
+- [`dump_hevc_au`](./samples/darwin/dump_hevc_au) — Split an H.265 (HEVC) elementary stream into access units (AU), writing each to a separate file
+- [`mux_mp4_file`](./samples/darwin/mux_mp4_file) — Multiplex two single-stream MP4 files (AAC audio + H.264 video) into an MP4 container
+- [`mux_webm_file`](./samples/darwin/mux_webm_file) — Multiplex two single-stream WebM files (Vorbis audio + VP8 video) into a WebM container
 
 **Advanced**
-- [`re-encode`](./samples/darwin/re-encode)
-- [`slideshow`](./samples/darwin/slideshow)
+- [`re-encode`](./samples/darwin/re-encode) — Take an MP4 input and re-encode audio and video streams back into MP4 output
+- [`slideshow`](./samples/darwin/slideshow) — Create a video clip from a sequence of images
 
 **Audio Processing**
-- [`audio_upsample`](./samples/darwin/audio_upsample)
+- [`audio_upsample`](./samples/darwin/audio_upsample) — Upsample audio from 44.1 KHz to 48 KHz
 
 **Video Processing**
-- [`video_framerate`](./samples/darwin/video_framerate)
-- [`video_pad`](./samples/darwin/video_pad)
-- [`video_crop`](./samples/darwin/video_crop)
-- [`video_upscale`](./samples/darwin/video_upscale)
+- [`video_framerate`](./samples/darwin/video_framerate) — Change the frame rate of a video from 24 fps to 30 fps
+- [`video_pad`](./samples/darwin/video_pad) — Add black border padding around a video
+- [`video_crop`](./samples/darwin/video_crop) — Crop a video by removing pixels from the edges
+- [`video_upscale`](./samples/darwin/video_upscale) — Upscale a video to Full HD (1920×1080) using bicubic interpolation
 
 ---
 
-### Linux
+## Linux
 
 **Getting Started**
 
 - [`simple_converter`](./samples/linux/simple_converter) — Transcode a media file using a `Transcoder` with hardcoded input and output file paths.
 
 **Media Info**
-- [`info_metadata_file`](./samples/linux/info_metadata_file)
-- [`info_stream_file`](./samples/linux/info_stream_file)
+- [`info_metadata_file`](./samples/linux/info_metadata_file) — Extract metadata information from a media file
+- [`info_stream_file`](./samples/linux/info_stream_file) — Extract the audio/video stream information from a media file
 
 **Decoding Audio**
-- [`dec_aac_adts_file`](./samples/linux/dec_aac_adts_file)
-- [`dec_aac_adts_pull`](./samples/linux/dec_aac_adts_pull)
-- [`dec_g711_alaw_file`](./samples/linux/dec_g711_alaw_file)
-- [`dec_g711_ulaw_file`](./samples/linux/dec_g711_ulaw_file)
-- [`dec_mp3_file`](./samples/linux/dec_mp3_file)
-- [`dec_opus_file`](./samples/linux/dec_opus_file)
-- [`dec_vorbis_file`](./samples/linux/dec_vorbis_file)
+- [`dec_aac_adts_file`](./samples/linux/dec_aac_adts_file) — Decode AAC file in ADTS format and save output to WAV file
+- [`dec_aac_adts_pull`](./samples/linux/dec_aac_adts_pull) — Decode AAC file in ADTS format using `Transcoder::pull` and save output to WAV file
+- [`dec_g711_alaw_file`](./samples/linux/dec_g711_alaw_file) — Decode G.711 A-law WAV file to PCM WAV file
+- [`dec_g711_ulaw_file`](./samples/linux/dec_g711_ulaw_file) — Decode G.711 μ-law WAV file to PCM WAV file
+- [`dec_mp3_file`](./samples/linux/dec_mp3_file) — Decode MP3 file and save output to WAV file
+- [`dec_opus_file`](./samples/linux/dec_opus_file) — Decode Opus OGG file and save output to WAV file
+- [`dec_vorbis_file`](./samples/linux/dec_vorbis_file) — Decode Vorbis OGG file and save output to WAV file
 
 **Decoding Video**
-- [`dec_avc_au`](./samples/linux/dec_avc_au)
-- [`dec_avc_file`](./samples/linux/dec_avc_file)
-- [`dec_hevc_au`](./samples/linux/dec_hevc_au)
-- [`dec_hevc_file`](./samples/linux/dec_hevc_file)
-- [`dec_vp8_file`](./samples/linux/dec_vp8_file)
-- [`dec_vp9_file`](./samples/linux/dec_vp9_file)
+- [`dec_avc_au`](./samples/linux/dec_avc_au) — Decode a H.264 stream using sequence of files to simulate a stream of H.264 Access Units
+- [`dec_avc_file`](./samples/linux/dec_avc_file) — Decode AVC/H.264 Annex B compressed file to YUV uncompressed file
+- [`dec_hevc_au`](./samples/linux/dec_hevc_au) — Decode an H.265 stream using sequence of files to simulate a stream of H.265 Access Units
+- [`dec_hevc_file`](./samples/linux/dec_hevc_file) — Decode an HEVC/H.265 Annex B compressed file to a raw uncompressed YUV video file
+- [`dec_vp8_file`](./samples/linux/dec_vp8_file) — Decode VP8 video in IVF container to YUV uncompressed file
+- [`dec_vp9_file`](./samples/linux/dec_vp9_file) — Decode VP9 video in IVF container to YUV uncompressed file
 
 **Encoding Audio**
-- [`enc_aac_adts_file`](./samples/linux/enc_aac_adts_file)
-- [`enc_aac_adts_pull`](./samples/linux/enc_aac_adts_pull)
-- [`enc_aac_adts_push`](./samples/linux/enc_aac_adts_push)
-- [`enc_g711_alaw_file`](./samples/linux/enc_g711_alaw_file)
-- [`enc_g711_ulaw_file`](./samples/linux/enc_g711_ulaw_file)
-- [`enc_mp3_file`](./samples/linux/enc_mp3_file)
-- [`enc_mp3_pull`](./samples/linux/enc_mp3_pull)
-- [`enc_mp3_push`](./samples/linux/enc_mp3_push)
-- [`enc_opus_file`](./samples/linux/enc_opus_file)
-- [`enc_vorbis_file`](./samples/linux/enc_vorbis_file)
+- [`enc_aac_adts_file`](./samples/linux/enc_aac_adts_file) — Encode WAV file to AAC file in ADTS format
+- [`enc_aac_adts_pull`](./samples/linux/enc_aac_adts_pull) — Encode WAV file to AAC file in ADTS format using `Transcoder::pull`
+- [`enc_aac_adts_push`](./samples/linux/enc_aac_adts_push) — Encode WAV file to AAC file in ADTS format using `Transcoder::push`
+- [`enc_g711_alaw_file`](./samples/linux/enc_g711_alaw_file) — Encode WAV file to G.711 A-law WAV file
+- [`enc_g711_ulaw_file`](./samples/linux/enc_g711_ulaw_file) — Encode WAV file to G.711 μ-law WAV file
+- [`enc_mp3_file`](./samples/linux/enc_mp3_file) — Encode WAV file to MP3 file
+- [`enc_mp3_pull`](./samples/linux/enc_mp3_pull) — Encode WAV file to MP3 file using `Transcoder::pull`
+- [`enc_mp3_push`](./samples/linux/enc_mp3_push) — Encode WAV file to MP3 file using `Transcoder::push`
+- [`enc_opus_file`](./samples/linux/enc_opus_file) — Encode WAV file to Opus OGG file
+- [`enc_vorbis_file`](./samples/linux/enc_vorbis_file) — Encode WAV file to Vorbis OGG file
 
 **Encoding Video**
-- [`enc_avc_file`](./samples/linux/enc_avc_file)
-- [`enc_avc_pull`](./samples/linux/enc_avc_pull)
-- [`enc_hevc_file`](./samples/linux/enc_hevc_file)
-- [`enc_hevc_pull`](./samples/linux/enc_hevc_pull)
-- [`enc_preset_file`](./samples/linux/enc_preset_file)
-- [`enc_vp8_file`](./samples/linux/enc_vp8_file)
-- [`enc_vp9_file`](./samples/linux/enc_vp9_file)
+- [`enc_avc_file`](./samples/linux/enc_avc_file) — Encode raw YUV video file to AVC/H.264 Annex B video file using `Transcoder::run`
+- [`enc_avc_pull`](./samples/linux/enc_avc_pull) — Encode raw YUV video file to AVC/H.264 Annex B video file using `Transcoder::pull`
+- [`enc_hevc_file`](./samples/linux/enc_hevc_file) — Encode raw YUV video file to HEVC/H.265 Annex B video file using `Transcoder::run`
+- [`enc_hevc_pull`](./samples/linux/enc_hevc_pull) — Encode raw YUV video file to HEVC/H.265 Annex B video file using `Transcoder::pull`
+- [`enc_preset_file`](./samples/linux/enc_preset_file) — Convert a raw YUV video file to a compressed video file using an AVBlocks preset
+- [`enc_vp8_file`](./samples/linux/enc_vp8_file) — Encode raw YUV video file to VP8 video in IVF container using `Transcoder::run`
+- [`enc_vp9_file`](./samples/linux/enc_vp9_file) — Encode raw YUV video file to VP9 video in IVF container using `Transcoder::run`
 
 **Muxing / Demuxing**
-- [`demux_mp4_file`](./samples/linux/demux_mp4_file)
-- [`demux_webm_file`](./samples/linux/demux_webm_file)
-- [`dump_avc_au`](./samples/linux/dump_avc_au)
-- [`dump_hevc_au`](./samples/linux/dump_hevc_au)
-- [`mux_mp4_file`](./samples/linux/mux_mp4_file)
-- [`mux_webm_file`](./samples/linux/mux_webm_file)
+- [`demux_mp4_file`](./samples/linux/demux_mp4_file) — Extract the first audio and video elementary stream from an MP4 container into separate MP4 files
+- [`demux_webm_file`](./samples/linux/demux_webm_file) — Extract the first audio and video elementary stream from a WebM container into separate WebM files
+- [`dump_avc_au`](./samples/linux/dump_avc_au) — Split an H.264 (AVC) elementary stream to access units (AU), writing each to a separate file
+- [`dump_hevc_au`](./samples/linux/dump_hevc_au) — Split an H.265 (HEVC) elementary stream into access units (AU), writing each to a separate file
+- [`mux_mp4_file`](./samples/linux/mux_mp4_file) — Multiplex two single-stream MP4 files (AAC audio + H.264 video) into an MP4 container
+- [`mux_webm_file`](./samples/linux/mux_webm_file) — Multiplex two single-stream WebM files (Vorbis audio + VP8 video) into a WebM container
 
 **Advanced**
-- [`re-encode`](./samples/linux/re-encode)
-- [`slideshow`](./samples/linux/slideshow)
+- [`re-encode`](./samples/linux/re-encode) — Take an MP4 input and re-encode audio and video streams back into MP4 output
+- [`slideshow`](./samples/linux/slideshow) — Create a video clip from a sequence of images
 
 **Audio Processing**
-- [`audio_upsample`](./samples/linux/audio_upsample)
+- [`audio_upsample`](./samples/linux/audio_upsample) — Upsample audio from 44.1 KHz to 48 KHz
 
 **Video Processing**
-- [`video_framerate`](./samples/linux/video_framerate)
-- [`video_pad`](./samples/linux/video_pad)
-- [`video_crop`](./samples/linux/video_crop)
-- [`video_upscale`](./samples/linux/video_upscale)
+- [`video_framerate`](./samples/linux/video_framerate) — Change the frame rate of a video from 24 fps to 30 fps
+- [`video_pad`](./samples/linux/video_pad) — Add black border padding around a video
+- [`video_crop`](./samples/linux/video_crop) — Crop a video by removing pixels from the edges
+- [`video_upscale`](./samples/linux/video_upscale) — Upscale a video to Full HD (1920×1080) using bicubic interpolation
 
 ---
 
-### Windows
+## Windows
 
 **Getting Started**
 
 - [`simple_converter`](./samples/windows/simple_converter) — Transcode a media file using a `Transcoder` with hardcoded input and output file paths.
 
 **Media Info**
-- [`info_metadata_file`](./samples/windows/info_metadata_file)
-- [`info_stream_file`](./samples/windows/info_stream_file)
+- [`info_metadata_file`](./samples/windows/info_metadata_file) — Extract metadata information from a media file
+- [`info_stream_file`](./samples/windows/info_stream_file) — Extract the audio/video stream information from a media file
 
 **Decoding Audio**
-- [`dec_aac_adts_file`](./samples/windows/dec_aac_adts_file)
-- [`dec_aac_adts_pull`](./samples/windows/dec_aac_adts_pull)
-- [`dec_g711_alaw_file`](./samples/windows/dec_g711_alaw_file)
-- [`dec_g711_ulaw_file`](./samples/windows/dec_g711_ulaw_file)
-- [`dec_mp3_file`](./samples/windows/dec_mp3_file)
-- [`dec_opus_file`](./samples/windows/dec_opus_file)
-- [`dec_vorbis_file`](./samples/windows/dec_vorbis_file)
+- [`dec_aac_adts_file`](./samples/windows/dec_aac_adts_file) — Decode AAC file in ADTS format and save output to WAV file
+- [`dec_aac_adts_pull`](./samples/windows/dec_aac_adts_pull) — Decode AAC file in ADTS format using `Transcoder::pull` and save output to WAV file
+- [`dec_g711_alaw_file`](./samples/windows/dec_g711_alaw_file) — Decode G.711 A-law WAV file to PCM WAV file
+- [`dec_g711_ulaw_file`](./samples/windows/dec_g711_ulaw_file) — Decode G.711 μ-law WAV file to PCM WAV file
+- [`dec_mp3_file`](./samples/windows/dec_mp3_file) — Decode MP3 file and save output to WAV file
+- [`dec_opus_file`](./samples/windows/dec_opus_file) — Decode Opus OGG file and save output to WAV file
+- [`dec_vorbis_file`](./samples/windows/dec_vorbis_file) — Decode Vorbis OGG file and save output to WAV file
 
 **Decoding Video**
-- [`dec_avc_au`](./samples/windows/dec_avc_au)
-- [`dec_avc_file`](./samples/windows/dec_avc_file)
-- [`dec_hevc_au`](./samples/windows/dec_hevc_au)
-- [`dec_hevc_file`](./samples/windows/dec_hevc_file)
-- [`dec_vp8_file`](./samples/windows/dec_vp8_file)
-- [`dec_vp9_file`](./samples/windows/dec_vp9_file)
+- [`dec_avc_au`](./samples/windows/dec_avc_au) — Decode a H.264 stream using sequence of files to simulate a stream of H.264 Access Units
+- [`dec_avc_file`](./samples/windows/dec_avc_file) — Decode AVC/H.264 Annex B compressed file to YUV uncompressed file
+- [`dec_hevc_au`](./samples/windows/dec_hevc_au) — Decode an H.265 stream using sequence of files to simulate a stream of H.265 Access Units
+- [`dec_hevc_file`](./samples/windows/dec_hevc_file) — Decode an HEVC/H.265 Annex B compressed file to a raw uncompressed YUV video file
+- [`dec_vp8_file`](./samples/windows/dec_vp8_file) — Decode VP8 video in IVF container to YUV uncompressed file
+- [`dec_vp9_file`](./samples/windows/dec_vp9_file) — Decode VP9 video in IVF container to YUV uncompressed file
 
 **Encoding Audio**
-- [`enc_aac_adts_file`](./samples/windows/enc_aac_adts_file)
-- [`enc_aac_adts_pull`](./samples/windows/enc_aac_adts_pull)
-- [`enc_aac_adts_push`](./samples/windows/enc_aac_adts_push)
-- [`enc_g711_alaw_file`](./samples/windows/enc_g711_alaw_file)
-- [`enc_g711_ulaw_file`](./samples/windows/enc_g711_ulaw_file)
-- [`enc_mp3_file`](./samples/windows/enc_mp3_file)
-- [`enc_mp3_pull`](./samples/windows/enc_mp3_pull)
-- [`enc_mp3_push`](./samples/windows/enc_mp3_push)
-- [`enc_opus_file`](./samples/windows/enc_opus_file)
-- [`enc_vorbis_file`](./samples/windows/enc_vorbis_file)
+- [`enc_aac_adts_file`](./samples/windows/enc_aac_adts_file) — Encode WAV file to AAC file in ADTS format
+- [`enc_aac_adts_pull`](./samples/windows/enc_aac_adts_pull) — Encode WAV file to AAC file in ADTS format using `Transcoder::pull`
+- [`enc_aac_adts_push`](./samples/windows/enc_aac_adts_push) — Encode WAV file to AAC file in ADTS format using `Transcoder::push`
+- [`enc_g711_alaw_file`](./samples/windows/enc_g711_alaw_file) — Encode WAV file to G.711 A-law WAV file
+- [`enc_g711_ulaw_file`](./samples/windows/enc_g711_ulaw_file) — Encode WAV file to G.711 μ-law WAV file
+- [`enc_mp3_file`](./samples/windows/enc_mp3_file) — Encode WAV file to MP3 file
+- [`enc_mp3_pull`](./samples/windows/enc_mp3_pull) — Encode WAV file to MP3 file using `Transcoder::pull`
+- [`enc_mp3_push`](./samples/windows/enc_mp3_push) — Encode WAV file to MP3 file using `Transcoder::push`
+- [`enc_opus_file`](./samples/windows/enc_opus_file) — Encode WAV file to Opus OGG file
+- [`enc_vorbis_file`](./samples/windows/enc_vorbis_file) — Encode WAV file to Vorbis OGG file
 
 **Encoding Video**
-- [`enc_avc_file`](./samples/windows/enc_avc_file)
-- [`enc_avc_pull`](./samples/windows/enc_avc_pull)
-- [`enc_hevc_file`](./samples/windows/enc_hevc_file)
-- [`enc_hevc_pull`](./samples/windows/enc_hevc_pull)
-- [`enc_preset_file`](./samples/windows/enc_preset_file)
-- [`enc_vp8_file`](./samples/windows/enc_vp8_file)
-- [`enc_vp9_file`](./samples/windows/enc_vp9_file)
+- [`enc_avc_file`](./samples/windows/enc_avc_file) — Encode raw YUV video file to AVC/H.264 Annex B video file using `Transcoder::run`
+- [`enc_avc_pull`](./samples/windows/enc_avc_pull) — Encode raw YUV video file to AVC/H.264 Annex B video file using `Transcoder::pull`
+- [`enc_hevc_file`](./samples/windows/enc_hevc_file) — Encode raw YUV video file to HEVC/H.265 Annex B video file using `Transcoder::run`
+- [`enc_hevc_pull`](./samples/windows/enc_hevc_pull) — Encode raw YUV video file to HEVC/H.265 Annex B video file using `Transcoder::pull`
+- [`enc_preset_file`](./samples/windows/enc_preset_file) — Convert a raw YUV video file to a compressed video file using an AVBlocks preset
+- [`enc_vp8_file`](./samples/windows/enc_vp8_file) — Encode raw YUV video file to VP8 video in IVF container using `Transcoder::run`
+- [`enc_vp9_file`](./samples/windows/enc_vp9_file) — Encode raw YUV video file to VP9 video in IVF container using `Transcoder::run`
 
 **Muxing / Demuxing**
-- [`demux_mp4_file`](./samples/windows/demux_mp4_file)
-- [`demux_webm_file`](./samples/windows/demux_webm_file)
-- [`dump_avc_au`](./samples/windows/dump_avc_au)
-- [`dump_hevc_au`](./samples/windows/dump_hevc_au)
-- [`mux_mp4_file`](./samples/windows/mux_mp4_file)
-- [`mux_webm_file`](./samples/windows/mux_webm_file)
+- [`demux_mp4_file`](./samples/windows/demux_mp4_file) — Extract the first audio and video elementary stream from an MP4 container into separate MP4 files
+- [`demux_webm_file`](./samples/windows/demux_webm_file) — Extract the first audio and video elementary stream from a WebM container into separate WebM files
+- [`dump_avc_au`](./samples/windows/dump_avc_au) — Split an H.264 (AVC) elementary stream to access units (AU), writing each to a separate file
+- [`dump_hevc_au`](./samples/windows/dump_hevc_au) — Split an H.265 (HEVC) elementary stream into access units (AU), writing each to a separate file
+- [`mux_mp4_file`](./samples/windows/mux_mp4_file) — Multiplex two single-stream MP4 files (AAC audio + H.264 video) into an MP4 container
+- [`mux_webm_file`](./samples/windows/mux_webm_file) — Multiplex two single-stream WebM files (Vorbis audio + VP8 video) into a WebM container
 
 **Advanced**
-- [`re-encode`](./samples/windows/re-encode)
-- [`slideshow`](./samples/windows/slideshow)
+- [`re-encode`](./samples/windows/re-encode) — Take an MP4 input and re-encode audio and video streams back into MP4 output
+- [`slideshow`](./samples/windows/slideshow) — Create a video clip from a sequence of images
 
 **Audio Processing**
-- [`audio_upsample`](./samples/windows/audio_upsample)
+- [`audio_upsample`](./samples/windows/audio_upsample) — Upsample audio from 44.1 KHz to 48 KHz
 
 **Video Processing**
-- [`video_framerate`](./samples/windows/video_framerate)
-- [`video_pad`](./samples/windows/video_pad)
-- [`video_crop`](./samples/windows/video_crop)
-- [`video_upscale`](./samples/windows/video_upscale)
+- [`video_framerate`](./samples/windows/video_framerate) — Change the frame rate of a video from 24 fps to 30 fps
+- [`video_pad`](./samples/windows/video_pad) — Add black border padding around a video
+- [`video_crop`](./samples/windows/video_crop) — Crop a video by removing pixels from the edges
+- [`video_upscale`](./samples/windows/video_upscale) — Upscale a video to Full HD (1920×1080) using bicubic interpolation
 
 # Development
 
