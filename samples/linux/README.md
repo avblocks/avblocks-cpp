@@ -1,5 +1,13 @@
 # Samples - C++ / Linux
 
+## Getting Started
+
+### simple_converter
+
+Transcodes an H.264/AVC video to H.265/HEVC.
+
+See [simple_converter](./simple_converter) for build and run instructions.
+
 ## Media Info
 
 ### info_metadata_file
@@ -284,9 +292,3 @@ See [re-encode](./re-encode) for details.
 Create a video from a sequence of images.
 
 See [slideshow](./slideshow) for details.
-
-### simple_converter
-
-Transcode a media file using a `Transcoder` with hardcoded input and output file paths.
-
-See [simple_converter](./simple_converter) for details.
