@@ -2,117 +2,115 @@
 
 AVBlocks - Audio SDK - Video SDK - C++ SDK  - CLI Samples
 
+# Docs
+
 - [API Docs](https://doc.avblocks.com/core/latest/)
 - [Wiki](https://wiki.avblocks.com/)
 - [Blog](https://blog.avblocks.com/)
 
 # Installation
 
-Download and install the AVBlocks demo version on your platform. The extracted files should be placed under the `sdk/` directory of this repository.
+Download and install the AVBlocks demo version on your platform. The extracted files will be placed under the `sdk/` directory of this repository.
 
 ## Linux
 
-### Download
-
 ```bash
-AVBLOCKS_BASE_URL="https://github.com/avblocks/avblocks-core/releases/download"
-AVBLOCKS_VERSION="v3.4.0-demo.1"
+# select version and platform
+tag="v3.4.0-demo.1"
+platform="linux"
 
-curl -L \
-  -o "avblocks-${AVBLOCKS_VERSION}-linux.tar.gz" \
-  "${AVBLOCKS_BASE_URL}/${AVBLOCKS_VERSION}/avblocks-${AVBLOCKS_VERSION}-linux.tar.gz"
+# download
+mkdir -p ./sdk
+cd ./sdk
+
+# sdk
+curl \
+  --location \
+  --output ./avblocks-$tag-$platform.tar.gz \
+  https://github.com/avblocks/avblocks-core/releases/download/$tag/avblocks-$tag-$platform.tar.gz
+  
+# sha256 checksum
+curl \
+  --location \
+  --output ./avblocks-$tag-$platform.tar.gz.sha256 \
+  https://github.com/avblocks/avblocks-core/releases/download/$tag/avblocks-$tag-$platform.tar.gz.sha256
+
+# verify sha256 checksum
+shasum --check ./avblocks-$tag-$platform.tar.gz.sha256
+
+# extract
+tar -xvf avblocks-$tag-$platform.tar.gz
+
+cd ..
 ```
-
-### Verify Integrity (Optional)
-
-```bash
-curl -L \
-  -o "avblocks-${AVBLOCKS_VERSION}-linux.tar.gz.sha256" \
-  "${AVBLOCKS_BASE_URL}/${AVBLOCKS_VERSION}/avblocks-${AVBLOCKS_VERSION}-linux.tar.gz.sha256"
-
-sha256sum -c "avblocks-${AVBLOCKS_VERSION}-linux.tar.gz.sha256"
-```
-
-### Extract
-
-```bash
-mkdir -p ./avblocks
-tar -xzf "avblocks-${AVBLOCKS_VERSION}-linux.tar.gz" -C ./avblocks --strip-components=1
-```
-
-The extracted files will be placed under `./avblocks/`.
 
 ## macOS
 
-### Download
-
 ```bash
-AVBLOCKS_BASE_URL="https://github.com/avblocks/avblocks-core/releases/download"
-AVBLOCKS_VERSION="v3.4.0-demo.1"
+# select version and platform
+tag="v3.4.0-demo.1"
+platform="darwin"
 
-curl -L \
-  -o "avblocks-${AVBLOCKS_VERSION}-darwin.zip" \
-  "${AVBLOCKS_BASE_URL}/${AVBLOCKS_VERSION}/avblocks-${AVBLOCKS_VERSION}-darwin.zip"
+# download
+mkdir -p ./sdk
+cd ./sdk
+
+# sdk
+curl \
+  --location \
+  --output ./avblocks-$tag-$platform.zip \
+  https://github.com/avblocks/avblocks-core/releases/download/$tag/avblocks-$tag-$platform.zip
+  
+# sha256 checksum
+curl \
+  --location \
+  --output ./avblocks-$tag-$platform.zip.sha256 \
+  https://github.com/avblocks/avblocks-core/releases/download/$tag/avblocks-$tag-$platform.zip.sha256
+
+# verify sha256 checksum
+shasum --check ./avblocks-$tag-$platform.zip.sha256
+
+# unzip
+unzip avblocks-$tag-$platform.zip
+
+cd ..
 ```
-
-### Verify Integrity (Optional)
-
-```bash
-curl -L \
-  -o "avblocks-${AVBLOCKS_VERSION}-darwin.zip.sha256" \
-  "${AVBLOCKS_BASE_URL}/${AVBLOCKS_VERSION}/avblocks-${AVBLOCKS_VERSION}-darwin.zip.sha256"
-
-shasum -a 256 "avblocks-${AVBLOCKS_VERSION}-darwin.zip"
-```
-
-The output should match the contents of the `.sha256` file.
-
-### Extract
-
-```bash
-mkdir -p ./avblocks
-unzip -q "avblocks-${AVBLOCKS_VERSION}-darwin.zip" -d ./avblocks
-```
-
-The extracted files will be placed under `./avblocks/`.
 
 ## Windows
 
-### Download
+> Scripts are PowerShell
 
 ```powershell
-$BaseUrl = "https://github.com/avblocks/avblocks-core/releases/download"
-$Version = "v3.4.0-demo.1"
+# select version and platform
+$tag='v3.4.0-demo.1'
+$platform='windows'
 
-Invoke-WebRequest `
-    -Uri "${BaseUrl}/${Version}/avblocks-${Version}-windows.zip" `
-    -OutFile "avblocks-${Version}-windows.zip"
+# download
+new-item -Force -ItemType Directory ./sdk
+cd ./sdk
+
+# sdk
+curl.exe `
+  --location `
+  --output ./avblocks-$tag-$platform.zip `
+  https://github.com/avblocks/avblocks-core/releases/download/$tag/avblocks-$tag-$platform.zip
+  
+# sha256 checksum
+curl.exe `
+  --location `
+  --output ./avblocks-$tag-$platform.zip.sha256 `
+  https://github.com/avblocks/avblocks-core/releases/download/$tag/avblocks-$tag-$platform.zip.sha256
+
+# verify checksum
+$downloadedHash = (Get-FileHash -Algorithm SHA256 ./avblocks-$tag-$platform.zip).Hash.ToLower()
+$expectedHash = (Get-Content ./avblocks-$tag-$platform.zip.sha256).Split(' ')[0].ToLower()
+if ($downloadedHash -eq $expectedHash) { Write-Host "Checksum OK!"; } else { Write-Host "Checksum failed!"; }
+
+# unzip
+expand-archive -Force -Path avblocks-$tag-$platform.zip -DestinationPath .
+
+cd ..
 ```
-
-### Verify Integrity (Optional)
-
-```powershell
-$BaseUrl = "https://github.com/avblocks/avblocks-core/releases/download"
-$Version = "v3.4.0-demo.1"
-
-Invoke-WebRequest `
-    -Uri "${BaseUrl}/${Version}/avblocks-${Version}-windows.zip.sha256" `
-    -OutFile "avblocks-${Version}-windows.zip.sha256"
-
-Get-FileHash -Algorithm SHA256 "avblocks-${Version}-windows.zip"
-```
-
-The output should match the contents of the `.sha256` file.
-
-### Extract
-
-```powershell
-Expand-Archive `
-    -Path "avblocks-${Version}-windows.zip" `
-    -DestinationPath "./avblocks" -Force
-```
-
-The extracted files will be placed under `.\avblocks\`.
 
 For more details, see the platform-specific setup guides in [docs/](docs/).
 
