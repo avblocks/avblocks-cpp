@@ -77,6 +77,10 @@ add_subdirectory(${OS}/video_upscale)
 
 # add projects, each project should be in its own directory
 if (OS STREQUAL "darwin")
+add_subdirectory(${OS}/simple_audio_upsample)
+add_subdirectory(${OS}/simple_video_crop)
+add_subdirectory(${OS}/simple_video_pad)
+add_subdirectory(${OS}/simple_video_upscale)
 endif()
 
 if(OS STREQUAL "linux")
