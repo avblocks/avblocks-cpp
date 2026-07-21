@@ -9,7 +9,7 @@ using namespace primo::avblocks;
 int main(int argc, const char *argv[]) {
     Library::initialize();
 
-    auto inputFile = primo::ustring(L"AndrewConnolly_2014_640x480.mp4");
+    auto inputFile = primo::ustring(L"AndrewConnolly_2014.mp4");
     auto outputFile = primo::ustring(L"AndrewConnolly_2014_1080p.mp4");
 
     auto inputInfo = primo::make_ref(Library::createMediaInfo());

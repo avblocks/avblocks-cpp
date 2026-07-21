@@ -33,8 +33,8 @@ The built executable will be placed in `bin/x64/simple_video_upscale`.
 1. Download the sample video, the MP4 file from the TED talk video [What's the next window into our universe?](https://archive.org/details/AndrewConnolly_2014) by Andrew Connolly (480p, 854x480):
 
     ```sh
-    curl -L -o AndrewConnolly_2014_640x480.mp4 \
-        https://archive.org/download/AndrewConnolly_2014/AndrewConnolly_2014_640x480.mp4
+    curl -L -o AndrewConnolly_2014.mp4 \
+        https://archive.org/download/AndrewConnolly_2014/AndrewConnolly_2014.mp4
     ```
 
 2. Run the sample from the sample directory (the input/output file paths are relative to the working directory):
@@ -48,6 +48,6 @@ The built executable will be placed in `bin/x64/simple_video_upscale`.
 
 ## Notes
 
-- The input file `AndrewConnolly_2014_640x480.mp4` and output file `AndrewConnolly_2014_1080p.mp4` paths are hardcoded in `simple_video_upscale.cpp`. They are relative to the working directory from which the executable is run.
+- The input file `AndrewConnolly_2014.mp4` and output file `AndrewConnolly_2014_1080p.mp4` paths are hardcoded in `simple_video_upscale.cpp`. They are relative to the working directory from which the executable is run.
 - If `transcoder->open()` fails, it may be because `AndrewConnolly_2014_1080p.mp4` already exists in the directory. Delete the output file and try again.
 - The output video stream is resized to 1920x1080 (Full HD) using `InterpolationMethod::Cubic`, which gives the best upscaling quality at the cost of speed. The audio stream is copied from the source as is.
