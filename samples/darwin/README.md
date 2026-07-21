@@ -32,6 +32,12 @@ Scales a 480p video up to Full HD 1080p.
 
 See [simple_video_upscale](./simple_video_upscale) for build and run instructions.
 
+### simple_video_framerate
+
+Changes the frame rate of a video from 24 fps to 30 fps.
+
+See [simple_video_framerate](./simple_video_framerate) for build and run instructions.
+
 ## Media Info
 
 ### info_metadata_file
