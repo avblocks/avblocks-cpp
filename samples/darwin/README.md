@@ -156,6 +156,12 @@ Decode a compressed AVC / H.264 Annex B file to raw uncompressed YUV video file.
 
 See [dec_avc_file](./dec_avc_file) for details.
 
+#### dec_avc_pull
+
+Decode an AVC / H.264 Annex B elementary stream using `Transcoder::pull` and save the output to raw YUV file.
+
+See [dec_avc_pull](./dec_avc_pull) for details.
+
 ### HEVC / H.265
 
 > High Efficiency Video Coding

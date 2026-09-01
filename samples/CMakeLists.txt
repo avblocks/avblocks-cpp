@@ -11,6 +11,7 @@ add_subdirectory(${OS}/dec_aac_adts_pull)
 
 add_subdirectory(${OS}/dec_avc_au)
 add_subdirectory(${OS}/dec_avc_file)
+add_subdirectory(${OS}/dec_avc_pull)
 
 add_subdirectory(${OS}/dec_g711_alaw_file)
 add_subdirectory(${OS}/dec_g711_ulaw_file)
