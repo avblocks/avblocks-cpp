@@ -113,7 +113,7 @@ bool decodeAvcPull(Options& opt)
     return success;
 }
 
-int main(int argc, wchar_t* argv[])
+int wmain(int argc, wchar_t* argv[])
 {
     Options opt;
 
