@@ -11,6 +11,7 @@ add_subdirectory(${OS}/dec_aac_adts_pull)
 
 add_subdirectory(${OS}/dec_avc_au)
 add_subdirectory(${OS}/dec_avc_file)
+add_subdirectory(${OS}/dec_avc_pull)
 
 add_subdirectory(${OS}/dec_g711_alaw_file)
 add_subdirectory(${OS}/dec_g711_ulaw_file)
@@ -71,6 +72,7 @@ add_subdirectory(${OS}/audio_upsample)
 add_subdirectory(${OS}/simple_converter)
 add_subdirectory(${OS}/simple_audio_upsample)
 add_subdirectory(${OS}/simple_video_crop)
+add_subdirectory(${OS}/simple_video_framerate)
 add_subdirectory(${OS}/simple_video_pad)
 add_subdirectory(${OS}/simple_video_upscale)
 
@@ -81,8 +83,6 @@ add_subdirectory(${OS}/video_upscale)
 
 # add projects, each project should be in its own directory
 if (OS STREQUAL "darwin")
-    add_subdirectory(${OS}/dec_avc_pull)
-    add_subdirectory(${OS}/simple_video_framerate)
 endif()
 
 if(OS STREQUAL "linux")
