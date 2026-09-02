@@ -280,6 +280,12 @@ Encode raw YUV video file to AVC / H.264 Annex B video file using `Transcoder::p
 
 See [enc_avc_pull](./enc_avc_pull) for details.
 
+#### enc_avc_push
+
+Encode raw YUV video file to AVC / H.264 Annex B video file using `Transcoder::push`.
+
+See [enc_avc_push](./enc_avc_push) for details.
+
 ### HEVC / H.265
 
 > High Efficiency Video Coding
