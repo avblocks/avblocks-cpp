@@ -32,13 +32,13 @@ The built executable will be placed in `bin/x64/simple_video_framerate`.
 1. Download the sample video, the MP4 file from the TED talk video [What's the next window into our universe?](https://archive.org/details/AndrewConnolly_2014) by Andrew Connolly (Wide 480p, 854x480, 24 fps):
 
     ```sh
+    cd samples/darwin/simple_video_framerate
     curl -L -o AndrewConnolly_2014.mp4 "https://archive.org/download/AndrewConnolly_2014/AndrewConnolly_2014.mp4"
     ```
 
 2. Run the sample from the sample directory (the input/output file paths are relative to the working directory):
 
     ```sh
-    cd samples/darwin/simple_video_framerate
     ../../../bin/x64/simple_video_framerate
     ```
 

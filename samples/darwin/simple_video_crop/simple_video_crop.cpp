@@ -10,7 +10,7 @@ int main(int argc, const char *argv[]) {
     Library::initialize();
 
     auto inputFile = primo::ustring(L"AndrewConnolly_2014.mp4");
-    auto outputFile = primo::ustring(L"AndrewConnolly_2014.mp4");
+    auto outputFile = primo::ustring(L"AndrewConnolly_2014_cropped.mp4");
 
     auto inputInfo = primo::make_ref(Library::createMediaInfo());
     inputInfo->inputs()->at(0)->setFile(inputFile);

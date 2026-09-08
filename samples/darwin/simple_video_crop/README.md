@@ -33,20 +33,20 @@ The built executable will be placed in `bin/x64/simple_video_crop`.
 1. Download the sample video, the MP4 file from the TED talk video [What's the next window into our universe?](https://archive.org/details/AndrewConnolly_2014) by Andrew Connolly (Wide 480p, 854x480, 16:9):
 
     ```sh
+    cd samples/darwin/simple_video_crop
     curl -L -o AndrewConnolly_2014.mp4 "https://archive.org/download/AndrewConnolly_2014/AndrewConnolly_2014.mp4"
     ```
 
 2. Run the sample from the sample directory (the input/output file paths are relative to the working directory):
 
     ```sh
-    cd samples/darwin/simple_video_crop
     ../../../bin/x64/simple_video_crop
     ```
 
-3. The cropped output file `AndrewConnolly_2014.mp4` will be created in the `samples/darwin/simple_video_crop` directory.
+3. The cropped output file `AndrewConnolly_2014_cropped.mp4` will be created in the `samples/darwin/simple_video_crop` directory.
 
 ## Notes
 
-- The input file `AndrewConnolly_2014.mp4` and output file `AndrewConnolly_2014.mp4` paths are hardcoded in `simple_video_crop.cpp`. They are relative to the working directory from which the executable is run.
-- If `transcoder->open()` fails, it may be because `AndrewConnolly_2014.mp4` already exists in the directory. Delete the output file and try again.
+- The input file `AndrewConnolly_2014.mp4` and output file `AndrewConnolly_2014_cropped.mp4` paths are hardcoded in `simple_video_crop.cpp`. They are relative to the working directory from which the executable is run.
+- If `transcoder->open()` fails, it may be because `AndrewConnolly_2014_cropped.mp4` already exists in the directory. Delete the output file and try again.
 - The source video is 16:9 at 854x480. To crop it to 4:3 at 640x480, (854 - 640) / 2 = 107 pixels are cropped from the left and right edges. The audio stream is copied from the source as is.

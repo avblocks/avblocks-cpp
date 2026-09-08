@@ -32,6 +32,7 @@ The built executable will be placed in `bin/x64/simple_audio_upsample`.
 1. Download the sample audio, the `kahvi011_kennybeltrey-hydrate.mp3` song from the [Internet Archive](https://archive.org/details/kahvi011) (MPEG Audio Layer 3, 44.1 KHz, Joint Stereo):
 
     ```sh
+    cd samples/darwin/simple_audio_upsample
     curl -L -o kahvi011_kennybeltrey-hydrate.mp3 \
         https://archive.org/download/kahvi011/kahvi011_kennybeltrey-hydrate.mp3
     ```
@@ -39,7 +40,6 @@ The built executable will be placed in `bin/x64/simple_audio_upsample`.
 2. Run the sample from the sample directory (the input/output file paths are relative to the working directory):
 
     ```sh
-    cd samples/darwin/simple_audio_upsample
     ../../../bin/x64/simple_audio_upsample
     ```
 

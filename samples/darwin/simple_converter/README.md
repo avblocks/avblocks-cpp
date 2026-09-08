@@ -31,13 +31,13 @@ The built executable will be placed in `bin/x64/simple_converter`.
 1. Download the sample video:
 
     ```sh
+    cd samples/darwin/simple_converter
     curl -L -o Wildlife_h264_aac.mp4 https://archive.org/download/WildlifeSampleVideo/Wildlife.mp4
     ```
 
 2. Run the sample from the sample directory (the input/output file paths are relative to the working directory):
 
     ```sh
-    cd samples/darwin/simple_converter
     ../../../bin/x64/simple_converter
     ```
 
