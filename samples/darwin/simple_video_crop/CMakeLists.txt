@@ -35,6 +35,11 @@ if(OS STREQUAL "darwin")
         target_compile_options(${target} PRIVATE -m64 -fPIC)
     endif()
 
+    # arm64 compile options
+    if (PLATFORM STREQUAL "arm64")
+        target_compile_options(${target} PRIVATE -fPIC)
+    endif()
+
     # debug compile options
     if (CMAKE_BUILD_TYPE STREQUAL "Debug")
         target_compile_options(${target} PRIVATE -g)

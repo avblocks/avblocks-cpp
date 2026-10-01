@@ -13,7 +13,7 @@ This sample demonstrates the basic AVBlocks transcoding workflow:
 
 No command line parsing is used — the input and output file paths are hardcoded in the source code.
 
-## Building
+## Building (x64)
 
 From the repository root:
 
@@ -26,7 +26,20 @@ ninja
 
 The built executable will be placed in `bin/x64/simple_converter`.
 
-## Running
+## Building (arm64)
+
+From the repository root:
+
+```sh
+mkdir -p build/debug_arm64
+cd build/debug_arm64
+cmake -G 'Ninja' -DCMAKE_BUILD_TYPE=debug -DPLATFORM=arm64 ../../samples
+ninja
+```
+
+The built executable will be placed in `bin/arm64/simple_converter`.
+
+## Running (x64)
 
 1. Download the sample video:
 
@@ -39,6 +52,23 @@ The built executable will be placed in `bin/x64/simple_converter`.
 
     ```sh
     ../../../bin/x64/simple_converter
+    ```
+
+3. The transcoded output file `Wildlife_h265_aac.mp4` will be created in the `samples/darwin/simple_converter` directory.
+
+## Running (arm64)
+
+1. Download the sample video:
+
+    ```sh
+    cd samples/darwin/simple_converter
+    curl -L -o Wildlife_h264_aac.mp4 https://archive.org/download/WildlifeSampleVideo/Wildlife.mp4
+    ```
+
+2. Run the sample from the sample directory (the input/output file paths are relative to the working directory):
+
+    ```sh
+    ../../../bin/arm64/simple_converter
     ```
 
 3. The transcoded output file `Wildlife_h265_aac.mp4` will be created in the `samples/darwin/simple_converter` directory.

@@ -14,7 +14,7 @@ This sample demonstrates the basic AVBlocks frame rate conversion workflow:
 
 No command line parsing is used — the input and output file paths are hardcoded in the source code.
 
-## Building
+## Building (x64)
 
 From the repository root:
 
@@ -27,7 +27,20 @@ ninja
 
 The built executable will be placed in `bin/x64/simple_video_framerate`.
 
-## Running
+## Building (arm64)
+
+From the repository root:
+
+```sh
+mkdir -p build/debug_arm64
+cd build/debug_arm64
+cmake -G 'Ninja' -DCMAKE_BUILD_TYPE=debug -DPLATFORM=arm64 ../../samples
+ninja
+```
+
+The built executable will be placed in `bin/arm64/simple_video_framerate`.
+
+## Running (x64)
 
 1. Download the sample video, the MP4 file from the TED talk video [What's the next window into our universe?](https://archive.org/details/AndrewConnolly_2014) by Andrew Connolly (Wide 480p, 854x480, 24 fps):
 
@@ -40,6 +53,23 @@ The built executable will be placed in `bin/x64/simple_video_framerate`.
 
     ```sh
     ../../../bin/x64/simple_video_framerate
+    ```
+
+3. The converted output file `AndrewConnolly_2014_30fps.mp4` will be created in the `samples/darwin/simple_video_framerate` directory.
+
+## Running (arm64)
+
+1. Download the sample video, the MP4 file from the TED talk video [What's the next window into our universe?](https://archive.org/details/AndrewConnolly_2014) by Andrew Connolly (Wide 480p, 854x480, 24 fps):
+
+    ```sh
+    cd samples/darwin/simple_video_framerate
+    curl -L -o AndrewConnolly_2014.mp4 "https://archive.org/download/AndrewConnolly_2014/AndrewConnolly_2014.mp4"
+    ```
+
+2. Run the sample from the sample directory (the input/output file paths are relative to the working directory):
+
+    ```sh
+    ../../../bin/arm64/simple_video_framerate
     ```
 
 3. The converted output file `AndrewConnolly_2014_30fps.mp4` will be created in the `samples/darwin/simple_video_framerate` directory.
