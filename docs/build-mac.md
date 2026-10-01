@@ -26,15 +26,28 @@ source ./configure.sh
 
 #### Build
 
+The target architecture defaults to the host (`arm64` on Apple Silicon, `x64` on Intel). Use `--platform` to override it.
+
 ```bash
 ./scripts/build.sh --type release
+
+# explicit platform
+./scripts/build.sh --type release --platform arm64
+./scripts/build.sh --type release --platform x64
 ```
+
+> The `sdk/` directory must contain the AVBlocks Core build for the same architecture. Output goes to `build/<type>_<platform>`, e.g. `build/release_arm64`.
 
 #### Clean
 
 ```bash
 ./scripts/clean.sh --type release
+./scripts/clean.sh --type release --platform arm64
 ```
+
+#### CMake presets
+
+Presets are also available for both architectures, e.g. `debug-arm64`, `release-arm64`, `debug-demo-arm64`, `release-demo-arm64` (and the `x64` equivalents).
 
 #### Edit
 
@@ -51,7 +64,7 @@ code .
 ```bash
 mkdir -p ./xcode
 pushd ./xcode
-cmake -G 'Xcode' -DCMAKE_BUILD_TYPE=Debug -DPLATFORM=x64 ..
+cmake -G 'Xcode' -DCMAKE_BUILD_TYPE=Debug -DPLATFORM=arm64 ..   # or x64 for Intel
 popd  
 ```
 

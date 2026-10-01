@@ -48,8 +48,9 @@ cd ..
 
 ```bash
 # select version and platform
+# "darwin-arm64" for Apple Silicon (M1/M2/M3/M4), "darwin" for Intel (x64)
 tag="v3.4.0-demo.1"
-platform="darwin"
+platform="darwin-arm64"
 
 # download
 mkdir -p ./sdk
@@ -1194,7 +1195,7 @@ StreamInfo* si = pin->streamInfo();
 ## Platform-Specific Considerations
 
 ### macOS
-- Link against `libAVBlocks.dylib`
+- Link against `libAVBlocks.dylib` (available for Apple Silicon `arm64` and Intel `x64`)
 - Use `primo::ustring` for file paths to handle Unicode correctly
 
 ### Linux
@@ -1437,7 +1438,7 @@ See [Setup for macOS](./docs/setup-mac.md)
 
 ### Build
 
-See [Build on macOS](./docs/build-mac.md)
+See [Build on macOS](./docs/build-mac.md). Both Apple Silicon (`arm64`) and Intel (`x64`) are supported; the build defaults to the host architecture.
 
 ### Run
 
