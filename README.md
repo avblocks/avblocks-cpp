@@ -14,6 +14,14 @@ Download and install the AVBlocks demo version on your platform. The extracted f
 
 ## Linux
 
+Run [download-sdk-and-assets.sh](./download-sdk-and-assets.sh) from the repository root. It detects the host architecture (`arm64` or `x64`), downloads the matching SDK into `sdk/` and the demo assets into `assets/`:
+
+```bash
+./download-sdk-and-assets.sh
+```
+
+Alternatively, download manually:
+
 ```bash
 # select version and platform
 # "linux-arm64" for ARM64 (aarch64), "linux" for x64
@@ -46,6 +54,14 @@ cd ..
 ```
 
 ## macOS
+
+Run [download-sdk-and-assets.sh](./download-sdk-and-assets.sh) from the repository root. It detects the host architecture (Apple Silicon `arm64` or Intel `x64`), downloads the matching SDK into `sdk/` and the demo assets into `assets/`:
+
+```bash
+./download-sdk-and-assets.sh
+```
+
+Alternatively, download manually:
 
 ```bash
 # select version and platform
