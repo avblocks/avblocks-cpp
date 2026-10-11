@@ -149,7 +149,7 @@ void savePictures(primo::codecs::Metadata* meta, const char* inputFile)
     MetaPictureList* piclist = meta->pictures();
     for (int i=0; i < piclist->count(); ++i)
     {
-        char num[8];
+        char num[12] = {};
         sprintf(num, "%d", i+1);
         string picname (baseFilename);
         picname += num;
