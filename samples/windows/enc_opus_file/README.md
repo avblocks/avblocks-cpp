@@ -8,7 +8,7 @@ The enc_opus_file sample shows how to encode a WAV file to Opus audio in OGG con
 ./enc_opus_file --input <wav file> --output <opus file>
 ```
 
-###	Examples
+### Examples (x64)
 
 List options:
 
@@ -30,3 +30,24 @@ mkdir -Force -Path ./output/enc_opus_file
   --output ./output/enc_opus_file/equinox-48KHz.opus
 ```
 
+### Examples (arm64)
+
+List options:
+
+```powershell
+./bin/arm64/enc_opus_file --help
+enc_opus_file --input <wav file> --output <opus file>
+  -h,    --help
+  -i,    --input     input WAV file
+  -o,    --output    output Opus file
+```
+
+The following command encodes WAV audio from `assets/aud/equinox-48KHz.wav` to `output/enc_opus_file/equinox-48KHz.opus`:
+
+```powershell
+mkdir -Force -Path ./output/enc_opus_file
+
+./bin/arm64/enc_opus_file `
+  --input ./assets/aud/equinox-48KHz.wav `
+  --output ./output/enc_opus_file/equinox-48KHz.opus
+```

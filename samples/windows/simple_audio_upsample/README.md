@@ -14,11 +14,13 @@ This sample demonstrates the basic AVBlocks audio upsampling workflow:
 
 No command line parsing is used -- the input and output file paths are hardcoded in the source code.
 
-## Building
+## Building (x64)
 
 From the repository root:
 
 ```powershell
+& ./scripts/Set-VsDevEnv.ps1 -arch x64
+
 mkdir -Force -Path build\debug_x64
 cd build\debug_x64
 cmake -G 'Ninja' -DCMAKE_BUILD_TYPE=debug -DPLATFORM=x64 ../../samples
@@ -27,7 +29,22 @@ ninja
 
 The built executable will be placed in `bin\x64\simple_audio_upsample.exe`.
 
-## Running
+## Building (arm64)
+
+From the repository root:
+
+```powershell
+& ./scripts/Set-VsDevEnv.ps1 -arch arm64
+
+mkdir -Force -Path build\debug_arm64
+cd build\debug_arm64
+cmake -G 'Ninja' -DCMAKE_BUILD_TYPE=debug -DPLATFORM=arm64 ../../samples
+ninja
+```
+
+The built executable will be placed in `bin\arm64\simple_audio_upsample.exe`.
+
+## Running (x64)
 
 1. Download the sample audio, the `kahvi011_kennybeltrey-hydrate.mp3` song from the [Internet Archive](https://archive.org/details/kahvi011) (MPEG Audio Layer 3, 44.1 KHz, Joint Stereo):
 
@@ -40,6 +57,23 @@ The built executable will be placed in `bin\x64\simple_audio_upsample.exe`.
     ```powershell
     cd samples\windows\simple_audio_upsample
     ..\..\..\bin\x64\simple_audio_upsample.exe
+    ```
+
+3. The upsampled output file `kahvi011_kennybeltrey-hydrate_48Khz.mp3` will be created in the `samples\windows\simple_audio_upsample` directory.
+
+## Running (arm64)
+
+1. Download the sample audio, the `kahvi011_kennybeltrey-hydrate.mp3` song from the [Internet Archive](https://archive.org/details/kahvi011) (MPEG Audio Layer 3, 44.1 KHz, Joint Stereo):
+
+    ```powershell
+    Invoke-WebRequest -Uri https://archive.org/download/kahvi011/kahvi011_kennybeltrey-hydrate.mp3 -OutFile kahvi011_kennybeltrey-hydrate.mp3
+    ```
+
+2. Run the sample from the sample directory (the input/output file paths are relative to the working directory):
+
+    ```powershell
+    cd samples\windows\simple_audio_upsample
+    ..\..\..\bin\arm64\simple_audio_upsample.exe
     ```
 
 3. The upsampled output file `kahvi011_kennybeltrey-hydrate_48Khz.mp3` will be created in the `samples\windows\simple_audio_upsample` directory.
