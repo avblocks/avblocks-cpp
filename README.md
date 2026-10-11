@@ -16,6 +16,7 @@ Download and install the AVBlocks demo version on your platform. The extracted f
 
 ```bash
 # select version and platform
+# "linux-arm64" for ARM64 (aarch64), "linux" for x64
 tag="v3.4.0-demo.1"
 platform="linux"
 
@@ -1199,7 +1200,7 @@ StreamInfo* si = pin->streamInfo();
 - Use `primo::ustring` for file paths to handle Unicode correctly
 
 ### Linux
-- Link against `libAVBlocks64.so`
+- Link against `libAVBlocks64.so` (available for ARM64 `arm64` and x64)
 - Ensure library path is in `LD_LIBRARY_PATH` or use `rpath`
 - Use `primo::ustring` for file paths to handle Unicode correctly
 
@@ -1456,7 +1457,7 @@ See [Setup for Linux](./docs/setup-linux.md)
 
 ### Build
 
-See [Build on Linux](./docs/build-linux.md)
+See [Build on Linux](./docs/build-linux.md). Both ARM64 (`arm64`) and x64 are supported; the build defaults to the host architecture.
 
 ### Run
 
