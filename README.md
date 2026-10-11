@@ -98,8 +98,17 @@ cd ..
 
 > Scripts are PowerShell
 
+Run [download-sdk-and-assets.ps1](./download-sdk-and-assets.ps1) from the repository root. It detects the host architecture (`arm64` or `x64`), downloads the matching SDK into `sdk/` and the demo assets into `assets/`:
+
+```powershell
+./download-sdk-and-assets.ps1
+```
+
+Alternatively, download manually:
+
 ```powershell
 # select version and platform
+# "windows-arm64" for ARM64, "windows" for x64
 $tag='v3.4.0-demo.1'
 $platform='windows'
 
@@ -1221,7 +1230,7 @@ StreamInfo* si = pin->streamInfo();
 - Use `primo::ustring` for file paths to handle Unicode correctly
 
 ### Windows
-- Link against `AVBlocks64.lib` (64-bit) 
+- Link against `AVBlocks64.lib` (available for ARM64 `arm64` and x64)
 - `AVBlocks64.dll` DLL must be in PATH or application directory
 - Use `/MT` or `/MTd` runtime library option
 
@@ -1491,7 +1500,7 @@ See [Setup for Windows](./docs/setup-windows.md)
 
 ### Build
 
-See [Build on Windows](./docs/build-windows.md)
+See [Build on Windows](./docs/build-windows.md). Both ARM64 (`arm64`) and x64 are supported; the build defaults to the host architecture.
 
 ### Run
 
