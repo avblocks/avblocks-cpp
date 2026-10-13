@@ -23,13 +23,8 @@ int main(int argc, const char *argv[]) {
         // Start with same output as the input, which is MP4 / H.264 + AAC
         auto outputSocket = primo::make_ref(inputSocket->clone());
 
-        // Get the output video stream info
-        auto outVideoStream = (VideoStreamInfo*)outputSocket
-                                                ->pins()->at(0)
-                                                ->streamInfo();
-
-        // Change the video stream type to H.265 (HEVC) 
-        // and the stream subtype to HEVC Annex B
+        // Get the output video stream info and modify it for H.265/HEVC
+        auto outVideoStream = (VideoStreamInfo*)outputSocket->pins()->at(0)->streamInfo();
         outVideoStream->setStreamType(StreamType::H265);
         outVideoStream->setStreamSubType(StreamSubType::HEVC_Annex_B);
         

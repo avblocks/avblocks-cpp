@@ -32,9 +32,7 @@ int wmain(int argc, wchar_t* argv[])
         );
 
         // Get the output video stream info and modify it for H.265/HEVC
-        auto outVideoStream = static_cast<VideoStreamInfo*>(outputSocket
-                                                            ->pins()->at(0)
-                                                            ->streamInfo());
+        auto outVideoStream = (VideoStreamInfo*)outputSocket->pins()->at(0)->streamInfo();
         outVideoStream->setStreamType(StreamType::H265);
         outVideoStream->setStreamSubType(StreamSubType::HEVC_Annex_B);
         
