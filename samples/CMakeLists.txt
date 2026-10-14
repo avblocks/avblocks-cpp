@@ -84,10 +84,13 @@ add_subdirectory(${OS}/video_upscale)
 
 # add projects, each project should be in its own directory
 if (OS STREQUAL "darwin")
+    add_subdirectory(${OS}/mux_mp4_fs_file)
 endif()
 
 if(OS STREQUAL "linux")
+    add_subdirectory(${OS}/mux_mp4_fs_file)
 endif()
 
 if(OS STREQUAL "windows")
+    add_subdirectory(${OS}/mux_mp4_fs_file)
 endif()

@@ -1,5 +1,7 @@
 # Samples - C++ / macOS
 
+The samples can be built for Intel (`x64`) and Apple silicon (`arm64`). The executables are placed in `bin/x64` and `bin/arm64` respectively. Each sample README has examples for both.
+
 ## Getting Started
 
 ### simple_converter
@@ -109,6 +111,12 @@ See [dump_hevc_au](./dump_hevc_au) for details.
 Multiplex two single-stream MP4 files containing AAC (audio) and H.264 (video) streams into an MP4 (container) file.
 
 See [mux_mp4_file](./mux_mp4_file) for details.
+
+#### mux_mp4_fs_file
+
+Multiplex AAC (audio) and H.264 (video) streams into an MP4 (container) file, or remux an existing MP4 file. Optionally enable fast start, which moves the `moov` atom before the `mdat` atom so the file can be played while it is downloading.
+
+See [mux_mp4_fs_file](./mux_mp4_fs_file) for details.
 
 ### WebM 
 

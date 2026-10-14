@@ -94,6 +94,12 @@ Multiplex two single-stream MP4 files containing AAC (audio) and H.264 (video) s
 
 See [mux_mp4_file](./demux_mp4_file) for details.
 
+## mux_mp4_fs_file
+
+Multiplex AAC (audio) and H.264 (video) streams into an MP4 (container) file, or remux an existing MP4 file. Optionally enable fast start, which moves the `moov` atom before the `mdat` atom so the file can be played while it is downloading.
+
+See [mux_mp4_fs_file](./mux_mp4_fs_file) for details.
+
 ---
 
 ## Decoding
