@@ -84,4 +84,4 @@ The built executable will be placed in `bin\arm64\simple_video_pad.exe`.
 
 - The input file `AndrewConnolly_2014.mp4` and output file `AndrewConnolly_2014_640x480_Padded.mp4` paths are hardcoded in `simple_video_pad.cpp`. They are relative to the working directory from which the executable is run.
 - If `transcoder->open()` fails, it may be because `AndrewConnolly_2014_640x480_Padded.mp4` already exists in the directory. Delete the output file and try again.
-- The source video is 16:9 at 854x480. The output frame is 640x480 (4:3), so the picture is squeezed to 640x270 (`640 * 9 / 16`) and padded by 105 pixels on top and bottom to preserve the original 16:9 aspect ratio within the 4:3 frame.
+- The source video is 16:9 at 854x480. The output frame is 640x480 (4:3), so the picture is squeezed to 640x360 (`640 * 9 / 16`) and padded by 60 pixels on top and bottom to preserve the original 16:9 aspect ratio within the 4:3 frame.
